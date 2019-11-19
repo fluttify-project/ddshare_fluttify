@@ -1,0 +1,23 @@
+name: ddshare_fluttify
+description: A `ddshare` flutter plugin, based on `fluttify` engine.
+version: 0.0.1
+author: yohom <382146139@qq.com>
+homepage: https://github.com/fluttify-project/ddshare_fluttify
+
+environment:
+  sdk: ">=2.2.2 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  foundation_fluttify: ^0.0.10
+  
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  plugin:
+    androidPackage: com.fluttify.ddshare_fluttify
+    pluginClass: DdshareFluttifyPlugin
