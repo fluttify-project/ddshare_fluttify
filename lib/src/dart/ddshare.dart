@@ -39,6 +39,30 @@ class DDSharePlugin {
   static Future<void> sendTextMessage(String text, [bool isSendDing = false]) async {
     return platform(
       android: (pool) async {
+        //  Android源码
+        //  String text = getString(R.string.share_text_default);
+        //
+        //        //初始化一个DDTextMessage对象
+        //        DDTextMessage textObject = new DDTextMessage();
+        //        textObject.mText = text;
+        //
+        //        //用DDTextMessage对象初始化一个DDMediaMessage对象
+        //        DDMediaMessage mediaMessage = new DDMediaMessage();
+        //        mediaMessage.mMediaObject = textObject;
+        //
+        //        //构造一个Req
+        //        SendMessageToDD.Req req = new SendMessageToDD.Req();
+        //        req.mMediaMessage = mediaMessage;
+        //
+        //        //调用api接口发送消息到钉钉
+        //        if(isSendDing){
+        //
+        //            iddShareApi.sendReqToDing(req);
+        //        } else {
+        //            iddShareApi.sendReq(req);
+        //        }
+
+
         // 初始化一个DDTextMessage对象
         com_android_dingtalk_share_ddsharemodule_message_DDTextMessage textObject = await DdshareFluttifyFactoryAndroid
             .createcom_android_dingtalk_share_ddsharemodule_message_DDTextMessage__();
@@ -50,7 +74,7 @@ class DDSharePlugin {
             await DdshareFluttifyFactoryAndroid
                 .createcom_android_dingtalk_share_ddsharemodule_message_DDMediaMessage__();
         print(mediaMessage.toString());
-        mediaMessage.set_mMediaObject(mediaMessage);
+        mediaMessage.set_mMediaObject(textObject);
         //构造一个Req
         com_android_dingtalk_share_ddsharemodule_message_SendMessageToDD_Req req = await DdshareFluttifyFactoryAndroid
             .createcom_android_dingtalk_share_ddsharemodule_message_SendMessageToDD_Req__();
@@ -58,9 +82,9 @@ class DDSharePlugin {
 
         //调用api接口发送消息到钉钉
         if (isSendDing) {
-          return await _androidApi.sendReqToDing(req);
+          return await _androidApi?.sendReqToDing(req);
         } else {
-          return await _androidApi.sendReq(req);
+          return await _androidApi?.sendReq(req);
         }
       },
     );
