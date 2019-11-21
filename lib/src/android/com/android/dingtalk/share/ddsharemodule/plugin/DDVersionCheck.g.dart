@@ -20,7 +20,7 @@ class com_android_dingtalk_share_ddsharemodule_plugin_DDVersionCheck extends jav
   // generate methods
   static Future<int> getSdkVersionFromMetaData(android_content_Context context, int defaultValue) async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.plugin.DDVersionCheck::getSdkVersionFromMetaData([\'defaultValue\':$defaultValue])');
     }
   

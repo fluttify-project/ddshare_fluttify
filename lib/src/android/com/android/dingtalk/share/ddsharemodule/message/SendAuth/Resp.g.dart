@@ -10,7 +10,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 // ignore_for_file: non_constant_identifier_names, camel_case_types, missing_return, unused_import
-class com_android_dingtalk_share_ddsharemodule_message_SendAuth_Resp extends java_lang_Object  {
+class com_android_dingtalk_share_ddsharemodule_message_SendAuth_Resp extends com_android_dingtalk_share_ddsharemodule_message_BaseResp  {
   // generate getters
   Future<String> get_code() async {
     final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod("com.android.dingtalk.share.ddsharemodule.message.SendAuth.Resp::get_code", {'refId': refId});
@@ -42,7 +42,7 @@ class com_android_dingtalk_share_ddsharemodule_message_SendAuth_Resp extends jav
   // generate methods
   Future<int> getType() async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.SendAuth.Resp@$refId::getType([])');
     }
   
@@ -64,7 +64,7 @@ class com_android_dingtalk_share_ddsharemodule_message_SendAuth_Resp extends jav
   
   Future<void> toBundle(android_os_Bundle bundle) async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.SendAuth.Resp@$refId::toBundle([])');
     }
   
@@ -86,7 +86,7 @@ class com_android_dingtalk_share_ddsharemodule_message_SendAuth_Resp extends jav
   
   Future<void> fromBundle(android_os_Bundle bundle) async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.SendAuth.Resp@$refId::fromBundle([])');
     }
   

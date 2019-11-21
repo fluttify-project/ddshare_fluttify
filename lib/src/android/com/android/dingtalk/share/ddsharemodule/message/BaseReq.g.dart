@@ -30,7 +30,7 @@ class com_android_dingtalk_share_ddsharemodule_message_BaseReq extends java_lang
   // generate methods
   Future<int> getType() async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.BaseReq@$refId::getType([])');
     }
   
@@ -52,7 +52,7 @@ class com_android_dingtalk_share_ddsharemodule_message_BaseReq extends java_lang
   
   Future<void> toBundle(android_os_Bundle bundle) async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.BaseReq@$refId::toBundle([])');
     }
   
@@ -74,7 +74,7 @@ class com_android_dingtalk_share_ddsharemodule_message_BaseReq extends java_lang
   
   Future<void> fromBundle(android_os_Bundle bundle) async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.BaseReq@$refId::fromBundle([])');
     }
   
@@ -96,7 +96,7 @@ class com_android_dingtalk_share_ddsharemodule_message_BaseReq extends java_lang
   
   Future<bool> checkArgs() async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.BaseReq@$refId::checkArgs([])');
     }
   
@@ -118,7 +118,7 @@ class com_android_dingtalk_share_ddsharemodule_message_BaseReq extends java_lang
   
   Future<int> getSupportVersion() async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.BaseReq@$refId::getSupportVersion([])');
     }
   

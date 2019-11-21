@@ -20,7 +20,7 @@ class com_android_dingtalk_share_ddsharemodule_algorithm_MD5 extends java_lang_O
   // generate methods
   static Future<String> getMessageDigest(List<int> bytes) async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.algorithm.MD5::getMessageDigest([\'bytes\':$bytes])');
     }
   
@@ -42,7 +42,7 @@ class com_android_dingtalk_share_ddsharemodule_algorithm_MD5 extends java_lang_O
   
   static Future<List<int>> getRawDigest(List<int> bytes) async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.algorithm.MD5::getRawDigest([\'bytes\':$bytes])');
     }
   
@@ -64,7 +64,7 @@ class com_android_dingtalk_share_ddsharemodule_algorithm_MD5 extends java_lang_O
   
   static Future<String> getMD5(String var0) async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.algorithm.MD5::getMD5([\'var0\':$var0])');
     }
   

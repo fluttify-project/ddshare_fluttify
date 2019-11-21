@@ -20,7 +20,7 @@ class com_android_dingtalk_share_ddsharemodule_message_DDMediaMessage_Builder ex
   // generate methods
   static Future<android_os_Bundle> toBundle(com_android_dingtalk_share_ddsharemodule_message_DDMediaMessage ddMediaMessage) async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage.Builder::toBundle([])');
     }
   
@@ -42,7 +42,7 @@ class com_android_dingtalk_share_ddsharemodule_message_DDMediaMessage_Builder ex
   
   static Future<com_android_dingtalk_share_ddsharemodule_message_DDMediaMessage> fromBundle(android_os_Bundle bundle) async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage.Builder::fromBundle([])');
     }
   

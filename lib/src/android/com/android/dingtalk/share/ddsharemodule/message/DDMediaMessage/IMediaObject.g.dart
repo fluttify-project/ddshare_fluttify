@@ -17,7 +17,7 @@ mixin com_android_dingtalk_share_ddsharemodule_message_DDMediaMessage_IMediaObje
 
   @mustCallSuper
   Future<void> serialize(android_os_Bundle var1) {
-    kNativeObjectPool.add(var1);
+  
   
     if (!kReleaseMode) {
       debugPrint('serialize::kNativeObjectPool: $kNativeObjectPool');
@@ -26,7 +26,7 @@ mixin com_android_dingtalk_share_ddsharemodule_message_DDMediaMessage_IMediaObje
   
   @mustCallSuper
   Future<void> unserialize(android_os_Bundle var1) {
-    kNativeObjectPool.add(var1);
+  
   
     if (!kReleaseMode) {
       debugPrint('unserialize::kNativeObjectPool: $kNativeObjectPool');

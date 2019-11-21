@@ -18,5 +18,26 @@ class com_android_dingtalk_share_ddsharemodule_DDShareApiFactory extends java_la
   
 
   // generate methods
+  static Future<com_android_dingtalk_share_ddsharemodule_IDDShareApi> createDDShareApi(android_content_Context context, String appId, bool needSignatureCheck) async {
+    // print log
+    if (fluttifyLogEnabled) {
+      print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.DDShareApiFactory::createDDShareApi([\'appId\':$appId, \'needSignatureCheck\':$needSignatureCheck])');
+    }
+  
+    // invoke native method
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('com.android.dingtalk.share.ddsharemodule.DDShareApiFactory::createDDShareApi', {"context": context.refId, "appId": appId, "needSignatureCheck": needSignatureCheck});
+  
+  
+    // handle native call
+  
+  
+    // convert native result to dart side object
+    if (result == null) {
+      return null;
+    } else {
+      kNativeObjectPool.add(com_android_dingtalk_share_ddsharemodule_DDShareApiV2()..refId = result..tag = 'ddshare_fluttify');
+      return com_android_dingtalk_share_ddsharemodule_DDShareApiV2()..refId = result..tag = 'ddshare_fluttify';
+    }
+  }
   
 }

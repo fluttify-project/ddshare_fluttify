@@ -10,7 +10,7 @@ typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, NSDictionary<NSStri
 extern NSMutableDictionary<NSString*, NSObject*>* STACK;
 // Dart端随机存取对象的容器
 extern NSMutableDictionary<NSNumber*, NSObject*>* HEAP;
-// Dart端随机存取对象的容器
+// 日志打印开关
 extern BOOL enableLog;
 
 @implementation DdshareFluttifyPlugin {
@@ -33,7 +33,9 @@ extern BOOL enableLog;
           id<DTOpenAPIDelegate> ref = (id<DTOpenAPIDelegate>) HEAP[args[@"refId"]];
       
           // print log
-          NSLog(@"fluttify-objc: DTOpenAPIDelegate@%@::onReq(暂未实现参数打印)", args[@"refId"]);
+          if (enableLog) {
+              NSLog(@"fluttify-objc: DTOpenAPIDelegate@%@::onReq(暂未实现参数打印)", args[@"refId"]);
+          }
       
           // invoke native method
           [ref onReq : req];
@@ -51,7 +53,9 @@ extern BOOL enableLog;
           id<DTOpenAPIDelegate> ref = (id<DTOpenAPIDelegate>) HEAP[args[@"refId"]];
       
           // print log
-          NSLog(@"fluttify-objc: DTOpenAPIDelegate@%@::onResp(暂未实现参数打印)", args[@"refId"]);
+          if (enableLog) {
+              NSLog(@"fluttify-objc: DTOpenAPIDelegate@%@::onResp(暂未实现参数打印)", args[@"refId"]);
+          }
       
           // invoke native method
           [ref onResp : resp];
@@ -69,7 +73,9 @@ extern BOOL enableLog;
       
       
           // print log
-          NSLog(@"fluttify-objc: DTOpenAPI::registerApp(暂未实现参数打印)");
+          if (enableLog) {
+              NSLog(@"fluttify-objc: DTOpenAPI::registerApp(暂未实现参数打印)");
+          }
       
           // invoke native method
           BOOL result = [DTOpenAPI registerApp: appId];
@@ -89,7 +95,9 @@ extern BOOL enableLog;
       
       
           // print log
-          NSLog(@"fluttify-objc: DTOpenAPI::registerApp(暂未实现参数打印)");
+          if (enableLog) {
+              NSLog(@"fluttify-objc: DTOpenAPI::registerApp(暂未实现参数打印)");
+          }
       
           // invoke native method
           BOOL result = [DTOpenAPI registerApp: appId appDescription: appDescription];
@@ -106,7 +114,9 @@ extern BOOL enableLog;
       
       
           // print log
-          NSLog(@"fluttify-objc: DTOpenAPI::isDingTalkInstalled(暂未实现参数打印)");
+          if (enableLog) {
+              NSLog(@"fluttify-objc: DTOpenAPI::isDingTalkInstalled(暂未实现参数打印)");
+          }
       
           // invoke native method
           BOOL result = [DTOpenAPI isDingTalkInstalled];
@@ -123,7 +133,9 @@ extern BOOL enableLog;
       
       
           // print log
-          NSLog(@"fluttify-objc: DTOpenAPI::isDingTalkSupportOpenAPI(暂未实现参数打印)");
+          if (enableLog) {
+              NSLog(@"fluttify-objc: DTOpenAPI::isDingTalkSupportOpenAPI(暂未实现参数打印)");
+          }
       
           // invoke native method
           BOOL result = [DTOpenAPI isDingTalkSupportOpenAPI];
@@ -140,7 +152,9 @@ extern BOOL enableLog;
       
       
           // print log
-          NSLog(@"fluttify-objc: DTOpenAPI::isDingTalkSupportSSO(暂未实现参数打印)");
+          if (enableLog) {
+              NSLog(@"fluttify-objc: DTOpenAPI::isDingTalkSupportSSO(暂未实现参数打印)");
+          }
       
           // invoke native method
           BOOL result = [DTOpenAPI isDingTalkSupportSSO];
@@ -157,7 +171,9 @@ extern BOOL enableLog;
       
       
           // print log
-          NSLog(@"fluttify-objc: DTOpenAPI::appStoreURLOfDingTalk(暂未实现参数打印)");
+          if (enableLog) {
+              NSLog(@"fluttify-objc: DTOpenAPI::appStoreURLOfDingTalk(暂未实现参数打印)");
+          }
       
           // invoke native method
           NSString* result = [DTOpenAPI appStoreURLOfDingTalk];
@@ -174,7 +190,9 @@ extern BOOL enableLog;
       
       
           // print log
-          NSLog(@"fluttify-objc: DTOpenAPI::openAPIVersion(暂未实现参数打印)");
+          if (enableLog) {
+              NSLog(@"fluttify-objc: DTOpenAPI::openAPIVersion(暂未实现参数打印)");
+          }
       
           // invoke native method
           NSString* result = [DTOpenAPI openAPIVersion];
@@ -191,7 +209,9 @@ extern BOOL enableLog;
       
       
           // print log
-          NSLog(@"fluttify-objc: DTOpenAPI::openDingTalk(暂未实现参数打印)");
+          if (enableLog) {
+              NSLog(@"fluttify-objc: DTOpenAPI::openDingTalk(暂未实现参数打印)");
+          }
       
           // invoke native method
           BOOL result = [DTOpenAPI openDingTalk];
@@ -208,7 +228,9 @@ extern BOOL enableLog;
       
       
           // print log
-          NSLog(@"fluttify-objc: DTOpenAPI::openDingTalkForSSO(暂未实现参数打印)");
+          if (enableLog) {
+              NSLog(@"fluttify-objc: DTOpenAPI::openDingTalkForSSO(暂未实现参数打印)");
+          }
       
           // invoke native method
           BOOL result = [DTOpenAPI openDingTalkForSSO];
@@ -226,7 +248,9 @@ extern BOOL enableLog;
       
       
           // print log
-          NSLog(@"fluttify-objc: DTOpenAPI::sendReq(暂未实现参数打印)");
+          if (enableLog) {
+              NSLog(@"fluttify-objc: DTOpenAPI::sendReq(暂未实现参数打印)");
+          }
       
           // invoke native method
           BOOL result = [DTOpenAPI sendReq: req];
@@ -244,7 +268,9 @@ extern BOOL enableLog;
       
       
           // print log
-          NSLog(@"fluttify-objc: DTOpenAPI::sendResp(暂未实现参数打印)");
+          if (enableLog) {
+              NSLog(@"fluttify-objc: DTOpenAPI::sendResp(暂未实现参数打印)");
+          }
       
           // invoke native method
           BOOL result = [DTOpenAPI sendResp: resp];
@@ -254,7 +280,10 @@ extern BOOL enableLog;
           methodResult(@(result));
       },
       @"DTBaseResp::get_errorCode": ^(NSObject <FlutterPluginRegistrar> * registrar, NSDictionary<NSString *, id> * args, FlutterResult methodResult) {
-          NSLog(@"DTBaseResp::get_errorCode");
+          // print log
+          if (enableLog) {
+              NSLog(@"DTBaseResp::get_errorCode");
+          }
       
           // ref object
           NSInteger refId = [args[@"refId"] integerValue];
@@ -268,7 +297,10 @@ extern BOOL enableLog;
       },
       
       @"DTBaseResp::get_errorMessage": ^(NSObject <FlutterPluginRegistrar> * registrar, NSDictionary<NSString *, id> * args, FlutterResult methodResult) {
-          NSLog(@"DTBaseResp::get_errorMessage");
+          // print log
+          if (enableLog) {
+              NSLog(@"DTBaseResp::get_errorMessage");
+          }
       
           // ref object
           NSInteger refId = [args[@"refId"] integerValue];
@@ -282,7 +314,10 @@ extern BOOL enableLog;
       },
       
       @"DTAuthorizeReq::get_redirectURI": ^(NSObject <FlutterPluginRegistrar> * registrar, NSDictionary<NSString *, id> * args, FlutterResult methodResult) {
-          NSLog(@"DTAuthorizeReq::get_redirectURI");
+          // print log
+          if (enableLog) {
+              NSLog(@"DTAuthorizeReq::get_redirectURI");
+          }
       
           // ref object
           NSInteger refId = [args[@"refId"] integerValue];
@@ -296,7 +331,10 @@ extern BOOL enableLog;
       },
       
       @"DTAuthorizeReq::get_bundleId": ^(NSObject <FlutterPluginRegistrar> * registrar, NSDictionary<NSString *, id> * args, FlutterResult methodResult) {
-          NSLog(@"DTAuthorizeReq::get_bundleId");
+          // print log
+          if (enableLog) {
+              NSLog(@"DTAuthorizeReq::get_bundleId");
+          }
       
           // ref object
           NSInteger refId = [args[@"refId"] integerValue];
@@ -310,7 +348,10 @@ extern BOOL enableLog;
       },
       
       @"DTAuthorizeResp::get_accessCode": ^(NSObject <FlutterPluginRegistrar> * registrar, NSDictionary<NSString *, id> * args, FlutterResult methodResult) {
-          NSLog(@"DTAuthorizeResp::get_accessCode");
+          // print log
+          if (enableLog) {
+              NSLog(@"DTAuthorizeResp::get_accessCode");
+          }
       
           // ref object
           NSInteger refId = [args[@"refId"] integerValue];
@@ -324,7 +365,10 @@ extern BOOL enableLog;
       },
       
       @"DTSendMessageToDingTalkReq::get_message": ^(NSObject <FlutterPluginRegistrar> * registrar, NSDictionary<NSString *, id> * args, FlutterResult methodResult) {
-          NSLog(@"DTSendMessageToDingTalkReq::get_message");
+          // print log
+          if (enableLog) {
+              NSLog(@"DTSendMessageToDingTalkReq::get_message");
+          }
       
           // ref object
           NSInteger refId = [args[@"refId"] integerValue];
@@ -339,7 +383,10 @@ extern BOOL enableLog;
       },
       
       @"DTSendMessageToDingTalkReq::get_scene": ^(NSObject <FlutterPluginRegistrar> * registrar, NSDictionary<NSString *, id> * args, FlutterResult methodResult) {
-          NSLog(@"DTSendMessageToDingTalkReq::get_scene");
+          // print log
+          if (enableLog) {
+              NSLog(@"DTSendMessageToDingTalkReq::get_scene");
+          }
       
           // ref object
           NSInteger refId = [args[@"refId"] integerValue];
@@ -353,7 +400,10 @@ extern BOOL enableLog;
       },
       
       @"DTMediaMessage::get_title": ^(NSObject <FlutterPluginRegistrar> * registrar, NSDictionary<NSString *, id> * args, FlutterResult methodResult) {
-          NSLog(@"DTMediaMessage::get_title");
+          // print log
+          if (enableLog) {
+              NSLog(@"DTMediaMessage::get_title");
+          }
       
           // ref object
           NSInteger refId = [args[@"refId"] integerValue];
@@ -367,7 +417,10 @@ extern BOOL enableLog;
       },
       
       @"DTMediaMessage::get_messageDescription": ^(NSObject <FlutterPluginRegistrar> * registrar, NSDictionary<NSString *, id> * args, FlutterResult methodResult) {
-          NSLog(@"DTMediaMessage::get_messageDescription");
+          // print log
+          if (enableLog) {
+              NSLog(@"DTMediaMessage::get_messageDescription");
+          }
       
           // ref object
           NSInteger refId = [args[@"refId"] integerValue];
@@ -381,7 +434,10 @@ extern BOOL enableLog;
       },
       
       @"DTMediaMessage::get_thumbURL": ^(NSObject <FlutterPluginRegistrar> * registrar, NSDictionary<NSString *, id> * args, FlutterResult methodResult) {
-          NSLog(@"DTMediaMessage::get_thumbURL");
+          // print log
+          if (enableLog) {
+              NSLog(@"DTMediaMessage::get_thumbURL");
+          }
       
           // ref object
           NSInteger refId = [args[@"refId"] integerValue];
@@ -395,7 +451,10 @@ extern BOOL enableLog;
       },
       
       @"DTMediaTextObject::get_text": ^(NSObject <FlutterPluginRegistrar> * registrar, NSDictionary<NSString *, id> * args, FlutterResult methodResult) {
-          NSLog(@"DTMediaTextObject::get_text");
+          // print log
+          if (enableLog) {
+              NSLog(@"DTMediaTextObject::get_text");
+          }
       
           // ref object
           NSInteger refId = [args[@"refId"] integerValue];
@@ -409,7 +468,10 @@ extern BOOL enableLog;
       },
       
       @"DTMediaImageObject::get_imageURL": ^(NSObject <FlutterPluginRegistrar> * registrar, NSDictionary<NSString *, id> * args, FlutterResult methodResult) {
-          NSLog(@"DTMediaImageObject::get_imageURL");
+          // print log
+          if (enableLog) {
+              NSLog(@"DTMediaImageObject::get_imageURL");
+          }
       
           // ref object
           NSInteger refId = [args[@"refId"] integerValue];
@@ -423,7 +485,10 @@ extern BOOL enableLog;
       },
       
       @"DTMediaWebObject::get_pageURL": ^(NSObject <FlutterPluginRegistrar> * registrar, NSDictionary<NSString *, id> * args, FlutterResult methodResult) {
-          NSLog(@"DTMediaWebObject::get_pageURL");
+          // print log
+          if (enableLog) {
+              NSLog(@"DTMediaWebObject::get_pageURL");
+          }
       
           // ref object
           NSInteger refId = [args[@"refId"] integerValue];
@@ -437,7 +502,10 @@ extern BOOL enableLog;
       },
       
       @"DTMediaAlipayObject::get_pageURL": ^(NSObject <FlutterPluginRegistrar> * registrar, NSDictionary<NSString *, id> * args, FlutterResult methodResult) {
-          NSLog(@"DTMediaAlipayObject::get_pageURL");
+          // print log
+          if (enableLog) {
+              NSLog(@"DTMediaAlipayObject::get_pageURL");
+          }
       
           // ref object
           NSInteger refId = [args[@"refId"] integerValue];
@@ -451,7 +519,10 @@ extern BOOL enableLog;
       },
       
       @"DTBaseResp::set_errorCode": ^(NSObject <FlutterPluginRegistrar> * registrar, NSDictionary<NSString *, id> * args, FlutterResult methodResult) {
-          NSLog(@"DTBaseResp::set_errorCode");
+          // print log
+          if (enableLog) {
+              NSLog(@"DTBaseResp::set_errorCode");
+          }
       
           // args
           // enum arg
@@ -465,7 +536,10 @@ extern BOOL enableLog;
       },
       
       @"DTBaseResp::set_errorMessage": ^(NSObject <FlutterPluginRegistrar> * registrar, NSDictionary<NSString *, id> * args, FlutterResult methodResult) {
-          NSLog(@"DTBaseResp::set_errorMessage");
+          // print log
+          if (enableLog) {
+              NSLog(@"DTBaseResp::set_errorMessage");
+          }
       
           // args
           // jsonable arg
@@ -479,7 +553,10 @@ extern BOOL enableLog;
       },
       
       @"DTAuthorizeReq::set_redirectURI": ^(NSObject <FlutterPluginRegistrar> * registrar, NSDictionary<NSString *, id> * args, FlutterResult methodResult) {
-          NSLog(@"DTAuthorizeReq::set_redirectURI");
+          // print log
+          if (enableLog) {
+              NSLog(@"DTAuthorizeReq::set_redirectURI");
+          }
       
           // args
           // jsonable arg
@@ -493,7 +570,10 @@ extern BOOL enableLog;
       },
       
       @"DTAuthorizeReq::set_bundleId": ^(NSObject <FlutterPluginRegistrar> * registrar, NSDictionary<NSString *, id> * args, FlutterResult methodResult) {
-          NSLog(@"DTAuthorizeReq::set_bundleId");
+          // print log
+          if (enableLog) {
+              NSLog(@"DTAuthorizeReq::set_bundleId");
+          }
       
           // args
           // jsonable arg
@@ -507,7 +587,10 @@ extern BOOL enableLog;
       },
       
       @"DTAuthorizeResp::set_accessCode": ^(NSObject <FlutterPluginRegistrar> * registrar, NSDictionary<NSString *, id> * args, FlutterResult methodResult) {
-          NSLog(@"DTAuthorizeResp::set_accessCode");
+          // print log
+          if (enableLog) {
+              NSLog(@"DTAuthorizeResp::set_accessCode");
+          }
       
           // args
           // jsonable arg
@@ -521,7 +604,10 @@ extern BOOL enableLog;
       },
       
       @"DTSendMessageToDingTalkReq::set_message": ^(NSObject <FlutterPluginRegistrar> * registrar, NSDictionary<NSString *, id> * args, FlutterResult methodResult) {
-          NSLog(@"DTSendMessageToDingTalkReq::set_message");
+          // print log
+          if (enableLog) {
+              NSLog(@"DTSendMessageToDingTalkReq::set_message");
+          }
       
           // args
           // ref arg
@@ -535,7 +621,10 @@ extern BOOL enableLog;
       },
       
       @"DTSendMessageToDingTalkReq::set_scene": ^(NSObject <FlutterPluginRegistrar> * registrar, NSDictionary<NSString *, id> * args, FlutterResult methodResult) {
-          NSLog(@"DTSendMessageToDingTalkReq::set_scene");
+          // print log
+          if (enableLog) {
+              NSLog(@"DTSendMessageToDingTalkReq::set_scene");
+          }
       
           // args
           // enum arg
@@ -549,7 +638,10 @@ extern BOOL enableLog;
       },
       
       @"DTMediaMessage::set_title": ^(NSObject <FlutterPluginRegistrar> * registrar, NSDictionary<NSString *, id> * args, FlutterResult methodResult) {
-          NSLog(@"DTMediaMessage::set_title");
+          // print log
+          if (enableLog) {
+              NSLog(@"DTMediaMessage::set_title");
+          }
       
           // args
           // jsonable arg
@@ -563,7 +655,10 @@ extern BOOL enableLog;
       },
       
       @"DTMediaMessage::set_messageDescription": ^(NSObject <FlutterPluginRegistrar> * registrar, NSDictionary<NSString *, id> * args, FlutterResult methodResult) {
-          NSLog(@"DTMediaMessage::set_messageDescription");
+          // print log
+          if (enableLog) {
+              NSLog(@"DTMediaMessage::set_messageDescription");
+          }
       
           // args
           // jsonable arg
@@ -577,7 +672,10 @@ extern BOOL enableLog;
       },
       
       @"DTMediaMessage::set_thumbURL": ^(NSObject <FlutterPluginRegistrar> * registrar, NSDictionary<NSString *, id> * args, FlutterResult methodResult) {
-          NSLog(@"DTMediaMessage::set_thumbURL");
+          // print log
+          if (enableLog) {
+              NSLog(@"DTMediaMessage::set_thumbURL");
+          }
       
           // args
           // jsonable arg
@@ -591,7 +689,10 @@ extern BOOL enableLog;
       },
       
       @"DTMediaTextObject::set_text": ^(NSObject <FlutterPluginRegistrar> * registrar, NSDictionary<NSString *, id> * args, FlutterResult methodResult) {
-          NSLog(@"DTMediaTextObject::set_text");
+          // print log
+          if (enableLog) {
+              NSLog(@"DTMediaTextObject::set_text");
+          }
       
           // args
           // jsonable arg
@@ -605,7 +706,10 @@ extern BOOL enableLog;
       },
       
       @"DTMediaImageObject::set_imageURL": ^(NSObject <FlutterPluginRegistrar> * registrar, NSDictionary<NSString *, id> * args, FlutterResult methodResult) {
-          NSLog(@"DTMediaImageObject::set_imageURL");
+          // print log
+          if (enableLog) {
+              NSLog(@"DTMediaImageObject::set_imageURL");
+          }
       
           // args
           // jsonable arg
@@ -619,7 +723,10 @@ extern BOOL enableLog;
       },
       
       @"DTMediaWebObject::set_pageURL": ^(NSObject <FlutterPluginRegistrar> * registrar, NSDictionary<NSString *, id> * args, FlutterResult methodResult) {
-          NSLog(@"DTMediaWebObject::set_pageURL");
+          // print log
+          if (enableLog) {
+              NSLog(@"DTMediaWebObject::set_pageURL");
+          }
       
           // args
           // jsonable arg
@@ -633,7 +740,10 @@ extern BOOL enableLog;
       },
       
       @"DTMediaAlipayObject::set_pageURL": ^(NSObject <FlutterPluginRegistrar> * registrar, NSDictionary<NSString *, id> * args, FlutterResult methodResult) {
-          NSLog(@"DTMediaAlipayObject::set_pageURL");
+          // print log
+          if (enableLog) {
+              NSLog(@"DTMediaAlipayObject::set_pageURL");
+          }
       
           // args
           // jsonable arg
@@ -911,7 +1021,10 @@ extern BOOL enableLog;
       },
       
       @"ObjectFactory::createDTBaseReq": ^(NSObject <FlutterPluginRegistrar> * registrar, NSDictionary<NSString *, id> * args, FlutterResult methodResult) {
-          NSLog(@"ObjectFactory::createDTBaseReq");
+          // print log
+          if (enableLog) {
+              NSLog(@"ObjectFactory::createDTBaseReq");
+          }
       
           DTBaseReq* ref = [[DTBaseReq alloc] init];
           HEAP[@(ref.hash)] = ref;
@@ -922,7 +1035,10 @@ extern BOOL enableLog;
       },
       
       @"ObjectFactory::createDTBaseResp": ^(NSObject <FlutterPluginRegistrar> * registrar, NSDictionary<NSString *, id> * args, FlutterResult methodResult) {
-          NSLog(@"ObjectFactory::createDTBaseResp");
+          // print log
+          if (enableLog) {
+              NSLog(@"ObjectFactory::createDTBaseResp");
+          }
       
           DTBaseResp* ref = [[DTBaseResp alloc] init];
           HEAP[@(ref.hash)] = ref;
@@ -933,7 +1049,10 @@ extern BOOL enableLog;
       },
       
       @"ObjectFactory::createDTAuthorizeReq": ^(NSObject <FlutterPluginRegistrar> * registrar, NSDictionary<NSString *, id> * args, FlutterResult methodResult) {
-          NSLog(@"ObjectFactory::createDTAuthorizeReq");
+          // print log
+          if (enableLog) {
+              NSLog(@"ObjectFactory::createDTAuthorizeReq");
+          }
       
           DTAuthorizeReq* ref = [[DTAuthorizeReq alloc] init];
           HEAP[@(ref.hash)] = ref;
@@ -944,7 +1063,10 @@ extern BOOL enableLog;
       },
       
       @"ObjectFactory::createDTAuthorizeResp": ^(NSObject <FlutterPluginRegistrar> * registrar, NSDictionary<NSString *, id> * args, FlutterResult methodResult) {
-          NSLog(@"ObjectFactory::createDTAuthorizeResp");
+          // print log
+          if (enableLog) {
+              NSLog(@"ObjectFactory::createDTAuthorizeResp");
+          }
       
           DTAuthorizeResp* ref = [[DTAuthorizeResp alloc] init];
           HEAP[@(ref.hash)] = ref;
@@ -955,7 +1077,10 @@ extern BOOL enableLog;
       },
       
       @"ObjectFactory::createDTSendMessageToDingTalkReq": ^(NSObject <FlutterPluginRegistrar> * registrar, NSDictionary<NSString *, id> * args, FlutterResult methodResult) {
-          NSLog(@"ObjectFactory::createDTSendMessageToDingTalkReq");
+          // print log
+          if (enableLog) {
+              NSLog(@"ObjectFactory::createDTSendMessageToDingTalkReq");
+          }
       
           DTSendMessageToDingTalkReq* ref = [[DTSendMessageToDingTalkReq alloc] init];
           HEAP[@(ref.hash)] = ref;
@@ -966,7 +1091,10 @@ extern BOOL enableLog;
       },
       
       @"ObjectFactory::createDTSendMessageToDingTalkResp": ^(NSObject <FlutterPluginRegistrar> * registrar, NSDictionary<NSString *, id> * args, FlutterResult methodResult) {
-          NSLog(@"ObjectFactory::createDTSendMessageToDingTalkResp");
+          // print log
+          if (enableLog) {
+              NSLog(@"ObjectFactory::createDTSendMessageToDingTalkResp");
+          }
       
           DTSendMessageToDingTalkResp* ref = [[DTSendMessageToDingTalkResp alloc] init];
           HEAP[@(ref.hash)] = ref;
@@ -977,7 +1105,10 @@ extern BOOL enableLog;
       },
       
       @"ObjectFactory::createDTMediaMessage": ^(NSObject <FlutterPluginRegistrar> * registrar, NSDictionary<NSString *, id> * args, FlutterResult methodResult) {
-          NSLog(@"ObjectFactory::createDTMediaMessage");
+          // print log
+          if (enableLog) {
+              NSLog(@"ObjectFactory::createDTMediaMessage");
+          }
       
           DTMediaMessage* ref = [[DTMediaMessage alloc] init];
           HEAP[@(ref.hash)] = ref;
@@ -988,7 +1119,10 @@ extern BOOL enableLog;
       },
       
       @"ObjectFactory::createDTMediaTextObject": ^(NSObject <FlutterPluginRegistrar> * registrar, NSDictionary<NSString *, id> * args, FlutterResult methodResult) {
-          NSLog(@"ObjectFactory::createDTMediaTextObject");
+          // print log
+          if (enableLog) {
+              NSLog(@"ObjectFactory::createDTMediaTextObject");
+          }
       
           DTMediaTextObject* ref = [[DTMediaTextObject alloc] init];
           HEAP[@(ref.hash)] = ref;
@@ -999,7 +1133,10 @@ extern BOOL enableLog;
       },
       
       @"ObjectFactory::createDTMediaImageObject": ^(NSObject <FlutterPluginRegistrar> * registrar, NSDictionary<NSString *, id> * args, FlutterResult methodResult) {
-          NSLog(@"ObjectFactory::createDTMediaImageObject");
+          // print log
+          if (enableLog) {
+              NSLog(@"ObjectFactory::createDTMediaImageObject");
+          }
       
           DTMediaImageObject* ref = [[DTMediaImageObject alloc] init];
           HEAP[@(ref.hash)] = ref;
@@ -1010,7 +1147,10 @@ extern BOOL enableLog;
       },
       
       @"ObjectFactory::createDTMediaWebObject": ^(NSObject <FlutterPluginRegistrar> * registrar, NSDictionary<NSString *, id> * args, FlutterResult methodResult) {
-          NSLog(@"ObjectFactory::createDTMediaWebObject");
+          // print log
+          if (enableLog) {
+              NSLog(@"ObjectFactory::createDTMediaWebObject");
+          }
       
           DTMediaWebObject* ref = [[DTMediaWebObject alloc] init];
           HEAP[@(ref.hash)] = ref;
@@ -1021,7 +1161,10 @@ extern BOOL enableLog;
       },
       
       @"ObjectFactory::createDTMediaAlipayObject": ^(NSObject <FlutterPluginRegistrar> * registrar, NSDictionary<NSString *, id> * args, FlutterResult methodResult) {
-          NSLog(@"ObjectFactory::createDTMediaAlipayObject");
+          // print log
+          if (enableLog) {
+              NSLog(@"ObjectFactory::createDTMediaAlipayObject");
+          }
       
           DTMediaAlipayObject* ref = [[DTMediaAlipayObject alloc] init];
           HEAP[@(ref.hash)] = ref;
@@ -1032,7 +1175,10 @@ extern BOOL enableLog;
       },
       
       @"ObjectFactory::createDTOpenAPI": ^(NSObject <FlutterPluginRegistrar> * registrar, NSDictionary<NSString *, id> * args, FlutterResult methodResult) {
-          NSLog(@"ObjectFactory::createDTOpenAPI");
+          // print log
+          if (enableLog) {
+              NSLog(@"ObjectFactory::createDTOpenAPI");
+          }
       
           DTOpenAPI* ref = [[DTOpenAPI alloc] init];
           HEAP[@(ref.hash)] = ref;
@@ -1077,8 +1223,10 @@ extern BOOL enableLog;
   FlutterMethodChannel *channel = [FlutterMethodChannel
       methodChannelWithName:@"DTOpenAPIDelegate::Callback"
             binaryMessenger:[_registrar messenger]];
-
-  NSLog(@"DTOpenAPIDelegate::onReq");
+  // print log
+  if (enableLog) {
+    NSLog(@"DTOpenAPIDelegate::onReq");
+  }
 
   // convert to jsonable arg
   // ref callback arg
@@ -1094,8 +1242,10 @@ extern BOOL enableLog;
   FlutterMethodChannel *channel = [FlutterMethodChannel
       methodChannelWithName:@"DTOpenAPIDelegate::Callback"
             binaryMessenger:[_registrar messenger]];
-
-  NSLog(@"DTOpenAPIDelegate::onResp");
+  // print log
+  if (enableLog) {
+    NSLog(@"DTOpenAPIDelegate::onResp");
+  }
 
   // convert to jsonable arg
   // ref callback arg

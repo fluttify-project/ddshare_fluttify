@@ -20,7 +20,7 @@ class com_android_dingtalk_share_ddsharemodule_message_DDMessageAct extends java
   // generate methods
   static Future<bool> sendDDFriend(android_content_Context context, String appId, android_os_Bundle bundle) async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.DDMessageAct::sendDDFriend([\'appId\':$appId])');
     }
   
@@ -42,7 +42,7 @@ class com_android_dingtalk_share_ddsharemodule_message_DDMessageAct extends java
   
   static Future<bool> sendDing(android_content_Context context, String appId, android_os_Bundle bundle) async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.DDMessageAct::sendDing([\'appId\':$appId])');
     }
   
@@ -64,7 +64,7 @@ class com_android_dingtalk_share_ddsharemodule_message_DDMessageAct extends java
   
   static Future<bool> sendDDAuth(android_content_Context context, String appId, android_os_Bundle bundle) async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.DDMessageAct::sendDDAuth([\'appId\':$appId])');
     }
   

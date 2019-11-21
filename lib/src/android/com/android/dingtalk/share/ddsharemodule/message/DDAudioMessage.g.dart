@@ -10,7 +10,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 // ignore_for_file: non_constant_identifier_names, camel_case_types, missing_return, unused_import
-class com_android_dingtalk_share_ddsharemodule_message_DDAudioMessage extends java_lang_Object  {
+class com_android_dingtalk_share_ddsharemodule_message_DDAudioMessage extends java_lang_Object with com_android_dingtalk_share_ddsharemodule_message_DDMediaMessage_IMediaObject {
   // generate getters
   
 
@@ -20,7 +20,7 @@ class com_android_dingtalk_share_ddsharemodule_message_DDAudioMessage extends ja
   // generate methods
   Future<void> serialize(android_os_Bundle var1) async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.DDAudioMessage@$refId::serialize([])');
     }
   
@@ -42,7 +42,7 @@ class com_android_dingtalk_share_ddsharemodule_message_DDAudioMessage extends ja
   
   Future<void> unserialize(android_os_Bundle var1) async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.DDAudioMessage@$refId::unserialize([])');
     }
   
@@ -64,7 +64,7 @@ class com_android_dingtalk_share_ddsharemodule_message_DDAudioMessage extends ja
   
   Future<int> type() async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.DDAudioMessage@$refId::type([])');
     }
   
@@ -86,7 +86,7 @@ class com_android_dingtalk_share_ddsharemodule_message_DDAudioMessage extends ja
   
   Future<bool> checkArgs() async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.DDAudioMessage@$refId::checkArgs([])');
     }
   
@@ -108,7 +108,7 @@ class com_android_dingtalk_share_ddsharemodule_message_DDAudioMessage extends ja
   
   Future<int> getSupportVersion() async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.DDAudioMessage@$refId::getSupportVersion([])');
     }
   

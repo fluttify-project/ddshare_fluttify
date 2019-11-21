@@ -20,7 +20,7 @@ class com_android_dingtalk_share_ddsharemodule_message_DDMessage extends java_la
   // generate methods
   static Future<bool> send(android_content_Context context, String receiverPermission, String action, String content, android_os_Bundle bundle) async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.DDMessage::send([\'receiverPermission\':$receiverPermission, \'action\':$action, \'content\':$content])');
     }
   

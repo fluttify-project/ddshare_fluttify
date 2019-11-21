@@ -106,6 +106,17 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
         
             methodResult.success(result);
         });
+        put("com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage::get_mMediaObject", (args, methodResult) -> {
+            // ref object
+            int refId = (int) args.get("refId");
+            com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage ref = (com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage) getHEAP().get(refId);
+        
+            com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage.IMediaObject result = ref.mMediaObject;
+        
+            getHEAP().put(result.hashCode(), result);
+        
+            methodResult.success(result.hashCode());
+        });
         put("com.android.dingtalk.share.ddsharemodule.message.SendMessageToDD.Req::get_mMediaMessage", (args, methodResult) -> {
             // ref object
             int refId = (int) args.get("refId");
@@ -2239,6 +2250,36 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
         
             // result
             methodResult.success(result);
+        });
+        put("com.android.dingtalk.share.ddsharemodule.DDShareApiFactory::createDDShareApi", (args, methodResult) -> {
+            // args
+            // ref arg
+            android.content.Context context = (android.content.Context) getHEAP().get((int) args.get("context"));
+            // jsonable arg
+            String appId = (String) args.get("appId");
+            // jsonable arg
+            boolean needSignatureCheck = (boolean) args.get("needSignatureCheck");
+        
+            // ref
+        
+        
+            // print log
+            if (getEnableLog()) {
+                Log.d("fluttify-java", "fluttify-java: com.android.dingtalk.share.ddsharemodule.DDShareApiFactory::createDDShareApi(" + context + appId + needSignatureCheck + ")");
+            }
+        
+            // invoke native method
+            com.android.dingtalk.share.ddsharemodule.IDDShareApi result = com.android.dingtalk.share.ddsharemodule.DDShareApiFactory.createDDShareApi(context, appId, needSignatureCheck);
+        
+            // result
+            if (result != null) {
+                int returnRefId = result.hashCode();
+                getHEAP().put(returnRefId, result);
+        
+                methodResult.success(returnRefId);
+            } else {
+                methodResult.success(null);
+            }
         });
         put("com.android.dingtalk.share.ddsharemodule.DDShareApiV2::registerApp", (args, methodResult) -> {
             // args

@@ -48,6 +48,12 @@ class com_android_dingtalk_share_ddsharemodule_message_DDMediaMessage extends ja
     return result;
   }
   
+  Future<com_android_dingtalk_share_ddsharemodule_message_DDMediaMessage_IMediaObject> get_mMediaObject() async {
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod("com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage::get_mMediaObject", {'refId': refId});
+    kNativeObjectPool.add(com_android_dingtalk_share_ddsharemodule_message_DDTextMessage()..refId = result..tag = 'ddshare_fluttify');
+    return com_android_dingtalk_share_ddsharemodule_message_DDTextMessage()..refId = result..tag = 'ddshare_fluttify';
+  }
+  
 
   // generate setters
   Future<void> set_mSDKVersion(int mSDKVersion) async {
@@ -89,69 +95,14 @@ class com_android_dingtalk_share_ddsharemodule_message_DDMediaMessage extends ja
   Future<void> set_mMediaObject(com_android_dingtalk_share_ddsharemodule_message_DDMediaMessage_IMediaObject mMediaObject) async {
     await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage::set_mMediaObject', {'refId': refId, "mMediaObject": mMediaObject.refId});
   
-    MethodChannel('com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage.IMediaObject::Callback')
-      .setMethodCallHandler((methodCall) async {
-        final args = methodCall.arguments as Map;
-        // final refId = args['callerRefId'] as int;
-        // if (refId != this.refId) return;
   
-        switch (methodCall.method) {
-          case 'Callback::com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage.IMediaObject::serialize':
-            // print log
-            if (!kReleaseMode) {
-              print('fluttify-dart-callback: serialize([])');
-            }
-        
-            // handle the native call
-            mMediaObject?.serialize(android_os_Bundle()..refId = (args['var1'])..tag = 'ddshare_fluttify');
-            break;
-          case 'Callback::com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage.IMediaObject::unserialize':
-            // print log
-            if (!kReleaseMode) {
-              print('fluttify-dart-callback: unserialize([])');
-            }
-        
-            // handle the native call
-            mMediaObject?.unserialize(android_os_Bundle()..refId = (args['var1'])..tag = 'ddshare_fluttify');
-            break;
-          case 'Callback::com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage.IMediaObject::type':
-            // print log
-            if (!kReleaseMode) {
-              print('fluttify-dart-callback: type([])');
-            }
-        
-            // handle the native call
-            mMediaObject?.type();
-            break;
-          case 'Callback::com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage.IMediaObject::checkArgs':
-            // print log
-            if (!kReleaseMode) {
-              print('fluttify-dart-callback: checkArgs([])');
-            }
-        
-            // handle the native call
-            mMediaObject?.checkArgs();
-            break;
-          case 'Callback::com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage.IMediaObject::getSupportVersion':
-            // print log
-            if (!kReleaseMode) {
-              print('fluttify-dart-callback: getSupportVersion([])');
-            }
-        
-            // handle the native call
-            mMediaObject?.getSupportVersion();
-            break;
-          default:
-            break;
-        }
-      });
   }
   
 
   // generate methods
   Future<int> getType() async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage@$refId::getType([])');
     }
   
@@ -173,7 +124,7 @@ class com_android_dingtalk_share_ddsharemodule_message_DDMediaMessage extends ja
   
   Future<void> setThumbImage(android_graphics_Bitmap bitmap) async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage@$refId::setThumbImage([])');
     }
   
@@ -195,7 +146,7 @@ class com_android_dingtalk_share_ddsharemodule_message_DDMediaMessage extends ja
   
   Future<bool> checkArgs() async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage@$refId::checkArgs([])');
     }
   
@@ -217,7 +168,7 @@ class com_android_dingtalk_share_ddsharemodule_message_DDMediaMessage extends ja
   
   Future<int> getSupportVersion() async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage@$refId::getSupportVersion([])');
     }
   

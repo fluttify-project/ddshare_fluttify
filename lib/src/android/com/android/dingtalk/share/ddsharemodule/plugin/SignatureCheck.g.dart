@@ -20,7 +20,7 @@ class com_android_dingtalk_share_ddsharemodule_plugin_SignatureCheck extends jav
   // generate methods
   static Future<String> getMD5Signature(android_content_Context context, String packageName) async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.plugin.SignatureCheck::getMD5Signature([\'packageName\':$packageName])');
     }
   
