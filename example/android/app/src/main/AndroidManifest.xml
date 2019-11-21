@@ -8,7 +8,7 @@
          FlutterApplication and put your custom class here. -->
     <application
         android:name="io.flutter.app.FlutterApplication"
-        android:label="ddshare_fluttify_example"
+        android:label="钉钉分享"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:exported="true"
