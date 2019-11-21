@@ -29,6 +29,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
     private Registrar registrar;
 
     private final Map<String, Handler> handlerMap = new HashMap<String, Handler>() {{
+        // getter
         put("com.android.dingtalk.share.ddsharemodule.message.DDTextMessage::get_mText", (args, methodResult) -> {
             // ref object
             int refId = (int) args.get("refId");
@@ -40,6 +41,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
         
             methodResult.success(result);
         });
+        // getter
         put("com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage::get_mSDKVersion", (args, methodResult) -> {
             // ref object
             int refId = (int) args.get("refId");
@@ -51,6 +53,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
         
             methodResult.success(result);
         });
+        // getter
         put("com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage::get_mTitle", (args, methodResult) -> {
             // ref object
             int refId = (int) args.get("refId");
@@ -62,6 +65,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
         
             methodResult.success(result);
         });
+        // getter
         put("com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage::get_mContent", (args, methodResult) -> {
             // ref object
             int refId = (int) args.get("refId");
@@ -73,6 +77,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
         
             methodResult.success(result);
         });
+        // getter
         put("com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage::get_mThumbData", (args, methodResult) -> {
             // ref object
             int refId = (int) args.get("refId");
@@ -84,6 +89,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
         
             methodResult.success(result);
         });
+        // getter
         put("com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage::get_mThumbUrl", (args, methodResult) -> {
             // ref object
             int refId = (int) args.get("refId");
@@ -95,6 +101,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
         
             methodResult.success(result);
         });
+        // getter
         put("com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage::get_mUrl", (args, methodResult) -> {
             // ref object
             int refId = (int) args.get("refId");
@@ -106,6 +113,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
         
             methodResult.success(result);
         });
+        // getter
         put("com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage::get_mMediaObject", (args, methodResult) -> {
             // ref object
             int refId = (int) args.get("refId");
@@ -117,6 +125,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
         
             methodResult.success(result.hashCode());
         });
+        // getter
         put("com.android.dingtalk.share.ddsharemodule.message.SendMessageToDD.Req::get_mMediaMessage", (args, methodResult) -> {
             // ref object
             int refId = (int) args.get("refId");
@@ -128,6 +137,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
         
             methodResult.success(result.hashCode());
         });
+        // getter
         put("com.android.dingtalk.share.ddsharemodule.message.SendAuth.Resp::get_code", (args, methodResult) -> {
             // ref object
             int refId = (int) args.get("refId");
@@ -139,6 +149,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
         
             methodResult.success(result);
         });
+        // getter
         put("com.android.dingtalk.share.ddsharemodule.message.SendAuth.Resp::get_state", (args, methodResult) -> {
             // ref object
             int refId = (int) args.get("refId");
@@ -150,6 +161,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
         
             methodResult.success(result);
         });
+        // getter
         put("com.android.dingtalk.share.ddsharemodule.message.BaseResp::get_mErrCode", (args, methodResult) -> {
             // ref object
             int refId = (int) args.get("refId");
@@ -161,6 +173,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
         
             methodResult.success(result);
         });
+        // getter
         put("com.android.dingtalk.share.ddsharemodule.message.BaseResp::get_mErrStr", (args, methodResult) -> {
             // ref object
             int refId = (int) args.get("refId");
@@ -172,6 +185,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
         
             methodResult.success(result);
         });
+        // getter
         put("com.android.dingtalk.share.ddsharemodule.message.BaseResp::get_mTransaction", (args, methodResult) -> {
             // ref object
             int refId = (int) args.get("refId");
@@ -183,6 +197,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
         
             methodResult.success(result);
         });
+        // getter
         put("com.android.dingtalk.share.ddsharemodule.message.DDImageMessage::get_mImageData", (args, methodResult) -> {
             // ref object
             int refId = (int) args.get("refId");
@@ -194,6 +209,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
         
             methodResult.success(result);
         });
+        // getter
         put("com.android.dingtalk.share.ddsharemodule.message.DDImageMessage::get_mImageUrl", (args, methodResult) -> {
             // ref object
             int refId = (int) args.get("refId");
@@ -205,6 +221,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
         
             methodResult.success(result);
         });
+        // getter
         put("com.android.dingtalk.share.ddsharemodule.message.DDImageMessage::get_mImagePath", (args, methodResult) -> {
             // ref object
             int refId = (int) args.get("refId");
@@ -216,6 +233,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
         
             methodResult.success(result);
         });
+        // getter
         put("com.android.dingtalk.share.ddsharemodule.message.SendAuth.Req::get_scope", (args, methodResult) -> {
             // ref object
             int refId = (int) args.get("refId");
@@ -227,6 +245,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
         
             methodResult.success(result);
         });
+        // getter
         put("com.android.dingtalk.share.ddsharemodule.message.SendAuth.Req::get_state", (args, methodResult) -> {
             // ref object
             int refId = (int) args.get("refId");
@@ -238,6 +257,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
         
             methodResult.success(result);
         });
+        // getter
         put("com.android.dingtalk.share.ddsharemodule.message.BaseReq::get_mTransaction", (args, methodResult) -> {
             // ref object
             int refId = (int) args.get("refId");
@@ -249,6 +269,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
         
             methodResult.success(result);
         });
+        // getter
         put("com.android.dingtalk.share.ddsharemodule.message.DDWebpageMessage::get_mUrl", (args, methodResult) -> {
             // ref object
             int refId = (int) args.get("refId");
@@ -260,6 +281,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
         
             methodResult.success(result);
         });
+        // getter
         put("com.android.dingtalk.share.ddsharemodule.message.DDZhiFuBaoMesseage::get_mUrl", (args, methodResult) -> {
             // ref object
             int refId = (int) args.get("refId");
@@ -271,7 +293,9 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
         
             methodResult.success(result);
         });
+        // setter
         put("com.android.dingtalk.share.ddsharemodule.message.DDTextMessage::set_mText", (args, methodResult) -> {
+            // jsonable arg
             String mText = (String) args.get("mText");
         
             int refId = (int) args.get("refId");
@@ -280,7 +304,9 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             ref.mText = mText;
             methodResult.success("success");
         });
+        // setter
         put("com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage::set_mSDKVersion", (args, methodResult) -> {
+            // jsonable arg
             int mSDKVersion = (int) args.get("mSDKVersion");
         
             int refId = (int) args.get("refId");
@@ -289,7 +315,9 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             ref.mSDKVersion = mSDKVersion;
             methodResult.success("success");
         });
+        // setter
         put("com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage::set_mTitle", (args, methodResult) -> {
+            // jsonable arg
             String mTitle = (String) args.get("mTitle");
         
             int refId = (int) args.get("refId");
@@ -298,7 +326,9 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             ref.mTitle = mTitle;
             methodResult.success("success");
         });
+        // setter
         put("com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage::set_mContent", (args, methodResult) -> {
+            // jsonable arg
             String mContent = (String) args.get("mContent");
         
             int refId = (int) args.get("refId");
@@ -307,7 +337,9 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             ref.mContent = mContent;
             methodResult.success("success");
         });
+        // setter
         put("com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage::set_mThumbData", (args, methodResult) -> {
+            // jsonable arg
             byte[] mThumbData = (byte[]) args.get("mThumbData");
         
             int refId = (int) args.get("refId");
@@ -316,7 +348,9 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             ref.mThumbData = mThumbData;
             methodResult.success("success");
         });
+        // setter
         put("com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage::set_mThumbUrl", (args, methodResult) -> {
+            // jsonable arg
             String mThumbUrl = (String) args.get("mThumbUrl");
         
             int refId = (int) args.get("refId");
@@ -325,7 +359,9 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             ref.mThumbUrl = mThumbUrl;
             methodResult.success("success");
         });
+        // setter
         put("com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage::set_mUrl", (args, methodResult) -> {
+            // jsonable arg
             String mUrl = (String) args.get("mUrl");
         
             int refId = (int) args.get("refId");
@@ -334,8 +370,10 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             ref.mUrl = mUrl;
             methodResult.success("success");
         });
+        // setter
         put("com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage::set_mMediaObject", (args, methodResult) -> {
-            com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage.IMediaObject mMediaObject = (com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage.IMediaObject) args.get("mMediaObject");
+            // ref arg
+            com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage.IMediaObject mMediaObject = (com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage.IMediaObject) getHEAP().get((int) args.get("mMediaObject"));
         
             int refId = (int) args.get("refId");
             com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage ref = (com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage) getHEAP().get(refId);
@@ -343,8 +381,10 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             ref.mMediaObject = mMediaObject;
             methodResult.success("success");
         });
+        // setter
         put("com.android.dingtalk.share.ddsharemodule.message.SendMessageToDD.Req::set_mMediaMessage", (args, methodResult) -> {
-            com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage mMediaMessage = (com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage) args.get("mMediaMessage");
+            // ref arg
+            com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage mMediaMessage = (com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage) getHEAP().get((int) args.get("mMediaMessage"));
         
             int refId = (int) args.get("refId");
             com.android.dingtalk.share.ddsharemodule.message.SendMessageToDD.Req ref = (com.android.dingtalk.share.ddsharemodule.message.SendMessageToDD.Req) getHEAP().get(refId);
@@ -352,7 +392,9 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             ref.mMediaMessage = mMediaMessage;
             methodResult.success("success");
         });
+        // setter
         put("com.android.dingtalk.share.ddsharemodule.message.SendAuth.Resp::set_code", (args, methodResult) -> {
+            // jsonable arg
             String code = (String) args.get("code");
         
             int refId = (int) args.get("refId");
@@ -361,7 +403,9 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             ref.code = code;
             methodResult.success("success");
         });
+        // setter
         put("com.android.dingtalk.share.ddsharemodule.message.SendAuth.Resp::set_state", (args, methodResult) -> {
+            // jsonable arg
             String state = (String) args.get("state");
         
             int refId = (int) args.get("refId");
@@ -370,7 +414,9 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             ref.state = state;
             methodResult.success("success");
         });
+        // setter
         put("com.android.dingtalk.share.ddsharemodule.message.BaseResp::set_mErrCode", (args, methodResult) -> {
+            // jsonable arg
             int mErrCode = (int) args.get("mErrCode");
         
             int refId = (int) args.get("refId");
@@ -379,7 +425,9 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             ref.mErrCode = mErrCode;
             methodResult.success("success");
         });
+        // setter
         put("com.android.dingtalk.share.ddsharemodule.message.BaseResp::set_mErrStr", (args, methodResult) -> {
+            // jsonable arg
             String mErrStr = (String) args.get("mErrStr");
         
             int refId = (int) args.get("refId");
@@ -388,7 +436,9 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             ref.mErrStr = mErrStr;
             methodResult.success("success");
         });
+        // setter
         put("com.android.dingtalk.share.ddsharemodule.message.BaseResp::set_mTransaction", (args, methodResult) -> {
+            // jsonable arg
             String mTransaction = (String) args.get("mTransaction");
         
             int refId = (int) args.get("refId");
@@ -397,7 +447,9 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             ref.mTransaction = mTransaction;
             methodResult.success("success");
         });
+        // setter
         put("com.android.dingtalk.share.ddsharemodule.message.DDImageMessage::set_mImageData", (args, methodResult) -> {
+            // jsonable arg
             byte[] mImageData = (byte[]) args.get("mImageData");
         
             int refId = (int) args.get("refId");
@@ -406,7 +458,9 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             ref.mImageData = mImageData;
             methodResult.success("success");
         });
+        // setter
         put("com.android.dingtalk.share.ddsharemodule.message.DDImageMessage::set_mImageUrl", (args, methodResult) -> {
+            // jsonable arg
             String mImageUrl = (String) args.get("mImageUrl");
         
             int refId = (int) args.get("refId");
@@ -415,7 +469,9 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             ref.mImageUrl = mImageUrl;
             methodResult.success("success");
         });
+        // setter
         put("com.android.dingtalk.share.ddsharemodule.message.DDImageMessage::set_mImagePath", (args, methodResult) -> {
+            // jsonable arg
             String mImagePath = (String) args.get("mImagePath");
         
             int refId = (int) args.get("refId");
@@ -424,7 +480,9 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             ref.mImagePath = mImagePath;
             methodResult.success("success");
         });
+        // setter
         put("com.android.dingtalk.share.ddsharemodule.message.SendAuth.Req::set_scope", (args, methodResult) -> {
+            // jsonable arg
             String scope = (String) args.get("scope");
         
             int refId = (int) args.get("refId");
@@ -433,7 +491,9 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             ref.scope = scope;
             methodResult.success("success");
         });
+        // setter
         put("com.android.dingtalk.share.ddsharemodule.message.SendAuth.Req::set_state", (args, methodResult) -> {
+            // jsonable arg
             String state = (String) args.get("state");
         
             int refId = (int) args.get("refId");
@@ -442,7 +502,9 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             ref.state = state;
             methodResult.success("success");
         });
+        // setter
         put("com.android.dingtalk.share.ddsharemodule.message.BaseReq::set_mTransaction", (args, methodResult) -> {
+            // jsonable arg
             String mTransaction = (String) args.get("mTransaction");
         
             int refId = (int) args.get("refId");
@@ -451,7 +513,9 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             ref.mTransaction = mTransaction;
             methodResult.success("success");
         });
+        // setter
         put("com.android.dingtalk.share.ddsharemodule.message.DDWebpageMessage::set_mUrl", (args, methodResult) -> {
+            // jsonable arg
             String mUrl = (String) args.get("mUrl");
         
             int refId = (int) args.get("refId");
@@ -460,7 +524,9 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             ref.mUrl = mUrl;
             methodResult.success("success");
         });
+        // setter
         put("com.android.dingtalk.share.ddsharemodule.message.DDZhiFuBaoMesseage::set_mUrl", (args, methodResult) -> {
+            // jsonable arg
             String mUrl = (String) args.get("mUrl");
         
             int refId = (int) args.get("refId");
@@ -469,6 +535,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             ref.mUrl = mUrl;
             methodResult.success("success");
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.IDDAPIEventHandler::onReq", (args, methodResult) -> {
             // args
             // ref arg
@@ -489,6 +556,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success("success");
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.IDDAPIEventHandler::onResp", (args, methodResult) -> {
             // args
             // ref arg
@@ -509,6 +577,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success("success");
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.IDDShareApi::registerApp", (args, methodResult) -> {
             // args
             // jsonable arg
@@ -529,6 +598,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.IDDShareApi::unregisterApp", (args, methodResult) -> {
             // args
         
@@ -548,6 +618,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success("success");
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.IDDShareApi::isDDAppInstalled", (args, methodResult) -> {
             // args
         
@@ -567,6 +638,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.IDDShareApi::isDDSupportAPI", (args, methodResult) -> {
             // args
         
@@ -586,6 +658,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.IDDShareApi::isDDSupportDingAPI", (args, methodResult) -> {
             // args
         
@@ -605,6 +678,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.IDDShareApi::getDDSupportAPI", (args, methodResult) -> {
             // args
         
@@ -624,6 +698,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.IDDShareApi::openDDApp", (args, methodResult) -> {
             // args
         
@@ -643,6 +718,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.IDDShareApi::sendReq", (args, methodResult) -> {
             // args
             // ref arg
@@ -663,6 +739,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.IDDShareApi::sendReqToDing", (args, methodResult) -> {
             // args
             // ref arg
@@ -683,6 +760,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.plugin.SignatureCheck::getMD5Signature", (args, methodResult) -> {
             // args
             // ref arg
@@ -704,6 +782,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.plugin.DDVersionCheck::getSdkVersionFromMetaData", (args, methodResult) -> {
             // args
             // ref arg
@@ -725,6 +804,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.DDTextMessage::serialize", (args, methodResult) -> {
             // args
             // ref arg
@@ -745,6 +825,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success("success");
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.DDTextMessage::unserialize", (args, methodResult) -> {
             // args
             // ref arg
@@ -765,6 +846,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success("success");
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.DDTextMessage::type", (args, methodResult) -> {
             // args
         
@@ -784,6 +866,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.DDTextMessage::checkArgs", (args, methodResult) -> {
             // args
         
@@ -803,6 +886,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.DDTextMessage::getSupportVersion", (args, methodResult) -> {
             // args
         
@@ -822,6 +906,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage::getType", (args, methodResult) -> {
             // args
         
@@ -841,6 +926,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage::setThumbImage", (args, methodResult) -> {
             // args
             // ref arg
@@ -861,6 +947,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success("success");
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage::checkArgs", (args, methodResult) -> {
             // args
         
@@ -880,6 +967,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage::getSupportVersion", (args, methodResult) -> {
             // args
         
@@ -899,6 +987,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.SendMessageToDD.Resp::getType", (args, methodResult) -> {
             // args
         
@@ -918,6 +1007,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.SendMessageToDD.Resp::fromBundle", (args, methodResult) -> {
             // args
             // ref arg
@@ -938,6 +1028,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success("success");
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.SendMessageToDD.Resp::toBundle", (args, methodResult) -> {
             // args
             // ref arg
@@ -958,6 +1049,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success("success");
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.SendMessageToDD.Req::getType", (args, methodResult) -> {
             // args
         
@@ -977,6 +1069,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.SendMessageToDD.Req::fromBundle", (args, methodResult) -> {
             // args
             // ref arg
@@ -997,6 +1090,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success("success");
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.SendMessageToDD.Req::toBundle", (args, methodResult) -> {
             // args
             // ref arg
@@ -1017,6 +1111,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success("success");
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.SendMessageToDD.Req::checkArgs", (args, methodResult) -> {
             // args
         
@@ -1036,6 +1131,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.SendMessageToDD.Req::getSupportVersion", (args, methodResult) -> {
             // args
         
@@ -1055,6 +1151,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage.Builder::toBundle", (args, methodResult) -> {
             // args
             // ref arg
@@ -1081,6 +1178,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
                 methodResult.success(null);
             }
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage.Builder::fromBundle", (args, methodResult) -> {
             // args
             // ref arg
@@ -1107,6 +1205,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
                 methodResult.success(null);
             }
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.SendAuth.Resp::getType", (args, methodResult) -> {
             // args
         
@@ -1126,6 +1225,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.SendAuth.Resp::toBundle", (args, methodResult) -> {
             // args
             // ref arg
@@ -1146,6 +1246,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success("success");
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.SendAuth.Resp::fromBundle", (args, methodResult) -> {
             // args
             // ref arg
@@ -1166,6 +1267,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success("success");
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.BaseResp::getType", (args, methodResult) -> {
             // args
         
@@ -1185,6 +1287,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.BaseResp::toBundle", (args, methodResult) -> {
             // args
             // ref arg
@@ -1205,6 +1308,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success("success");
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.BaseResp::fromBundle", (args, methodResult) -> {
             // args
             // ref arg
@@ -1225,6 +1329,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success("success");
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.DDImageMessage::serialize", (args, methodResult) -> {
             // args
             // ref arg
@@ -1245,6 +1350,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success("success");
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.DDImageMessage::unserialize", (args, methodResult) -> {
             // args
             // ref arg
@@ -1265,6 +1371,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success("success");
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.DDImageMessage::type", (args, methodResult) -> {
             // args
         
@@ -1284,6 +1391,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.DDImageMessage::checkArgs", (args, methodResult) -> {
             // args
         
@@ -1303,6 +1411,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.DDImageMessage::getSupportVersion", (args, methodResult) -> {
             // args
         
@@ -1322,6 +1431,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.SendAuth.Req::toBundle", (args, methodResult) -> {
             // args
             // ref arg
@@ -1342,6 +1452,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success("success");
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.SendAuth.Req::fromBundle", (args, methodResult) -> {
             // args
             // ref arg
@@ -1362,6 +1473,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success("success");
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.SendAuth.Req::getType", (args, methodResult) -> {
             // args
         
@@ -1381,6 +1493,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.SendAuth.Req::checkArgs", (args, methodResult) -> {
             // args
         
@@ -1400,6 +1513,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.SendAuth.Req::getSupportVersion", (args, methodResult) -> {
             // args
         
@@ -1419,6 +1533,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.BaseReq::getType", (args, methodResult) -> {
             // args
         
@@ -1438,6 +1553,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.BaseReq::toBundle", (args, methodResult) -> {
             // args
             // ref arg
@@ -1458,6 +1574,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success("success");
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.BaseReq::fromBundle", (args, methodResult) -> {
             // args
             // ref arg
@@ -1478,6 +1595,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success("success");
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.BaseReq::checkArgs", (args, methodResult) -> {
             // args
         
@@ -1497,6 +1615,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.BaseReq::getSupportVersion", (args, methodResult) -> {
             // args
         
@@ -1516,6 +1635,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.DDMessage::send", (args, methodResult) -> {
             // args
             // ref arg
@@ -1543,6 +1663,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.DDWebpageMessage::serialize", (args, methodResult) -> {
             // args
             // ref arg
@@ -1563,6 +1684,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success("success");
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.DDWebpageMessage::unserialize", (args, methodResult) -> {
             // args
             // ref arg
@@ -1583,6 +1705,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success("success");
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.DDWebpageMessage::type", (args, methodResult) -> {
             // args
         
@@ -1602,6 +1725,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.DDWebpageMessage::checkArgs", (args, methodResult) -> {
             // args
         
@@ -1621,6 +1745,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.DDWebpageMessage::getSupportVersion", (args, methodResult) -> {
             // args
         
@@ -1640,6 +1765,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage.IMediaObject::serialize", (args, methodResult) -> {
             // args
             // ref arg
@@ -1660,6 +1786,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success("success");
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage.IMediaObject::unserialize", (args, methodResult) -> {
             // args
             // ref arg
@@ -1680,6 +1807,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success("success");
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage.IMediaObject::type", (args, methodResult) -> {
             // args
         
@@ -1699,6 +1827,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage.IMediaObject::checkArgs", (args, methodResult) -> {
             // args
         
@@ -1718,6 +1847,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage.IMediaObject::getSupportVersion", (args, methodResult) -> {
             // args
         
@@ -1737,6 +1867,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.DDZhiFuBaoMesseage::serialize", (args, methodResult) -> {
             // args
             // ref arg
@@ -1757,6 +1888,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success("success");
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.DDZhiFuBaoMesseage::unserialize", (args, methodResult) -> {
             // args
             // ref arg
@@ -1777,6 +1909,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success("success");
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.DDZhiFuBaoMesseage::type", (args, methodResult) -> {
             // args
         
@@ -1796,6 +1929,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.DDZhiFuBaoMesseage::checkArgs", (args, methodResult) -> {
             // args
         
@@ -1815,6 +1949,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.DDZhiFuBaoMesseage::getSupportVersion", (args, methodResult) -> {
             // args
         
@@ -1834,6 +1969,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.DDVideoMessage::serialize", (args, methodResult) -> {
             // args
             // ref arg
@@ -1854,6 +1990,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success("success");
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.DDVideoMessage::unserialize", (args, methodResult) -> {
             // args
             // ref arg
@@ -1874,6 +2011,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success("success");
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.DDVideoMessage::type", (args, methodResult) -> {
             // args
         
@@ -1893,6 +2031,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.DDVideoMessage::checkArgs", (args, methodResult) -> {
             // args
         
@@ -1912,6 +2051,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.DDVideoMessage::getSupportVersion", (args, methodResult) -> {
             // args
         
@@ -1931,6 +2071,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.DDMessageAct::sendDDFriend", (args, methodResult) -> {
             // args
             // ref arg
@@ -1954,6 +2095,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.DDMessageAct::sendDing", (args, methodResult) -> {
             // args
             // ref arg
@@ -1977,6 +2119,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.DDMessageAct::sendDDAuth", (args, methodResult) -> {
             // args
             // ref arg
@@ -2000,6 +2143,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.DDFileMessage::serialize", (args, methodResult) -> {
             // args
             // ref arg
@@ -2020,6 +2164,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success("success");
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.DDFileMessage::unserialize", (args, methodResult) -> {
             // args
             // ref arg
@@ -2040,6 +2185,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success("success");
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.DDFileMessage::type", (args, methodResult) -> {
             // args
         
@@ -2059,6 +2205,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.DDFileMessage::checkArgs", (args, methodResult) -> {
             // args
         
@@ -2078,6 +2225,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.DDFileMessage::getSupportVersion", (args, methodResult) -> {
             // args
         
@@ -2097,6 +2245,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.DDAudioMessage::serialize", (args, methodResult) -> {
             // args
             // ref arg
@@ -2117,6 +2266,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success("success");
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.DDAudioMessage::unserialize", (args, methodResult) -> {
             // args
             // ref arg
@@ -2137,6 +2287,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success("success");
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.DDAudioMessage::type", (args, methodResult) -> {
             // args
         
@@ -2156,6 +2307,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.DDAudioMessage::checkArgs", (args, methodResult) -> {
             // args
         
@@ -2175,6 +2327,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.message.DDAudioMessage::getSupportVersion", (args, methodResult) -> {
             // args
         
@@ -2194,6 +2347,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.algorithm.MD5::getMessageDigest", (args, methodResult) -> {
             // args
             // jsonable arg
@@ -2213,6 +2367,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.algorithm.MD5::getRawDigest", (args, methodResult) -> {
             // args
             // jsonable arg
@@ -2232,6 +2387,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.algorithm.MD5::getMD5", (args, methodResult) -> {
             // args
             // jsonable arg
@@ -2251,6 +2407,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.DDShareApiFactory::createDDShareApi", (args, methodResult) -> {
             // args
             // ref arg
@@ -2281,6 +2438,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
                 methodResult.success(null);
             }
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.DDShareApiV2::registerApp", (args, methodResult) -> {
             // args
             // jsonable arg
@@ -2301,6 +2459,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.DDShareApiV2::unregisterApp", (args, methodResult) -> {
             // args
         
@@ -2320,6 +2479,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success("success");
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.DDShareApiV2::isDDAppInstalled", (args, methodResult) -> {
             // args
         
@@ -2339,6 +2499,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.DDShareApiV2::isDDSupportAPI", (args, methodResult) -> {
             // args
         
@@ -2358,6 +2519,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.DDShareApiV2::isDDSupportDingAPI", (args, methodResult) -> {
             // args
         
@@ -2377,6 +2539,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.DDShareApiV2::getDDSupportAPI", (args, methodResult) -> {
             // args
         
@@ -2396,6 +2559,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.DDShareApiV2::openDDApp", (args, methodResult) -> {
             // args
         
@@ -2415,6 +2579,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.DDShareApiV2::sendReq", (args, methodResult) -> {
             // args
             // ref arg
@@ -2435,6 +2600,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.DDShareApiV2::sendReqToDing", (args, methodResult) -> {
             // args
             // ref arg
@@ -2455,6 +2621,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             // result
             methodResult.success(result);
         });
+        // factory
         put("ObjectFactory::createcom_android_dingtalk_share_ddsharemodule_plugin_SignatureCheck__", (args, methodResult) -> {
             Log.d("ObjectFactory", "创建对象: com_android_dingtalk_share_ddsharemodule_plugin_SignatureCheck__");
         
@@ -2472,6 +2639,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
         
             methodResult.success(obj.hashCode());
         });
+        // factory
         put("ObjectFactory::createcom_android_dingtalk_share_ddsharemodule_plugin_DDVersionCheck__", (args, methodResult) -> {
             Log.d("ObjectFactory", "创建对象: com_android_dingtalk_share_ddsharemodule_plugin_DDVersionCheck__");
         
@@ -2489,6 +2657,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
         
             methodResult.success(obj.hashCode());
         });
+        // factory
         put("ObjectFactory::createcom_android_dingtalk_share_ddsharemodule_MMessageUtil__", (args, methodResult) -> {
             Log.d("ObjectFactory", "创建对象: com_android_dingtalk_share_ddsharemodule_MMessageUtil__");
         
@@ -2506,6 +2675,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
         
             methodResult.success(obj.hashCode());
         });
+        // factory
         put("ObjectFactory::createcom_android_dingtalk_share_ddsharemodule_message_DDTextMessage__", (args, methodResult) -> {
             Log.d("ObjectFactory", "创建对象: com_android_dingtalk_share_ddsharemodule_message_DDTextMessage__");
         
@@ -2523,6 +2693,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
         
             methodResult.success(obj.hashCode());
         });
+        // factory
         put("ObjectFactory::createcom_android_dingtalk_share_ddsharemodule_message_DDMediaMessage__", (args, methodResult) -> {
             Log.d("ObjectFactory", "创建对象: com_android_dingtalk_share_ddsharemodule_message_DDMediaMessage__");
         
@@ -2540,6 +2711,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
         
             methodResult.success(obj.hashCode());
         });
+        // factory
         put("ObjectFactory::createcom_android_dingtalk_share_ddsharemodule_message_SendMessageToDD_Resp__", (args, methodResult) -> {
             Log.d("ObjectFactory", "创建对象: com_android_dingtalk_share_ddsharemodule_message_SendMessageToDD_Resp__");
         
@@ -2557,6 +2729,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
         
             methodResult.success(obj.hashCode());
         });
+        // factory
         put("ObjectFactory::createcom_android_dingtalk_share_ddsharemodule_message_SendMessageToDD_Resp__android_os_Bundle", (args, methodResult) -> {
             Log.d("ObjectFactory", "创建对象: com_android_dingtalk_share_ddsharemodule_message_SendMessageToDD_Resp__android_os_Bundle");
         
@@ -2575,6 +2748,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
         
             methodResult.success(obj.hashCode());
         });
+        // factory
         put("ObjectFactory::createcom_android_dingtalk_share_ddsharemodule_message_SendMessageToDD_Req__", (args, methodResult) -> {
             Log.d("ObjectFactory", "创建对象: com_android_dingtalk_share_ddsharemodule_message_SendMessageToDD_Req__");
         
@@ -2592,6 +2766,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
         
             methodResult.success(obj.hashCode());
         });
+        // factory
         put("ObjectFactory::createcom_android_dingtalk_share_ddsharemodule_message_SendMessageToDD_Req__android_os_Bundle", (args, methodResult) -> {
             Log.d("ObjectFactory", "创建对象: com_android_dingtalk_share_ddsharemodule_message_SendMessageToDD_Req__android_os_Bundle");
         
@@ -2610,6 +2785,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
         
             methodResult.success(obj.hashCode());
         });
+        // factory
         put("ObjectFactory::createcom_android_dingtalk_share_ddsharemodule_message_DDMediaMessage_Builder__", (args, methodResult) -> {
             Log.d("ObjectFactory", "创建对象: com_android_dingtalk_share_ddsharemodule_message_DDMediaMessage_Builder__");
         
@@ -2627,6 +2803,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
         
             methodResult.success(obj.hashCode());
         });
+        // factory
         put("ObjectFactory::createcom_android_dingtalk_share_ddsharemodule_message_SendAuth__", (args, methodResult) -> {
             Log.d("ObjectFactory", "创建对象: com_android_dingtalk_share_ddsharemodule_message_SendAuth__");
         
@@ -2644,6 +2821,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
         
             methodResult.success(obj.hashCode());
         });
+        // factory
         put("ObjectFactory::createcom_android_dingtalk_share_ddsharemodule_message_SendAuth_Resp__", (args, methodResult) -> {
             Log.d("ObjectFactory", "创建对象: com_android_dingtalk_share_ddsharemodule_message_SendAuth_Resp__");
         
@@ -2661,6 +2839,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
         
             methodResult.success(obj.hashCode());
         });
+        // factory
         put("ObjectFactory::createcom_android_dingtalk_share_ddsharemodule_message_DDImageMessage__", (args, methodResult) -> {
             Log.d("ObjectFactory", "创建对象: com_android_dingtalk_share_ddsharemodule_message_DDImageMessage__");
         
@@ -2678,6 +2857,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
         
             methodResult.success(obj.hashCode());
         });
+        // factory
         put("ObjectFactory::createcom_android_dingtalk_share_ddsharemodule_message_DDImageMessage__byteArray", (args, methodResult) -> {
             Log.d("ObjectFactory", "创建对象: com_android_dingtalk_share_ddsharemodule_message_DDImageMessage__byteArray");
         
@@ -2696,6 +2876,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
         
             methodResult.success(obj.hashCode());
         });
+        // factory
         put("ObjectFactory::createcom_android_dingtalk_share_ddsharemodule_message_DDImageMessage__android_graphics_Bitmap", (args, methodResult) -> {
             Log.d("ObjectFactory", "创建对象: com_android_dingtalk_share_ddsharemodule_message_DDImageMessage__android_graphics_Bitmap");
         
@@ -2714,6 +2895,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
         
             methodResult.success(obj.hashCode());
         });
+        // factory
         put("ObjectFactory::createcom_android_dingtalk_share_ddsharemodule_message_SendAuth_Req__", (args, methodResult) -> {
             Log.d("ObjectFactory", "创建对象: com_android_dingtalk_share_ddsharemodule_message_SendAuth_Req__");
         
@@ -2731,6 +2913,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
         
             methodResult.success(obj.hashCode());
         });
+        // factory
         put("ObjectFactory::createcom_android_dingtalk_share_ddsharemodule_message_DDMessage__", (args, methodResult) -> {
             Log.d("ObjectFactory", "创建对象: com_android_dingtalk_share_ddsharemodule_message_DDMessage__");
         
@@ -2748,6 +2931,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
         
             methodResult.success(obj.hashCode());
         });
+        // factory
         put("ObjectFactory::createcom_android_dingtalk_share_ddsharemodule_message_DDWebpageMessage__", (args, methodResult) -> {
             Log.d("ObjectFactory", "创建对象: com_android_dingtalk_share_ddsharemodule_message_DDWebpageMessage__");
         
@@ -2765,6 +2949,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
         
             methodResult.success(obj.hashCode());
         });
+        // factory
         put("ObjectFactory::createcom_android_dingtalk_share_ddsharemodule_message_DDZhiFuBaoMesseage__", (args, methodResult) -> {
             Log.d("ObjectFactory", "创建对象: com_android_dingtalk_share_ddsharemodule_message_DDZhiFuBaoMesseage__");
         
@@ -2782,6 +2967,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
         
             methodResult.success(obj.hashCode());
         });
+        // factory
         put("ObjectFactory::createcom_android_dingtalk_share_ddsharemodule_message_DDVideoMessage__", (args, methodResult) -> {
             Log.d("ObjectFactory", "创建对象: com_android_dingtalk_share_ddsharemodule_message_DDVideoMessage__");
         
@@ -2799,6 +2985,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
         
             methodResult.success(obj.hashCode());
         });
+        // factory
         put("ObjectFactory::createcom_android_dingtalk_share_ddsharemodule_message_DDMessageAct__", (args, methodResult) -> {
             Log.d("ObjectFactory", "创建对象: com_android_dingtalk_share_ddsharemodule_message_DDMessageAct__");
         
@@ -2816,6 +3003,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
         
             methodResult.success(obj.hashCode());
         });
+        // factory
         put("ObjectFactory::createcom_android_dingtalk_share_ddsharemodule_message_DDFileMessage__", (args, methodResult) -> {
             Log.d("ObjectFactory", "创建对象: com_android_dingtalk_share_ddsharemodule_message_DDFileMessage__");
         
@@ -2833,6 +3021,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
         
             methodResult.success(obj.hashCode());
         });
+        // factory
         put("ObjectFactory::createcom_android_dingtalk_share_ddsharemodule_message_SendMessageToDD__", (args, methodResult) -> {
             Log.d("ObjectFactory", "创建对象: com_android_dingtalk_share_ddsharemodule_message_SendMessageToDD__");
         
@@ -2850,6 +3039,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
         
             methodResult.success(obj.hashCode());
         });
+        // factory
         put("ObjectFactory::createcom_android_dingtalk_share_ddsharemodule_message_DDAudioMessage__", (args, methodResult) -> {
             Log.d("ObjectFactory", "创建对象: com_android_dingtalk_share_ddsharemodule_message_DDAudioMessage__");
         
@@ -2867,6 +3057,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
         
             methodResult.success(obj.hashCode());
         });
+        // factory
         put("ObjectFactory::createcom_android_dingtalk_share_ddsharemodule_algorithm_MD5__", (args, methodResult) -> {
             Log.d("ObjectFactory", "创建对象: com_android_dingtalk_share_ddsharemodule_algorithm_MD5__");
         
@@ -2884,6 +3075,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
         
             methodResult.success(obj.hashCode());
         });
+        // factory
         put("ObjectFactory::createcom_android_dingtalk_share_ddsharemodule_DDShareApiFactory__", (args, methodResult) -> {
             Log.d("ObjectFactory", "创建对象: com_android_dingtalk_share_ddsharemodule_DDShareApiFactory__");
         
@@ -2901,6 +3093,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
         
             methodResult.success(obj.hashCode());
         });
+        // factory
         put("ObjectFactory::createcom_android_dingtalk_share_ddsharemodule_DDShareApiV2__android_content_Context__String__boolean", (args, methodResult) -> {
             Log.d("ObjectFactory", "创建对象: com_android_dingtalk_share_ddsharemodule_DDShareApiV2__android_content_Context__String__boolean");
         
@@ -2923,6 +3116,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
         
             methodResult.success(obj.hashCode());
         });
+        // factory
         put("ObjectFactory::createcom_android_dingtalk_share_ddsharemodule_ShareConstant__", (args, methodResult) -> {
             Log.d("ObjectFactory", "创建对象: com_android_dingtalk_share_ddsharemodule_ShareConstant__");
         
