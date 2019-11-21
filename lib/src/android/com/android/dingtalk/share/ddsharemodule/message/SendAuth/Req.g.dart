@@ -10,7 +10,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 // ignore_for_file: non_constant_identifier_names, camel_case_types, missing_return, unused_import
-class com_android_dingtalk_share_ddsharemodule_message_SendAuth_Req extends java_lang_Object  {
+class com_android_dingtalk_share_ddsharemodule_message_SendAuth_Req extends com_android_dingtalk_share_ddsharemodule_message_BaseReq  {
   // generate getters
   Future<String> get_scope() async {
     final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod("com.android.dingtalk.share.ddsharemodule.message.SendAuth.Req::get_scope", {'refId': refId});
@@ -42,7 +42,7 @@ class com_android_dingtalk_share_ddsharemodule_message_SendAuth_Req extends java
   // generate methods
   Future<void> toBundle(android_os_Bundle bundle) async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.SendAuth.Req@$refId::toBundle([])');
     }
   
@@ -64,7 +64,7 @@ class com_android_dingtalk_share_ddsharemodule_message_SendAuth_Req extends java
   
   Future<void> fromBundle(android_os_Bundle bundle) async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.SendAuth.Req@$refId::fromBundle([])');
     }
   
@@ -86,7 +86,7 @@ class com_android_dingtalk_share_ddsharemodule_message_SendAuth_Req extends java
   
   Future<int> getType() async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.SendAuth.Req@$refId::getType([])');
     }
   
@@ -108,7 +108,7 @@ class com_android_dingtalk_share_ddsharemodule_message_SendAuth_Req extends java
   
   Future<bool> checkArgs() async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.SendAuth.Req@$refId::checkArgs([])');
     }
   
@@ -130,7 +130,7 @@ class com_android_dingtalk_share_ddsharemodule_message_SendAuth_Req extends java
   
   Future<int> getSupportVersion() async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.SendAuth.Req@$refId::getSupportVersion([])');
     }
   

@@ -10,7 +10,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 // ignore_for_file: non_constant_identifier_names, camel_case_types, missing_return, unused_import
-class com_android_dingtalk_share_ddsharemodule_DDShareApiV2 extends java_lang_Object  {
+class com_android_dingtalk_share_ddsharemodule_DDShareApiV2 extends java_lang_Object with com_android_dingtalk_share_ddsharemodule_IDDShareApi {
   // generate getters
   
 
@@ -20,7 +20,7 @@ class com_android_dingtalk_share_ddsharemodule_DDShareApiV2 extends java_lang_Ob
   // generate methods
   Future<bool> registerApp(String appId) async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.DDShareApiV2@$refId::registerApp([\'appId\':$appId])');
     }
   
@@ -42,7 +42,7 @@ class com_android_dingtalk_share_ddsharemodule_DDShareApiV2 extends java_lang_Ob
   
   Future<void> unregisterApp() async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.DDShareApiV2@$refId::unregisterApp([])');
     }
   
@@ -64,7 +64,7 @@ class com_android_dingtalk_share_ddsharemodule_DDShareApiV2 extends java_lang_Ob
   
   Future<bool> isDDAppInstalled() async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.DDShareApiV2@$refId::isDDAppInstalled([])');
     }
   
@@ -86,7 +86,7 @@ class com_android_dingtalk_share_ddsharemodule_DDShareApiV2 extends java_lang_Ob
   
   Future<bool> isDDSupportAPI() async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.DDShareApiV2@$refId::isDDSupportAPI([])');
     }
   
@@ -108,7 +108,7 @@ class com_android_dingtalk_share_ddsharemodule_DDShareApiV2 extends java_lang_Ob
   
   Future<bool> isDDSupportDingAPI() async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.DDShareApiV2@$refId::isDDSupportDingAPI([])');
     }
   
@@ -130,7 +130,7 @@ class com_android_dingtalk_share_ddsharemodule_DDShareApiV2 extends java_lang_Ob
   
   Future<int> getDDSupportAPI() async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.DDShareApiV2@$refId::getDDSupportAPI([])');
     }
   
@@ -152,7 +152,7 @@ class com_android_dingtalk_share_ddsharemodule_DDShareApiV2 extends java_lang_Ob
   
   Future<bool> openDDApp() async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.DDShareApiV2@$refId::openDDApp([])');
     }
   
@@ -174,7 +174,7 @@ class com_android_dingtalk_share_ddsharemodule_DDShareApiV2 extends java_lang_Ob
   
   Future<bool> sendReq(com_android_dingtalk_share_ddsharemodule_message_BaseReq baseReq) async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.DDShareApiV2@$refId::sendReq([])');
     }
   
@@ -196,7 +196,7 @@ class com_android_dingtalk_share_ddsharemodule_DDShareApiV2 extends java_lang_Ob
   
   Future<bool> sendReqToDing(com_android_dingtalk_share_ddsharemodule_message_BaseReq baseReq) async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.DDShareApiV2@$refId::sendReqToDing([])');
     }
   

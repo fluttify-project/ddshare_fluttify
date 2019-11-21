@@ -54,7 +54,7 @@ class com_android_dingtalk_share_ddsharemodule_message_BaseResp extends java_lan
   // generate methods
   Future<int> getType() async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.BaseResp@$refId::getType([])');
     }
   
@@ -76,7 +76,7 @@ class com_android_dingtalk_share_ddsharemodule_message_BaseResp extends java_lan
   
   Future<void> toBundle(android_os_Bundle bundle) async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.BaseResp@$refId::toBundle([])');
     }
   
@@ -98,7 +98,7 @@ class com_android_dingtalk_share_ddsharemodule_message_BaseResp extends java_lan
   
   Future<void> fromBundle(android_os_Bundle bundle) async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.BaseResp@$refId::fromBundle([])');
     }
   

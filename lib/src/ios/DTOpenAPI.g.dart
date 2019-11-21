@@ -20,7 +20,7 @@ class DTOpenAPI extends NSObject  {
   // generate methods
   static Future<bool> registerApp(String appId) async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: DTOpenAPI::registerApp([\'appId\':$appId])');
     }
   
@@ -42,7 +42,7 @@ class DTOpenAPI extends NSObject  {
   
   static Future<bool> registerAppAppDescription(String appId, String appDescription) async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: DTOpenAPI::registerApp([\'appId\':$appId, \'appDescription\':$appDescription])');
     }
   
@@ -64,7 +64,7 @@ class DTOpenAPI extends NSObject  {
   
   static Future<bool> isDingTalkInstalled() async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: DTOpenAPI::isDingTalkInstalled([])');
     }
   
@@ -86,7 +86,7 @@ class DTOpenAPI extends NSObject  {
   
   static Future<bool> isDingTalkSupportOpenAPI() async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: DTOpenAPI::isDingTalkSupportOpenAPI([])');
     }
   
@@ -108,7 +108,7 @@ class DTOpenAPI extends NSObject  {
   
   static Future<bool> isDingTalkSupportSSO() async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: DTOpenAPI::isDingTalkSupportSSO([])');
     }
   
@@ -130,7 +130,7 @@ class DTOpenAPI extends NSObject  {
   
   static Future<String> appStoreURLOfDingTalk() async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: DTOpenAPI::appStoreURLOfDingTalk([])');
     }
   
@@ -152,7 +152,7 @@ class DTOpenAPI extends NSObject  {
   
   static Future<String> openAPIVersion() async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: DTOpenAPI::openAPIVersion([])');
     }
   
@@ -174,7 +174,7 @@ class DTOpenAPI extends NSObject  {
   
   static Future<bool> openDingTalk() async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: DTOpenAPI::openDingTalk([])');
     }
   
@@ -196,7 +196,7 @@ class DTOpenAPI extends NSObject  {
   
   static Future<bool> openDingTalkForSSO() async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: DTOpenAPI::openDingTalkForSSO([])');
     }
   
@@ -218,7 +218,7 @@ class DTOpenAPI extends NSObject  {
   
   static Future<bool> sendReq(DTBaseReq req) async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: DTOpenAPI::sendReq([])');
     }
   
@@ -240,7 +240,7 @@ class DTOpenAPI extends NSObject  {
   
   static Future<bool> sendResp(DTBaseResp resp) async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: DTOpenAPI::sendResp([])');
     }
   

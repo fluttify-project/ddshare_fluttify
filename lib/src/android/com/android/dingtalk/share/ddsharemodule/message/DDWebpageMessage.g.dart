@@ -10,7 +10,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 // ignore_for_file: non_constant_identifier_names, camel_case_types, missing_return, unused_import
-class com_android_dingtalk_share_ddsharemodule_message_DDWebpageMessage extends java_lang_Object  {
+class com_android_dingtalk_share_ddsharemodule_message_DDWebpageMessage extends java_lang_Object with com_android_dingtalk_share_ddsharemodule_message_DDMediaMessage_IMediaObject {
   // generate getters
   Future<String> get_mUrl() async {
     final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod("com.android.dingtalk.share.ddsharemodule.message.DDWebpageMessage::get_mUrl", {'refId': refId});
@@ -30,7 +30,7 @@ class com_android_dingtalk_share_ddsharemodule_message_DDWebpageMessage extends 
   // generate methods
   Future<void> serialize(android_os_Bundle bundle) async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.DDWebpageMessage@$refId::serialize([])');
     }
   
@@ -52,7 +52,7 @@ class com_android_dingtalk_share_ddsharemodule_message_DDWebpageMessage extends 
   
   Future<void> unserialize(android_os_Bundle bundle) async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.DDWebpageMessage@$refId::unserialize([])');
     }
   
@@ -74,7 +74,7 @@ class com_android_dingtalk_share_ddsharemodule_message_DDWebpageMessage extends 
   
   Future<int> type() async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.DDWebpageMessage@$refId::type([])');
     }
   
@@ -96,7 +96,7 @@ class com_android_dingtalk_share_ddsharemodule_message_DDWebpageMessage extends 
   
   Future<bool> checkArgs() async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.DDWebpageMessage@$refId::checkArgs([])');
     }
   
@@ -118,7 +118,7 @@ class com_android_dingtalk_share_ddsharemodule_message_DDWebpageMessage extends 
   
   Future<int> getSupportVersion() async {
     // print log
-    if (!kReleaseMode) {
+    if (fluttifyLogEnabled) {
       print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.DDWebpageMessage@$refId::getSupportVersion([])');
     }
   

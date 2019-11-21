@@ -80,7 +80,7 @@ mixin com_android_dingtalk_share_ddsharemodule_IDDShareApi on java_lang_Object {
   
   @mustCallSuper
   Future<bool> sendReq(com_android_dingtalk_share_ddsharemodule_message_BaseReq var1) {
-    kNativeObjectPool.add(var1);
+  
   
     if (!kReleaseMode) {
       debugPrint('sendReq::kNativeObjectPool: $kNativeObjectPool');
@@ -89,7 +89,7 @@ mixin com_android_dingtalk_share_ddsharemodule_IDDShareApi on java_lang_Object {
   
   @mustCallSuper
   Future<bool> sendReqToDing(com_android_dingtalk_share_ddsharemodule_message_BaseReq var1) {
-    kNativeObjectPool.add(var1);
+  
   
     if (!kReleaseMode) {
       debugPrint('sendReqToDing::kNativeObjectPool: $kNativeObjectPool');
