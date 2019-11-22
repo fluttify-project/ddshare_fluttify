@@ -639,6 +639,76 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             methodResult.success(result);
         });
         // method
+        put("com.android.dingtalk.share.ddsharemodule.IDDShareApi::handleIntent", (args, methodResult) -> {
+            // args
+            // ref arg
+            android.content.Intent var1 = (android.content.Intent) getHEAP().get((int) args.get("var1"));
+        
+            // ref
+            int refId = (int) args.get("refId");
+            com.android.dingtalk.share.ddsharemodule.IDDShareApi ref = (com.android.dingtalk.share.ddsharemodule.IDDShareApi) getHEAP().get(refId);
+        
+            // print log
+            if (getEnableLog()) {
+                Log.d("fluttify-java", "fluttify-java: com.android.dingtalk.share.ddsharemodule.IDDShareApi@" + refId + "::handleIntent(" + var1 + ")");
+            }
+        
+            // invoke native method
+            boolean result = ref.handleIntent(var1, new com.android.dingtalk.share.ddsharemodule.IDDAPIEventHandler() {
+                // method channel
+                MethodChannel callbackChannel = new MethodChannel(registrar.messenger(), "com.android.dingtalk.share.ddsharemodule.IDDShareApi::handleIntent::Callback");
+        
+                // call dart method
+                @Override
+                public void onReq(com.android.dingtalk.share.ddsharemodule.message.BaseReq var1) {
+                    // print log
+                    Log.d("java-callback", "fluttify-java-callback: onReq(" + var1 + ")");
+        
+                    // convert to jsonable data
+                    // ref arg
+                    int argvar1 = var1.hashCode();
+                    getHEAP().put(argvar1, var1);
+        
+                    // call dart method
+                    callbackChannel.invokeMethod(
+                            "Callback::com.android.dingtalk.share.ddsharemodule.IDDAPIEventHandler::onReq",
+                            new HashMap<String, Object>() {{
+                                put("var1", argvar1);
+                            }}
+                    );
+        
+                    // method result
+        
+                }
+        
+                @Override
+                public void onResp(com.android.dingtalk.share.ddsharemodule.message.BaseResp var1) {
+                    // print log
+                    Log.d("java-callback", "fluttify-java-callback: onResp(" + var1 + ")");
+        
+                    // convert to jsonable data
+                    // ref arg
+                    int argvar1 = var1.hashCode();
+                    getHEAP().put(argvar1, var1);
+        
+                    // call dart method
+                    callbackChannel.invokeMethod(
+                            "Callback::com.android.dingtalk.share.ddsharemodule.IDDAPIEventHandler::onResp",
+                            new HashMap<String, Object>() {{
+                                put("var1", argvar1);
+                            }}
+                    );
+        
+                    // method result
+        
+                }
+        
+            });
+        
+            // result
+            methodResult.success(result);
+        });
+        // method
         put("com.android.dingtalk.share.ddsharemodule.IDDShareApi::isDDSupportAPI", (args, methodResult) -> {
             // args
         
@@ -1204,6 +1274,27 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
             } else {
                 methodResult.success(null);
             }
+        });
+        // method
+        put("com.android.dingtalk.share.ddsharemodule.message.DDMessage.CallBack::handleMessage", (args, methodResult) -> {
+            // args
+            // ref arg
+            android.content.Intent var1 = (android.content.Intent) getHEAP().get((int) args.get("var1"));
+        
+            // ref
+            int refId = (int) args.get("refId");
+            com.android.dingtalk.share.ddsharemodule.message.DDMessage.CallBack ref = (com.android.dingtalk.share.ddsharemodule.message.DDMessage.CallBack) getHEAP().get(refId);
+        
+            // print log
+            if (getEnableLog()) {
+                Log.d("fluttify-java", "fluttify-java: com.android.dingtalk.share.ddsharemodule.message.DDMessage.CallBack@" + refId + "::handleMessage(" + var1 + ")");
+            }
+        
+            // invoke native method
+            ref.handleMessage(var1);
+        
+            // result
+            methodResult.success("success");
         });
         // method
         put("com.android.dingtalk.share.ddsharemodule.message.SendAuth.Resp::getType", (args, methodResult) -> {
@@ -2495,6 +2586,76 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
         
             // invoke native method
             boolean result = ref.isDDAppInstalled();
+        
+            // result
+            methodResult.success(result);
+        });
+        // method
+        put("com.android.dingtalk.share.ddsharemodule.DDShareApiV2::handleIntent", (args, methodResult) -> {
+            // args
+            // ref arg
+            android.content.Intent intent = (android.content.Intent) getHEAP().get((int) args.get("intent"));
+        
+            // ref
+            int refId = (int) args.get("refId");
+            com.android.dingtalk.share.ddsharemodule.DDShareApiV2 ref = (com.android.dingtalk.share.ddsharemodule.DDShareApiV2) getHEAP().get(refId);
+        
+            // print log
+            if (getEnableLog()) {
+                Log.d("fluttify-java", "fluttify-java: com.android.dingtalk.share.ddsharemodule.DDShareApiV2@" + refId + "::handleIntent(" + intent + ")");
+            }
+        
+            // invoke native method
+            boolean result = ref.handleIntent(intent, new com.android.dingtalk.share.ddsharemodule.IDDAPIEventHandler() {
+                // method channel
+                MethodChannel callbackChannel = new MethodChannel(registrar.messenger(), "com.android.dingtalk.share.ddsharemodule.DDShareApiV2::handleIntent::Callback");
+        
+                // call dart method
+                @Override
+                public void onReq(com.android.dingtalk.share.ddsharemodule.message.BaseReq var1) {
+                    // print log
+                    Log.d("java-callback", "fluttify-java-callback: onReq(" + var1 + ")");
+        
+                    // convert to jsonable data
+                    // ref arg
+                    int argvar1 = var1.hashCode();
+                    getHEAP().put(argvar1, var1);
+        
+                    // call dart method
+                    callbackChannel.invokeMethod(
+                            "Callback::com.android.dingtalk.share.ddsharemodule.IDDAPIEventHandler::onReq",
+                            new HashMap<String, Object>() {{
+                                put("var1", argvar1);
+                            }}
+                    );
+        
+                    // method result
+        
+                }
+        
+                @Override
+                public void onResp(com.android.dingtalk.share.ddsharemodule.message.BaseResp var1) {
+                    // print log
+                    Log.d("java-callback", "fluttify-java-callback: onResp(" + var1 + ")");
+        
+                    // convert to jsonable data
+                    // ref arg
+                    int argvar1 = var1.hashCode();
+                    getHEAP().put(argvar1, var1);
+        
+                    // call dart method
+                    callbackChannel.invokeMethod(
+                            "Callback::com.android.dingtalk.share.ddsharemodule.IDDAPIEventHandler::onResp",
+                            new HashMap<String, Object>() {{
+                                put("var1", argvar1);
+                            }}
+                    );
+        
+                    // method result
+        
+                }
+        
+            });
         
             // result
             methodResult.success(result);

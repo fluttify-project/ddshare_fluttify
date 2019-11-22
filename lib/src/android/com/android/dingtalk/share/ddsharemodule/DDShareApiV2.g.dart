@@ -84,6 +84,56 @@ class com_android_dingtalk_share_ddsharemodule_DDShareApiV2 extends java_lang_Ob
     }
   }
   
+  Future<bool> handleIntent(android_content_Intent intent, com_android_dingtalk_share_ddsharemodule_IDDAPIEventHandler handler) async {
+    // print log
+    if (fluttifyLogEnabled) {
+      print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.DDShareApiV2@$refId::handleIntent([])');
+    }
+  
+    // invoke native method
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('com.android.dingtalk.share.ddsharemodule.DDShareApiV2::handleIntent', {"intent": intent.refId, "refId": refId});
+  
+  
+    // handle native call
+    MethodChannel('com.android.dingtalk.share.ddsharemodule.DDShareApiV2::handleIntent::Callback')
+        .setMethodCallHandler((methodCall) async {
+          final args = methodCall.arguments as Map;
+          // final refId = args['callerRefId'] as int;
+          // if (refId != this.refId) return;
+  
+          switch (methodCall.method) {
+            case 'Callback::com.android.dingtalk.share.ddsharemodule.IDDAPIEventHandler::onReq':
+              // print log
+              if (!kReleaseMode) {
+                print('fluttify-dart-callback: onReq([])');
+              }
+        
+              // handle the native call
+              handler?.onReq(com_android_dingtalk_share_ddsharemodule_message_SendMessageToDD_Req()..refId = (args['var1'])..tag = 'ddshare_fluttify');
+              break;
+            case 'Callback::com.android.dingtalk.share.ddsharemodule.IDDAPIEventHandler::onResp':
+              // print log
+              if (!kReleaseMode) {
+                print('fluttify-dart-callback: onResp([])');
+              }
+        
+              // handle the native call
+              handler?.onResp(com_android_dingtalk_share_ddsharemodule_message_SendMessageToDD_Resp()..refId = (args['var1'])..tag = 'ddshare_fluttify');
+              break;
+            default:
+              break;
+          }
+        });
+  
+    // convert native result to dart side object
+    if (result == null) {
+      return null;
+    } else {
+    
+      return result;
+    }
+  }
+  
   Future<bool> isDDSupportAPI() async {
     // print log
     if (fluttifyLogEnabled) {

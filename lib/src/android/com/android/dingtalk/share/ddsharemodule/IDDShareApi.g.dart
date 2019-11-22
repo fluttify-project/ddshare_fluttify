@@ -43,6 +43,15 @@ mixin com_android_dingtalk_share_ddsharemodule_IDDShareApi on java_lang_Object {
   }
   
   @mustCallSuper
+  Future<bool> handleIntent(android_content_Intent var1, com_android_dingtalk_share_ddsharemodule_IDDAPIEventHandler var2) {
+  
+  
+    if (!kReleaseMode) {
+      debugPrint('handleIntent::kNativeObjectPool: $kNativeObjectPool');
+    }
+  }
+  
+  @mustCallSuper
   Future<bool> isDDSupportAPI() {
   
   

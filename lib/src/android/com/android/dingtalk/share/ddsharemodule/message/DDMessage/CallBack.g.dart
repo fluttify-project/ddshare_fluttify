@@ -15,5 +15,13 @@ mixin com_android_dingtalk_share_ddsharemodule_message_DDMessage_CallBack on jav
 
   
 
+  @mustCallSuper
+  Future<void> handleMessage(android_content_Intent var1) {
+    kNativeObjectPool.add(var1);
+  
+    if (!kReleaseMode) {
+      debugPrint('handleMessage::kNativeObjectPool: $kNativeObjectPool');
+    }
+  }
   
 }
