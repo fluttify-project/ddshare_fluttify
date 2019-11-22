@@ -48,6 +48,7 @@ class DDSharePlugin {
   /// 分享
   static Future<bool> _share(DDShareBody shareBody, [bool isSendDing = false]) async {
     if (Platform.isAndroid) {
+//      _androidApi.handleIntent(android_content_Intent()..refId=100..tag='ddshare_fluttify', DDAPIEventHandler());
       com_android_dingtalk_share_ddsharemodule_message_DDMediaMessage mediaMessage =
           await DdshareFluttifyFactoryAndroid.createcom_android_dingtalk_share_ddsharemodule_message_DDMediaMessage__();
       switch (shareBody.shareType) {
@@ -72,7 +73,7 @@ class DDSharePlugin {
           break;
         case DDShareType.URL:
         case DDShareType.ZFB:
-          if (shareBody.shareType == DDShareType.IMG_LOCAL) {
+          if (shareBody.shareType == DDShareType.URL) {
             com_android_dingtalk_share_ddsharemodule_message_DDWebpageMessage webPageObject =
                 await DdshareFluttifyFactoryAndroid
                     .createcom_android_dingtalk_share_ddsharemodule_message_DDWebpageMessage__();
@@ -151,4 +152,32 @@ class DDSharePlugin {
 //      isSendDing,
 //    );
 //  }
+}
+
+class DDAPIEventHandler extends java_lang_Object with com_android_dingtalk_share_ddsharemodule_IDDAPIEventHandler {
+  @override
+  Future<void> onReq(com_android_dingtalk_share_ddsharemodule_message_BaseReq var1) {
+    print(var1);
+    return super.onReq(var1);
+  }
+
+  @override
+  Future<void> onResp(com_android_dingtalk_share_ddsharemodule_message_BaseResp baseResp) async {
+    int errCode = await baseResp.get_mErrCode();
+    print("errorCode==========> $errCode");
+    String errMsg = await baseResp.get_mErrStr();
+    print("errMsg==========>" + errMsg);
+    switch (errCode) {
+      case 0:
+        print("分享成功");
+        break;
+      case -2:
+        print("分享取消");
+        break;
+      default:
+        print("分享失败:$errMsg");
+        break;
+    }
+    return super.onResp(baseResp);
+  }
 }
