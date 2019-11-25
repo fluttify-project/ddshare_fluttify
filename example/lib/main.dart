@@ -59,7 +59,8 @@ class _MyAppState extends State<MyApp> {
       ),
       height: 30);
 
-  Widget _buildItem(String label, [VoidCallback onTap]) => ListTile(title: Text(label), onTap: onTap);
+  Widget _buildItem(String label, [VoidCallback onTap]) =>
+      ListTile(title: Text(label), onTap: onTap);
 
   isDDAppInstalled() async {
     bool flag = await DDSharePlugin.isDDAppInstalled();
@@ -77,19 +78,22 @@ class _MyAppState extends State<MyApp> {
   }
 
   sendTextMessage([bool isSendDing = false]) async {
-    bool flag = await DDSharePlugin.sendTextMessage("一个简单的文本分享", isSendDing);
+    bool flag = await DDSharePlugin.sendTextMessage("一个简单的文本分享",
+        isSendDing: isSendDing, onShareListener: _shareLisenter);
     showToast("$flag");
   }
 
   sendOnlineImage([bool isSendDing = false]) async {
     //        String picUrl = "http://upfile.asqql.com/2009pasdfasdfic2009s305985-ts/2017-12/201712617475697622.gif";
     //        String picUrl = "http://img.zcool.cn/community/010a1b554c01d1000001bf72a68b37.jpg@1280w_1l_2o_100sh.png";
-    String picUrl = "https://img-download.pchome.net/download/1k1/ut/5a/ouzdgm-1dzc.jpg";
+    String picUrl =
+        "https://img-download.pchome.net/download/1k1/ut/5a/ouzdgm-1dzc.jpg";
     //        String picUrl = "http://img.qdaily.com/uploads/20160606152752iqaH5t4KMvn18BZo.gif-WebpWebW640";
     //        String picUrl = "http://img.qdaily.com/uploads/20160606152752iqaH5t4KMvn18BZo.gif";
     //        String picUrl = "http://static.dingtalk.com/media/lAHPBY0V4shLSVDMlszw_240_150.gif";
 
-    bool flag = await DDSharePlugin.sendOnlineImage(picUrl, isSendDing);
+    bool flag = await DDSharePlugin.sendOnlineImage(picUrl,
+        isSendDing: isSendDing, onShareListener: _shareLisenter);
     showToast("$flag");
   }
 
@@ -97,23 +101,32 @@ class _MyAppState extends State<MyApp> {
     // 替换成本地可用路径
     File image = await ImagePicker.pickImage(source: ImageSource.gallery);
     if (image == null) return;
-    bool flag = await DDSharePlugin.sendLocalImage(image, isSendDing);
+    bool flag = await DDSharePlugin.sendLocalImage(image,
+        isSendDing: isSendDing, onShareListener: _shareLisenter);
     showToast("$flag");
   }
 
   sendWebPageMessage([bool isSendDing = false]) async {
     String url = "https://www.baidu.com";
     String title = "这是标题";
-    String content = "这里是分享的内容:"+DateTime.now().toIso8601String();
+    String content = "这里是分享的内容:" + DateTime.now().toIso8601String();
 //    String thumbUrl = "http://static.dingtalk.com/media/lAHPBY0V4shLSVDMlszw_240_150.gif";
-    String thumbUrl = "https://t.alipayobjects.com/images/rmsweb/T1vs0gXXhlXXXXXXXX.jpg";
+    String thumbUrl =
+        "https://t.alipayobjects.com/images/rmsweb/T1vs0gXXhlXXXXXXXX.jpg";
 
     bool flag = await DDSharePlugin.sendWebPageMessage(url,
-        title: title, content: content, thumbUrl: thumbUrl, isSendDing: isSendDing);
+        title: title,
+        content: content,
+        thumbUrl: thumbUrl,
+        isSendDing: isSendDing,
+        onShareListener: _shareLisenter);
     showToast("$flag");
   }
 
-  //
+  void _shareLisenter(int errCode) {
+    showToast("分享结果：$errCode");
+  }
+//
 //  sendZFBMessage([bool isSendDing = false]) async {
 //    String url = "https://www.baidu.com";
 //    String title = "支付宝红包标题这是一个很长很长的标题";
