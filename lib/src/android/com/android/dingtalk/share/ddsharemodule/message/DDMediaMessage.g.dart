@@ -30,7 +30,7 @@ class com_android_dingtalk_share_ddsharemodule_message_DDMediaMessage extends ja
     return result;
   }
   
-  Future<List<int>> get_mThumbData() async {
+  Future<Uint8List> get_mThumbData() async {
     final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod("com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage::get_mThumbData", {'refId': refId});
   
     return result;
@@ -74,7 +74,7 @@ class com_android_dingtalk_share_ddsharemodule_message_DDMediaMessage extends ja
   
   }
   
-  Future<void> set_mThumbData(List<int> mThumbData) async {
+  Future<void> set_mThumbData(Uint8List mThumbData) async {
     await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage::set_mThumbData', {'refId': refId, "mThumbData": mThumbData});
   
   

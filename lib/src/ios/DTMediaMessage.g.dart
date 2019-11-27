@@ -24,10 +24,22 @@ class DTMediaMessage extends NSObject  {
     return result;
   }
   
+  Future<NSData> get_thumbData() async {
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod("DTMediaMessage::get_thumbData", {'refId': refId});
+    kNativeObjectPool.add(NSData()..refId = result..tag = 'ddshare_fluttify');
+    return NSData()..refId = result..tag = 'ddshare_fluttify';
+  }
+  
   Future<String> get_thumbURL() async {
     final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod("DTMediaMessage::get_thumbURL", {'refId': refId});
   
     return result;
+  }
+  
+  Future<NSObject> get_mediaObject() async {
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod("DTMediaMessage::get_mediaObject", {'refId': refId});
+    kNativeObjectPool.add(NSObject()..refId = result..tag = 'ddshare_fluttify');
+    return NSObject()..refId = result..tag = 'ddshare_fluttify';
   }
   
 
@@ -44,8 +56,20 @@ class DTMediaMessage extends NSObject  {
   
   }
   
+  Future<void> set_thumbData(NSData thumbData) async {
+    await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('DTMediaMessage::set_thumbData', {'refId': refId, "thumbData": thumbData.refId});
+  
+  
+  }
+  
   Future<void> set_thumbURL(String thumbURL) async {
     await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('DTMediaMessage::set_thumbURL', {'refId': refId, "thumbURL": thumbURL});
+  
+  
+  }
+  
+  Future<void> set_mediaObject(NSObject mediaObject) async {
+    await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('DTMediaMessage::set_mediaObject', {'refId': refId, "mediaObject": mediaObject.refId});
   
   
   }

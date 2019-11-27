@@ -12,7 +12,7 @@ import 'package:flutter/services.dart';
 // ignore_for_file: non_constant_identifier_names, camel_case_types, missing_return, unused_import
 class com_android_dingtalk_share_ddsharemodule_message_DDImageMessage extends java_lang_Object with com_android_dingtalk_share_ddsharemodule_message_DDMediaMessage_IMediaObject {
   // generate getters
-  Future<List<int>> get_mImageData() async {
+  Future<Uint8List> get_mImageData() async {
     final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod("com.android.dingtalk.share.ddsharemodule.message.DDImageMessage::get_mImageData", {'refId': refId});
   
     return result;
@@ -32,7 +32,7 @@ class com_android_dingtalk_share_ddsharemodule_message_DDImageMessage extends ja
   
 
   // generate setters
-  Future<void> set_mImageData(List<int> mImageData) async {
+  Future<void> set_mImageData(Uint8List mImageData) async {
     await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('com.android.dingtalk.share.ddsharemodule.message.DDImageMessage::set_mImageData', {'refId': refId, "mImageData": mImageData});
   
   
