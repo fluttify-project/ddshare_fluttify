@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:ddshare_fluttify/src/dart/enums.dart';
+import 'package:flutter/foundation.dart';
 
 import '../android/android.export.g.dart';
 import '../ios/ios.export.g.dart';
@@ -13,7 +14,8 @@ class DDSharePlugin {
   static Future<void> init(String appId) {
     return platform(
       android: (pool) async {
-        final android_content_Context context = await PlatformFactoryAndroid.getandroid_app_Activity();
+        final android_content_Context context =
+            await PlatformFactoryAndroid.getandroid_app_Activity();
         _androidApi = await DdshareFluttifyFactoryAndroid
             .createcom_android_dingtalk_share_ddsharemodule_DDShareApiV2__android_content_Context__String__boolean(
                 context, appId, false);
@@ -46,22 +48,31 @@ class DDSharePlugin {
   }
 
   /// 分享
-  static Future<bool> _share(DDShareBody shareBody, [bool isSendDing = false]) async {
+  static Future<bool> _share(DDShareBody shareBody,
+      {bool isSendDing = false,
+      @required ValueChanged<int> onShareListener}) async {
     if (Platform.isAndroid) {
-      com_android_dingtalk_share_ddsharemodule_message_DDMediaMessage mediaMessage =
-          await DdshareFluttifyFactoryAndroid.createcom_android_dingtalk_share_ddsharemodule_message_DDMediaMessage__();
+      final android_app_Activity activity =
+          await PlatformFactoryAndroid.getandroid_app_Activity();
+      final android_content_Intent intent = await activity.intent;
+      await _androidApi.handleIntent(
+          intent, _AndroidAPIEventDelegate().._valueChanged = onShareListener);
+
+      com_android_dingtalk_share_ddsharemodule_message_DDMediaMessage
+          mediaMessage = await DdshareFluttifyFactoryAndroid
+              .createcom_android_dingtalk_share_ddsharemodule_message_DDMediaMessage__();
       switch (shareBody.shareType) {
         case DDShareType.TEXT:
-          com_android_dingtalk_share_ddsharemodule_message_DDTextMessage textObject =
-              await DdshareFluttifyFactoryAndroid
+          com_android_dingtalk_share_ddsharemodule_message_DDTextMessage
+              textObject = await DdshareFluttifyFactoryAndroid
                   .createcom_android_dingtalk_share_ddsharemodule_message_DDTextMessage__();
           await textObject.set_mText(shareBody.mContent);
           await mediaMessage.set_mMediaObject(textObject);
           break;
         case DDShareType.IMG_LOCAL:
         case DDShareType.IMG_URL:
-          com_android_dingtalk_share_ddsharemodule_message_DDImageMessage imageObject =
-              await DdshareFluttifyFactoryAndroid
+          com_android_dingtalk_share_ddsharemodule_message_DDImageMessage
+              imageObject = await DdshareFluttifyFactoryAndroid
                   .createcom_android_dingtalk_share_ddsharemodule_message_DDImageMessage__();
           if (shareBody.shareType == DDShareType.IMG_LOCAL) {
             await imageObject.set_mImagePath(shareBody.mContent);
@@ -73,14 +84,14 @@ class DDSharePlugin {
         case DDShareType.URL:
         case DDShareType.ZFB:
           if (shareBody.shareType == DDShareType.IMG_LOCAL) {
-            com_android_dingtalk_share_ddsharemodule_message_DDWebpageMessage webPageObject =
-                await DdshareFluttifyFactoryAndroid
+            com_android_dingtalk_share_ddsharemodule_message_DDWebpageMessage
+                webPageObject = await DdshareFluttifyFactoryAndroid
                     .createcom_android_dingtalk_share_ddsharemodule_message_DDWebpageMessage__();
             await webPageObject.set_mUrl(shareBody.mUrl);
             await mediaMessage.set_mMediaObject(webPageObject);
           } else {
-            com_android_dingtalk_share_ddsharemodule_message_DDZhiFuBaoMesseage zfbPageObject =
-                await DdshareFluttifyFactoryAndroid
+            com_android_dingtalk_share_ddsharemodule_message_DDZhiFuBaoMesseage
+                zfbPageObject = await DdshareFluttifyFactoryAndroid
                     .createcom_android_dingtalk_share_ddsharemodule_message_DDZhiFuBaoMesseage__();
             await zfbPageObject.set_mUrl(shareBody.mUrl);
             await mediaMessage.set_mMediaObject(zfbPageObject);
@@ -90,8 +101,9 @@ class DDSharePlugin {
           await mediaMessage.set_mContent(shareBody.mContent);
           break;
       }
-      com_android_dingtalk_share_ddsharemodule_message_SendMessageToDD_Req req = await DdshareFluttifyFactoryAndroid
-          .createcom_android_dingtalk_share_ddsharemodule_message_SendMessageToDD_Req__();
+      com_android_dingtalk_share_ddsharemodule_message_SendMessageToDD_Req req =
+          await DdshareFluttifyFactoryAndroid
+              .createcom_android_dingtalk_share_ddsharemodule_message_SendMessageToDD_Req__();
       await req.set_mMediaMessage(mediaMessage);
       if (isSendDing) {
         return await _androidApi?.sendReqToDing(req);
@@ -105,23 +117,59 @@ class DDSharePlugin {
 
   /// 分享文本 <br/>
   /// [content] - 分享的文本内容 <br/>
-  /// [isSendDing] - 是否分享到Ding
-  static Future<bool> sendTextMessage(String content, [bool isSendDing = false]) async {
-    return _share(DDShareBody(mContent: content, shareType: DDShareType.TEXT));
+  /// [isSendDing] - 是否分享到Ding <br/>
+  /// [onShareListener]-分享回调
+  static Future<bool> sendTextMessage(
+    String content, {
+    bool isSendDing = false,
+    @required ValueChanged<int> onShareListener,
+  }) async {
+    return _share(
+      DDShareBody(
+        mContent: content,
+        shareType: DDShareType.TEXT,
+      ),
+      onShareListener: onShareListener,
+      isSendDing: isSendDing,
+    );
   }
 
   /// 分享本地图片 <br/>
   /// [imgFile] - 本地图片，请先检测是否存在 <br/>
-  /// [isSendDing] - 是否分享到Ding
-  static Future<bool> sendLocalImage(File imgFile, [bool isSendDing = false]) async {
-    return _share(DDShareBody(mContent: imgFile.path, shareType: DDShareType.IMG_LOCAL), isSendDing);
+  /// [isSendDing] - 是否分享到Ding <br/>
+  /// [onShareListener] - 分享回调
+  static Future<bool> sendLocalImage(
+    File imgFile, {
+    bool isSendDing = false,
+    @required ValueChanged<int> onShareListener,
+  }) async {
+    return _share(
+      DDShareBody(
+        mContent: imgFile.path,
+        shareType: DDShareType.IMG_LOCAL,
+      ),
+      isSendDing: isSendDing,
+      onShareListener: onShareListener,
+    );
   }
 
   /// 分享网络图片 <br/>
   /// [url] - 图片地址 <br/>
-  /// [isSendDing] - 是否分享到Ding
-  static Future<bool> sendOnlineImage(String url, [bool isSendDing = false]) async {
-    return _share(DDShareBody(mContent: url, shareType: DDShareType.IMG_URL), isSendDing);
+  /// [isSendDing] - 是否分享到Ding <br/>
+  /// [onShareListener] - 分享回调
+  static Future<bool> sendOnlineImage(
+    String url, {
+    bool isSendDing = false,
+    @required ValueChanged<int> onShareListener,
+  }) async {
+    return _share(
+      DDShareBody(
+        mContent: url,
+        shareType: DDShareType.IMG_URL,
+      ),
+      isSendDing: isSendDing,
+      onShareListener: onShareListener,
+    );
   }
 
   /// 分享网址 <br/>
@@ -129,26 +177,42 @@ class DDSharePlugin {
   /// [title] - 分享标题 <br/>
   /// [content] - 分享内容 <br/>
   /// [thumbUrl] - 缩略图网络地址 <br/>
-  /// [isSendDing] - 是否分享到Ding
-  static Future<bool> sendWebPageMessage(String url,
-      {String title, String content, String thumbUrl, bool isSendDing = false}) async {
+  /// [isSendDing] - 是否分享到Ding <br/>
+  /// [onShareListener] - 分享回调
+  static Future<bool> sendWebPageMessage(
+    String url, {
+    String title,
+    String content,
+    String thumbUrl,
+    bool isSendDing = false,
+    @required ValueChanged<int> onShareListener,
+  }) async {
     return _share(
-      DDShareBody(mUrl: url, mTitle: title, mContent: content, mThumbUrl: thumbUrl, shareType: DDShareType.URL),
-      isSendDing,
+      DDShareBody(
+        mUrl: url,
+        mTitle: title,
+        mContent: content,
+        mThumbUrl: thumbUrl,
+        shareType: DDShareType.URL,
+      ),
+      isSendDing: isSendDing,
+      onShareListener: onShareListener,
     );
   }
+}
 
-  /// 支付宝红包分享 <br/>
-  /// [url] - 网页地址 <br/>
-  /// [title] - 支付宝红包标题 <br/>
-  /// [content] - 支付宝红包内容描述 <br/>
-  /// [thumbUrl] - 缩略图网络地址 <br/>
-  /// [isSendDing] - 是否分享到Ding
-//  static Future<bool> sendZFBMessage(String url,
-//      {String title, String content, String thumbUrl, bool isSendDing = false}) async {
-//    return _share(
-//      DDShareBody(mUrl: url, mTitle: title, mContent: content, mThumbUrl: thumbUrl, shareType: DDShareType.ZFB),
-//      isSendDing,
-//    );
-//  }
+class _AndroidAPIEventDelegate extends java_lang_Object
+    with com_android_dingtalk_share_ddsharemodule_IDDAPIEventHandler {
+  ValueChanged<int> _valueChanged;
+
+  @override
+  Future<void> onResp(
+      com_android_dingtalk_share_ddsharemodule_message_BaseResp var1) async {
+    super.onResp(var1);
+    print("=====>onResp:$var1");
+    if (_valueChanged != null) {
+      int errCode = await var1.get_mErrCode();
+      _valueChanged(errCode);
+    }
+  }
 }
