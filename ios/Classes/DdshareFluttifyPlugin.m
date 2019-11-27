@@ -433,6 +433,24 @@ extern BOOL enableLog;
           methodResult(result);
       },
       
+      @"DTMediaMessage::get_thumbData": ^(NSObject <FlutterPluginRegistrar> * registrar, NSDictionary<NSString *, id> * args, FlutterResult methodResult) {
+          // print log
+          if (enableLog) {
+              NSLog(@"DTMediaMessage::get_thumbData");
+          }
+      
+          // ref object
+          NSInteger refId = [args[@"refId"] integerValue];
+          DTMediaMessage* ref = (DTMediaMessage*) HEAP[@(refId)];
+      
+          // invoke native method
+          NSData* result = ref.thumbData;
+      
+          // 返回值: 引用
+          HEAP[@(result.hash)] = result;
+          methodResult(@(result.hash));
+      },
+      
       @"DTMediaMessage::get_thumbURL": ^(NSObject <FlutterPluginRegistrar> * registrar, NSDictionary<NSString *, id> * args, FlutterResult methodResult) {
           // print log
           if (enableLog) {
@@ -450,6 +468,24 @@ extern BOOL enableLog;
           methodResult(result);
       },
       
+      @"DTMediaMessage::get_mediaObject": ^(NSObject <FlutterPluginRegistrar> * registrar, NSDictionary<NSString *, id> * args, FlutterResult methodResult) {
+          // print log
+          if (enableLog) {
+              NSLog(@"DTMediaMessage::get_mediaObject");
+          }
+      
+          // ref object
+          NSInteger refId = [args[@"refId"] integerValue];
+          DTMediaMessage* ref = (DTMediaMessage*) HEAP[@(refId)];
+      
+          // invoke native method
+          NSObject* result = ref.mediaObject;
+      
+          // 返回值: 引用
+          HEAP[@(result.hash)] = result;
+          methodResult(@(result.hash));
+      },
+      
       @"DTMediaTextObject::get_text": ^(NSObject <FlutterPluginRegistrar> * registrar, NSDictionary<NSString *, id> * args, FlutterResult methodResult) {
           // print log
           if (enableLog) {
@@ -465,6 +501,24 @@ extern BOOL enableLog;
       
           // 返回值: jsonable
           methodResult(result);
+      },
+      
+      @"DTMediaImageObject::get_imageData": ^(NSObject <FlutterPluginRegistrar> * registrar, NSDictionary<NSString *, id> * args, FlutterResult methodResult) {
+          // print log
+          if (enableLog) {
+              NSLog(@"DTMediaImageObject::get_imageData");
+          }
+      
+          // ref object
+          NSInteger refId = [args[@"refId"] integerValue];
+          DTMediaImageObject* ref = (DTMediaImageObject*) HEAP[@(refId)];
+      
+          // invoke native method
+          NSData* result = ref.imageData;
+      
+          // 返回值: 引用
+          HEAP[@(result.hash)] = result;
+          methodResult(@(result.hash));
       },
       
       @"DTMediaImageObject::get_imageURL": ^(NSObject <FlutterPluginRegistrar> * registrar, NSDictionary<NSString *, id> * args, FlutterResult methodResult) {
@@ -671,6 +725,23 @@ extern BOOL enableLog;
           methodResult(@"success");
       },
       
+      @"DTMediaMessage::set_thumbData": ^(NSObject <FlutterPluginRegistrar> * registrar, NSDictionary<NSString *, id> * args, FlutterResult methodResult) {
+          // print log
+          if (enableLog) {
+              NSLog(@"DTMediaMessage::set_thumbData");
+          }
+      
+          // args
+          // ref arg
+          NSData* thumbData = (NSData*) HEAP[@([args[@"thumbData"] integerValue])];
+      
+          NSInteger refId = [args[@"refId"] integerValue];
+          DTMediaMessage* ref = (DTMediaMessage*) HEAP[@(refId)];
+      
+          ref.thumbData = thumbData;
+          methodResult(@"success");
+      },
+      
       @"DTMediaMessage::set_thumbURL": ^(NSObject <FlutterPluginRegistrar> * registrar, NSDictionary<NSString *, id> * args, FlutterResult methodResult) {
           // print log
           if (enableLog) {
@@ -688,6 +759,23 @@ extern BOOL enableLog;
           methodResult(@"success");
       },
       
+      @"DTMediaMessage::set_mediaObject": ^(NSObject <FlutterPluginRegistrar> * registrar, NSDictionary<NSString *, id> * args, FlutterResult methodResult) {
+          // print log
+          if (enableLog) {
+              NSLog(@"DTMediaMessage::set_mediaObject");
+          }
+      
+          // args
+          // ref arg
+          id mediaObject = (id) HEAP[@([args[@"mediaObject"] integerValue])];
+      
+          NSInteger refId = [args[@"refId"] integerValue];
+          DTMediaMessage* ref = (DTMediaMessage*) HEAP[@(refId)];
+      
+          ref.mediaObject = mediaObject;
+          methodResult(@"success");
+      },
+      
       @"DTMediaTextObject::set_text": ^(NSObject <FlutterPluginRegistrar> * registrar, NSDictionary<NSString *, id> * args, FlutterResult methodResult) {
           // print log
           if (enableLog) {
@@ -702,6 +790,23 @@ extern BOOL enableLog;
           DTMediaTextObject* ref = (DTMediaTextObject*) HEAP[@(refId)];
       
           ref.text = text;
+          methodResult(@"success");
+      },
+      
+      @"DTMediaImageObject::set_imageData": ^(NSObject <FlutterPluginRegistrar> * registrar, NSDictionary<NSString *, id> * args, FlutterResult methodResult) {
+          // print log
+          if (enableLog) {
+              NSLog(@"DTMediaImageObject::set_imageData");
+          }
+      
+          // args
+          // ref arg
+          NSData* imageData = (NSData*) HEAP[@([args[@"imageData"] integerValue])];
+      
+          NSInteger refId = [args[@"refId"] integerValue];
+          DTMediaImageObject* ref = (DTMediaImageObject*) HEAP[@(refId)];
+      
+          ref.imageData = imageData;
           methodResult(@"success");
       },
       
