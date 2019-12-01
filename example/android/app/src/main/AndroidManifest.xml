@@ -12,7 +12,7 @@
         android:icon="@mipmap/ic_launcher">
         <activity
             android:exported="true"
-            android:name=".MainActivity"
+            android:name="cn.yshye.ddshare.MainActivity"
             android:launchMode="singleTop"
             android:theme="@style/LaunchTheme"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"

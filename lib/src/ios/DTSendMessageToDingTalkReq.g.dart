@@ -10,35 +10,41 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 // ignore_for_file: non_constant_identifier_names, camel_case_types, missing_return, unused_import
-class DTSendMessageToDingTalkReq extends DTBaseReq  {
+class DTSendMessageToDingTalkReq extends DTBaseReq {
   // generate getters
   Future<DTMediaMessage> get_message() async {
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod("DTSendMessageToDingTalkReq::get_message", {'refId': refId});
-    kNativeObjectPool.add(DTMediaMessage()..refId = result..tag = 'ddshare_fluttify');
-    return DTMediaMessage()..refId = result..tag = 'ddshare_fluttify';
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod(
+            "DTSendMessageToDingTalkReq::get_message", {'refId': refId});
+    kNativeObjectPool.add(DTMediaMessage()
+      ..refId = result
+      ..tag = 'ddshare_fluttify');
+    return DTMediaMessage()
+      ..refId = result
+      ..tag = 'ddshare_fluttify';
   }
-  
+
   Future<DTScene> get_scene() async {
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod("DTSendMessageToDingTalkReq::get_scene", {'refId': refId});
-  
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod(
+            "DTSendMessageToDingTalkReq::get_scene", {'refId': refId});
+
     return DTScene.values[result];
   }
-  
 
   // generate setters
   Future<void> set_message(DTMediaMessage message) async {
-    await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('DTSendMessageToDingTalkReq::set_message', {'refId': refId, "message": message.refId});
-  
-  
+    await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod(
+        'DTSendMessageToDingTalkReq::set_message',
+        {'refId': refId, "message": message.refId});
   }
-  
-  Future<void> set_scene(DTScene scene) async {
-    await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('DTSendMessageToDingTalkReq::set_scene', {'refId': refId, "scene": scene.index});
-  
-  
-  }
-  
 
-  // generate methods
-  
+  Future<void> set_scene(DTScene scene) async {
+    await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod(
+        'DTSendMessageToDingTalkReq::set_scene',
+        {'refId': refId, "scene": scene.index});
+  }
+
+// generate methods
+
 }

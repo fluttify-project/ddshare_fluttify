@@ -10,34 +10,34 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 // ignore_for_file: non_constant_identifier_names, camel_case_types, missing_return, unused_import
-class com_android_dingtalk_share_ddsharemodule_plugin_DDVersionCheck extends java_lang_Object  {
+class com_android_dingtalk_share_ddsharemodule_plugin_DDVersionCheck
+    extends java_lang_Object {
   // generate getters
-  
 
   // generate setters
-  
 
   // generate methods
-  static Future<int> getSdkVersionFromMetaData(android_content_Context context, int defaultValue) async {
+  static Future<int> getSdkVersionFromMetaData(
+      android_content_Context context, int defaultValue) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.plugin.DDVersionCheck::getSdkVersionFromMetaData([\'defaultValue\':$defaultValue])');
+      print(
+          'fluttify-dart: com.android.dingtalk.share.ddsharemodule.plugin.DDVersionCheck::getSdkVersionFromMetaData([\'defaultValue\':$defaultValue])');
     }
-  
+
     // invoke native method
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('com.android.dingtalk.share.ddsharemodule.plugin.DDVersionCheck::getSdkVersionFromMetaData', {"context": context.refId, "defaultValue": defaultValue});
-  
-  
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod(
+            'com.android.dingtalk.share.ddsharemodule.plugin.DDVersionCheck::getSdkVersionFromMetaData',
+            {"context": context.refId, "defaultValue": defaultValue});
+
     // handle native call
-  
-  
+
     // convert native result to dart side object
     if (result == null) {
       return null;
     } else {
-    
       return result;
     }
   }
-  
 }

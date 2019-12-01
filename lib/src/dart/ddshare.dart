@@ -1,8 +1,6 @@
 import 'dart:io';
 
 import 'package:ddshare_fluttify/src/dart/enums.dart';
-import 'package:flutter/foundation.dart';
-
 import '../android/android.export.g.dart';
 import '../ios/ios.export.g.dart';
 import 'models.dart';
@@ -19,10 +17,10 @@ class DDSharePlugin {
         _androidApi =
             await createcom_android_dingtalk_share_ddsharemodule_DDShareApiV2__android_content_Context__String__boolean(
                 context, appId, false);
-        _androidApi.registerApp(appId);
+        await _androidApi.registerApp(appId);
       },
       ios: (pool) async {
-        DTOpenAPI.registerApp(appId);
+        await DTOpenAPI.registerApp(appId);
       },
     );
   }
@@ -48,16 +46,10 @@ class DDSharePlugin {
   }
 
   /// 分享
+  /// [isSendDing] - 是否分享到Ding <br/>
   static Future<bool> _share(DDShareBody shareBody,
-      {bool isSendDing = false,
-      @required ValueChanged<int> onShareListener}) async {
+      {bool isSendDing = false}) async {
     if (Platform.isAndroid) {
-      final android_app_Activity activity =
-          await PlatformFactoryAndroid.getandroid_app_Activity();
-      final android_content_Intent intent = await activity.intent;
-      await _androidApi.handleIntent(
-          intent, _AndroidAPIEventDelegate().._valueChanged = onShareListener);
-
       com_android_dingtalk_share_ddsharemodule_message_DDMediaMessage
           mediaMessage =
           await createcom_android_dingtalk_share_ddsharemodule_message_DDMediaMessage__();
@@ -109,26 +101,49 @@ class DDSharePlugin {
       } else {
         return await _androidApi?.sendReq(req);
       }
-    }
+    } else if (Platform.isIOS && !isSendDing) {
+      DTMediaMessage mediaMessage = await createDTMediaMessage();
+      switch (shareBody.shareType) {
+        case DDShareType.TEXT:
+          DTMediaTextObject object = await createDTMediaTextObject();
+          await object.set_text(shareBody.mContent);
+          await mediaMessage.set_mediaObject(object);
+          break;
+        case DDShareType.IMG_URL:
+          DTMediaImageObject object = await createDTMediaImageObject();
+          await object.set_imageURL(shareBody.mContent);
+          await mediaMessage.set_mediaObject(object);
+          break;
+        case DDShareType.URL:
+          DTMediaWebObject object = await createDTMediaWebObject();
+          await object.set_pageURL(shareBody.mUrl);
+          await mediaMessage.set_title(shareBody.mTitle);
+          await mediaMessage.set_messageDescription(shareBody.mContent);
+          await mediaMessage.set_thumbURL(shareBody.mThumbUrl);
+          await mediaMessage.set_mediaObject(object);
+          break;
+        default:
+          break;
+      }
 
+      DTSendMessageToDingTalkReq sendMessageReq =
+          await createDTSendMessageToDingTalkReq();
+      await sendMessageReq.set_message(mediaMessage);
+      return await DTOpenAPI.sendReq(sendMessageReq);
+    }
     return false;
   }
 
   /// 分享文本 <br/>
   /// [content] - 分享的文本内容 <br/>
   /// [isSendDing] - 是否分享到Ding <br/>
-  /// [onShareListener]-分享回调
-  static Future<bool> sendTextMessage(
-    String content, {
-    bool isSendDing = false,
-    @required ValueChanged<int> onShareListener,
-  }) async {
+  static Future<bool> sendTextMessage(String content,
+      {bool isSendDing = false}) async {
     return _share(
       DDShareBody(
         mContent: content,
         shareType: DDShareType.TEXT,
       ),
-      onShareListener: onShareListener,
       isSendDing: isSendDing,
     );
   }
@@ -136,38 +151,27 @@ class DDSharePlugin {
   /// 分享本地图片 <br/>
   /// [imgFile] - 本地图片，请先检测是否存在 <br/>
   /// [isSendDing] - 是否分享到Ding <br/>
-  /// [onShareListener] - 分享回调
-  static Future<bool> sendLocalImage(
-    File imgFile, {
-    bool isSendDing = false,
-    @required ValueChanged<int> onShareListener,
-  }) async {
+  static Future<bool> sendLocalImage(File imgFile,
+      {bool isSendDing = false}) async {
     return _share(
-      DDShareBody(
-        mContent: imgFile.path,
-        shareType: DDShareType.IMG_LOCAL,
-      ),
-      isSendDing: isSendDing,
-      onShareListener: onShareListener,
-    );
+        DDShareBody(
+          mContent: imgFile.path,
+          shareType: DDShareType.IMG_LOCAL,
+        ),
+        isSendDing: isSendDing);
   }
 
   /// 分享网络图片 <br/>
   /// [url] - 图片地址 <br/>
   /// [isSendDing] - 是否分享到Ding <br/>
-  /// [onShareListener] - 分享回调
-  static Future<bool> sendOnlineImage(
-    String url, {
-    bool isSendDing = false,
-    @required ValueChanged<int> onShareListener,
-  }) async {
+  static Future<bool> sendOnlineImage(String url,
+      {bool isSendDing = false}) async {
     return _share(
       DDShareBody(
         mContent: url,
         shareType: DDShareType.IMG_URL,
       ),
       isSendDing: isSendDing,
-      onShareListener: onShareListener,
     );
   }
 
@@ -177,15 +181,11 @@ class DDSharePlugin {
   /// [content] - 分享内容 <br/>
   /// [thumbUrl] - 缩略图网络地址 <br/>
   /// [isSendDing] - 是否分享到Ding <br/>
-  /// [onShareListener] - 分享回调
-  static Future<bool> sendWebPageMessage(
-    String url, {
-    String title,
-    String content,
-    String thumbUrl,
-    bool isSendDing = false,
-    @required ValueChanged<int> onShareListener,
-  }) async {
+  static Future<bool> sendWebPageMessage(String url,
+      {String title,
+      String content,
+      String thumbUrl,
+      bool isSendDing = false}) async {
     return _share(
       DDShareBody(
         mUrl: url,
@@ -195,23 +195,6 @@ class DDSharePlugin {
         shareType: DDShareType.URL,
       ),
       isSendDing: isSendDing,
-      onShareListener: onShareListener,
     );
-  }
-}
-
-class _AndroidAPIEventDelegate extends java_lang_Object
-    with com_android_dingtalk_share_ddsharemodule_IDDAPIEventHandler {
-  ValueChanged<int> _valueChanged;
-
-  @override
-  Future<void> onResp(
-      com_android_dingtalk_share_ddsharemodule_message_BaseResp var1) async {
-    super.onResp(var1);
-    print("=====>onResp:$var1");
-    if (_valueChanged != null) {
-      int errCode = await var1.get_mErrCode();
-      _valueChanged(errCode);
-    }
   }
 }

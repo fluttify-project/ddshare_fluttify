@@ -10,18 +10,14 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 // ignore_for_file: non_constant_identifier_names, camel_case_types, missing_return, unused_import
-mixin com_android_dingtalk_share_ddsharemodule_message_DDMessage_CallBack on java_lang_Object {
-  
-
-  
-
+mixin com_android_dingtalk_share_ddsharemodule_message_DDMessage_CallBack
+    on java_lang_Object {
   @mustCallSuper
   Future<void> handleMessage(android_content_Intent var1) {
     kNativeObjectPool.add(var1);
-  
+
     if (!kReleaseMode) {
       debugPrint('handleMessage::kNativeObjectPool: $kNativeObjectPool');
     }
   }
-  
 }

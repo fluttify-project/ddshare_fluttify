@@ -16,35 +16,35 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    DDSharePlugin.init("dingoalgfg9lln5ltgtmwg");
+    if (Platform.isAndroid) {
+      // Android 测试
+      DDSharePlugin.init("dingoalgfg9lln5ltgtmwg");
+    } else if (Platform.isIOS) {
+      // 苹果测试
+      DDSharePlugin.init("dingoak5hqhuvmpfhpnjvt");
+    }
   }
 
   @override
   Widget build(BuildContext context) {
+    List<Widget> items = [
+      _buildTitle("消息发送前校验"),
+      _buildItem("是否安装钉钉", isDDAppInstalled),
+      _buildItem("是否支持分享到好友", isDDSupportAPI),
+//    _buildItem("是否支持分享到Ding", isDDSupportDingAPI),
+      _buildTitle("分享到好友"),
+      _buildItem("文本分享", sendTextMessage),
+      _buildItem("图片网络分享", sendOnlineImage),
+      _buildItem("链接分享", sendWebPageMessage),
+    ];
+    if (Platform.isAndroid) {
+      items.add(_buildItem("图片本地分享", sendLocalImage));
+    }
     return OKToast(
       child: MaterialApp(
         home: Scaffold(
           appBar: AppBar(title: const Text('钉钉分享Demo')),
-          body: ListView(
-            children: <Widget>[
-              _buildTitle("消息发送前校验"),
-              _buildItem("是否安装钉钉", isDDAppInstalled),
-              _buildItem("是否支持分享到好友", isDDSupportAPI),
-              _buildItem("是否支持分享到Ding", isDDSupportDingAPI),
-              _buildTitle("分享到好友"),
-              _buildItem("文本分享", sendTextMessage),
-              _buildItem("图片本地分享", sendLocalImage),
-              _buildItem("图片网络分享", sendOnlineImage),
-              _buildItem("链接分享", sendWebPageMessage),
-//              _buildItem("支付宝红包分享", sendZFBMessage),
-              _buildTitle("分享到Ding[仅Android]"),
-              _buildItem("文本分享", () => sendTextMessage(true)),
-              _buildItem("图片本地分享", () => sendLocalImage(true)),
-              _buildItem("图片网络分享", () => sendOnlineImage(true)),
-              _buildItem("链接分享", () => sendWebPageMessage(true)),
-//              _buildItem("支付宝红包分享", () => sendZFBMessage(true)),
-            ],
-          ),
+          body: ListView(children: items),
         ),
       ),
     );
@@ -79,7 +79,7 @@ class _MyAppState extends State<MyApp> {
 
   sendTextMessage([bool isSendDing = false]) async {
     bool flag = await DDSharePlugin.sendTextMessage("一个简单的文本分享",
-        isSendDing: isSendDing, onShareListener: _shareLisenter);
+        isSendDing: isSendDing);
     showToast("$flag");
   }
 
@@ -92,8 +92,8 @@ class _MyAppState extends State<MyApp> {
     //        String picUrl = "http://img.qdaily.com/uploads/20160606152752iqaH5t4KMvn18BZo.gif";
     //        String picUrl = "http://static.dingtalk.com/media/lAHPBY0V4shLSVDMlszw_240_150.gif";
 
-    bool flag = await DDSharePlugin.sendOnlineImage(picUrl,
-        isSendDing: isSendDing, onShareListener: _shareLisenter);
+    bool flag =
+        await DDSharePlugin.sendOnlineImage(picUrl, isSendDing: isSendDing);
     showToast("$flag");
   }
 
@@ -101,8 +101,8 @@ class _MyAppState extends State<MyApp> {
     // 替换成本地可用路径
     File image = await ImagePicker.pickImage(source: ImageSource.gallery);
     if (image == null) return;
-    bool flag = await DDSharePlugin.sendLocalImage(image,
-        isSendDing: isSendDing, onShareListener: _shareLisenter);
+    bool flag =
+        await DDSharePlugin.sendLocalImage(image, isSendDing: isSendDing);
     showToast("$flag");
   }
 
@@ -110,7 +110,6 @@ class _MyAppState extends State<MyApp> {
     String url = "https://www.baidu.com";
     String title = "这是标题";
     String content = "这里是分享的内容:" + DateTime.now().toIso8601String();
-//    String thumbUrl = "http://static.dingtalk.com/media/lAHPBY0V4shLSVDMlszw_240_150.gif";
     String thumbUrl =
         "https://t.alipayobjects.com/images/rmsweb/T1vs0gXXhlXXXXXXXX.jpg";
 
@@ -118,23 +117,7 @@ class _MyAppState extends State<MyApp> {
         title: title,
         content: content,
         thumbUrl: thumbUrl,
-        isSendDing: isSendDing,
-        onShareListener: _shareLisenter);
+        isSendDing: isSendDing);
     showToast("$flag");
   }
-
-  void _shareLisenter(int errCode) {
-    showToast("分享结果：$errCode");
-  }
-//
-//  sendZFBMessage([bool isSendDing = false]) async {
-//    String url = "https://www.baidu.com";
-//    String title = "支付宝红包标题这是一个很长很长的标题";
-//    String content = "支付宝红包内容描述";
-//    String thumbUrl = "https://t.alipayobjects.com/images/rmsweb/T1vs0gXXhlXXXXXXXX.jpg";
-//
-//    bool flag = await DDSharePlugin.sendZFBMessage(url,
-//        title: title, content: content, thumbUrl: thumbUrl, isSendDing: isSendDing);
-//    showToast("$flag");
-//  }
 }

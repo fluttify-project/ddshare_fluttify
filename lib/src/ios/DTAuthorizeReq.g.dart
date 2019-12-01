@@ -10,35 +10,34 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 // ignore_for_file: non_constant_identifier_names, camel_case_types, missing_return, unused_import
-class DTAuthorizeReq extends DTBaseReq  {
+class DTAuthorizeReq extends DTBaseReq {
   // generate getters
   Future<String> get_redirectURI() async {
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod("DTAuthorizeReq::get_redirectURI", {'refId': refId});
-  
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod("DTAuthorizeReq::get_redirectURI", {'refId': refId});
+
     return result;
   }
-  
+
   Future<String> get_bundleId() async {
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod("DTAuthorizeReq::get_bundleId", {'refId': refId});
-  
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod("DTAuthorizeReq::get_bundleId", {'refId': refId});
+
     return result;
   }
-  
 
   // generate setters
   Future<void> set_redirectURI(String redirectURI) async {
-    await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('DTAuthorizeReq::set_redirectURI', {'refId': refId, "redirectURI": redirectURI});
-  
-  
+    await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod(
+        'DTAuthorizeReq::set_redirectURI',
+        {'refId': refId, "redirectURI": redirectURI});
   }
-  
-  Future<void> set_bundleId(String bundleId) async {
-    await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('DTAuthorizeReq::set_bundleId', {'refId': refId, "bundleId": bundleId});
-  
-  
-  }
-  
 
-  // generate methods
-  
+  Future<void> set_bundleId(String bundleId) async {
+    await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod(
+        'DTAuthorizeReq::set_bundleId', {'refId': refId, "bundleId": bundleId});
+  }
+
+// generate methods
+
 }

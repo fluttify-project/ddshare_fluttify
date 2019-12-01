@@ -10,132 +10,146 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 // ignore_for_file: non_constant_identifier_names, camel_case_types, missing_return, unused_import
-class com_android_dingtalk_share_ddsharemodule_message_SendMessageToDD_Req extends com_android_dingtalk_share_ddsharemodule_message_BaseReq  {
+class com_android_dingtalk_share_ddsharemodule_message_SendMessageToDD_Req
+    extends com_android_dingtalk_share_ddsharemodule_message_BaseReq {
   // generate getters
-  Future<com_android_dingtalk_share_ddsharemodule_message_DDMediaMessage> get_mMediaMessage() async {
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod("com.android.dingtalk.share.ddsharemodule.message.SendMessageToDD.Req::get_mMediaMessage", {'refId': refId});
-    kNativeObjectPool.add(com_android_dingtalk_share_ddsharemodule_message_DDMediaMessage()..refId = result..tag = 'ddshare_fluttify');
-    return com_android_dingtalk_share_ddsharemodule_message_DDMediaMessage()..refId = result..tag = 'ddshare_fluttify';
+  Future<com_android_dingtalk_share_ddsharemodule_message_DDMediaMessage>
+      get_mMediaMessage() async {
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod(
+            "com.android.dingtalk.share.ddsharemodule.message.SendMessageToDD.Req::get_mMediaMessage",
+            {'refId': refId});
+    kNativeObjectPool
+        .add(com_android_dingtalk_share_ddsharemodule_message_DDMediaMessage()
+          ..refId = result
+          ..tag = 'ddshare_fluttify');
+    return com_android_dingtalk_share_ddsharemodule_message_DDMediaMessage()
+      ..refId = result
+      ..tag = 'ddshare_fluttify';
   }
-  
 
   // generate setters
-  Future<void> set_mMediaMessage(com_android_dingtalk_share_ddsharemodule_message_DDMediaMessage mMediaMessage) async {
-    await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('com.android.dingtalk.share.ddsharemodule.message.SendMessageToDD.Req::set_mMediaMessage', {'refId': refId, "mMediaMessage": mMediaMessage.refId});
-  
-  
+  Future<void> set_mMediaMessage(
+      com_android_dingtalk_share_ddsharemodule_message_DDMediaMessage
+          mMediaMessage) async {
+    await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod(
+        'com.android.dingtalk.share.ddsharemodule.message.SendMessageToDD.Req::set_mMediaMessage',
+        {'refId': refId, "mMediaMessage": mMediaMessage.refId});
   }
-  
 
   // generate methods
   Future<int> getType() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.SendMessageToDD.Req@$refId::getType([])');
+      print(
+          'fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.SendMessageToDD.Req@$refId::getType([])');
     }
-  
+
     // invoke native method
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('com.android.dingtalk.share.ddsharemodule.message.SendMessageToDD.Req::getType', {"refId": refId});
-  
-  
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod(
+            'com.android.dingtalk.share.ddsharemodule.message.SendMessageToDD.Req::getType',
+            {"refId": refId});
+
     // handle native call
-  
-  
+
     // convert native result to dart side object
     if (result == null) {
       return null;
     } else {
-    
       return result;
     }
   }
-  
+
   Future<void> fromBundle(android_os_Bundle bundle) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.SendMessageToDD.Req@$refId::fromBundle([])');
+      print(
+          'fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.SendMessageToDD.Req@$refId::fromBundle([])');
     }
-  
+
     // invoke native method
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('com.android.dingtalk.share.ddsharemodule.message.SendMessageToDD.Req::fromBundle', {"bundle": bundle.refId, "refId": refId});
-  
-  
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod(
+            'com.android.dingtalk.share.ddsharemodule.message.SendMessageToDD.Req::fromBundle',
+            {"bundle": bundle.refId, "refId": refId});
+
     // handle native call
-  
-  
+
     // convert native result to dart side object
     if (result == null) {
       return null;
     } else {
-    
       return result;
     }
   }
-  
+
   Future<void> toBundle(android_os_Bundle bundle) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.SendMessageToDD.Req@$refId::toBundle([])');
+      print(
+          'fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.SendMessageToDD.Req@$refId::toBundle([])');
     }
-  
+
     // invoke native method
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('com.android.dingtalk.share.ddsharemodule.message.SendMessageToDD.Req::toBundle', {"bundle": bundle.refId, "refId": refId});
-  
-  
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod(
+            'com.android.dingtalk.share.ddsharemodule.message.SendMessageToDD.Req::toBundle',
+            {"bundle": bundle.refId, "refId": refId});
+
     // handle native call
-  
-  
+
     // convert native result to dart side object
     if (result == null) {
       return null;
     } else {
-    
       return result;
     }
   }
-  
+
   Future<bool> checkArgs() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.SendMessageToDD.Req@$refId::checkArgs([])');
+      print(
+          'fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.SendMessageToDD.Req@$refId::checkArgs([])');
     }
-  
+
     // invoke native method
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('com.android.dingtalk.share.ddsharemodule.message.SendMessageToDD.Req::checkArgs', {"refId": refId});
-  
-  
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod(
+            'com.android.dingtalk.share.ddsharemodule.message.SendMessageToDD.Req::checkArgs',
+            {"refId": refId});
+
     // handle native call
-  
-  
+
     // convert native result to dart side object
     if (result == null) {
       return null;
     } else {
-    
       return result;
     }
   }
-  
+
   Future<int> getSupportVersion() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.SendMessageToDD.Req@$refId::getSupportVersion([])');
+      print(
+          'fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.SendMessageToDD.Req@$refId::getSupportVersion([])');
     }
-  
+
     // invoke native method
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('com.android.dingtalk.share.ddsharemodule.message.SendMessageToDD.Req::getSupportVersion', {"refId": refId});
-  
-  
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod(
+            'com.android.dingtalk.share.ddsharemodule.message.SendMessageToDD.Req::getSupportVersion',
+            {"refId": refId});
+
     // handle native call
-  
-  
+
     // convert native result to dart side object
     if (result == null) {
       return null;
     } else {
-    
       return result;
     }
   }
-  
 }

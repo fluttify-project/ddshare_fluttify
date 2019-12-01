@@ -26,7 +26,9 @@ apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
     compileSdkVersion 28
-
+    lintOptions {
+        disable 'InvalidPackage'
+    }
     signingConfigs {
         release {
             storeFile file("../ddshare_fluttify.jks")
@@ -35,10 +37,6 @@ android {
             keyPassword "170728.xyz"
         }
     }
-    lintOptions {
-        disable 'InvalidPackage'
-    }
-
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "com.fluttify.ddshare_fluttify_example"
@@ -55,7 +53,6 @@ android {
             // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig signingConfigs.release
         }
-
         debug {
             signingConfig signingConfigs.release
         }
