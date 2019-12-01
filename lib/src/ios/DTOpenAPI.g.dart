@@ -10,12 +10,10 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 // ignore_for_file: non_constant_identifier_names, camel_case_types, missing_return, unused_import
-class DTOpenAPI extends NSObject  {
+class DTOpenAPI extends NSObject {
   // generate getters
-  
 
   // generate setters
-  
 
   // generate methods
   static Future<bool> registerApp(String appId) async {
@@ -23,241 +21,235 @@ class DTOpenAPI extends NSObject  {
     if (fluttifyLogEnabled) {
       print('fluttify-dart: DTOpenAPI::registerApp([\'appId\':$appId])');
     }
-  
+
     // invoke native method
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('DTOpenAPI::registerApp', {"appId": appId});
-  
-  
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod('DTOpenAPI::registerApp', {"appId": appId});
+
     // handle native call
-  
-  
+
     // convert native result to dart side object
     if (result == null) {
       return null;
     } else {
-    
       return result;
     }
   }
-  
-  static Future<bool> registerAppAppDescription(String appId, String appDescription) async {
+
+  static Future<bool> registerAppAppDescription(
+      String appId, String appDescription) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: DTOpenAPI::registerApp([\'appId\':$appId, \'appDescription\':$appDescription])');
+      print(
+          'fluttify-dart: DTOpenAPI::registerApp([\'appId\':$appId, \'appDescription\':$appDescription])');
     }
-  
+
     // invoke native method
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('DTOpenAPI::registerAppAppDescription', {"appId": appId, "appDescription": appDescription});
-  
-  
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod('DTOpenAPI::registerAppAppDescription',
+            {"appId": appId, "appDescription": appDescription});
+
     // handle native call
-  
-  
+
     // convert native result to dart side object
     if (result == null) {
       return null;
     } else {
-    
       return result;
     }
   }
-  
+
   static Future<bool> isDingTalkInstalled() async {
     // print log
     if (fluttifyLogEnabled) {
       print('fluttify-dart: DTOpenAPI::isDingTalkInstalled([])');
     }
-  
+
     // invoke native method
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('DTOpenAPI::isDingTalkInstalled', );
-  
-  
+    final result =
+        await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod(
+      'DTOpenAPI::isDingTalkInstalled',
+    );
+
     // handle native call
-  
-  
+
     // convert native result to dart side object
     if (result == null) {
       return null;
     } else {
-    
       return result;
     }
   }
-  
+
   static Future<bool> isDingTalkSupportOpenAPI() async {
     // print log
     if (fluttifyLogEnabled) {
       print('fluttify-dart: DTOpenAPI::isDingTalkSupportOpenAPI([])');
     }
-  
+
     // invoke native method
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('DTOpenAPI::isDingTalkSupportOpenAPI', );
-  
-  
+    final result =
+        await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod(
+      'DTOpenAPI::isDingTalkSupportOpenAPI',
+    );
+
     // handle native call
-  
-  
+
     // convert native result to dart side object
     if (result == null) {
       return null;
     } else {
-    
       return result;
     }
   }
-  
+
   static Future<bool> isDingTalkSupportSSO() async {
     // print log
     if (fluttifyLogEnabled) {
       print('fluttify-dart: DTOpenAPI::isDingTalkSupportSSO([])');
     }
-  
+
     // invoke native method
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('DTOpenAPI::isDingTalkSupportSSO', );
-  
-  
+    final result =
+        await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod(
+      'DTOpenAPI::isDingTalkSupportSSO',
+    );
+
     // handle native call
-  
-  
+
     // convert native result to dart side object
     if (result == null) {
       return null;
     } else {
-    
       return result;
     }
   }
-  
+
   static Future<String> appStoreURLOfDingTalk() async {
     // print log
     if (fluttifyLogEnabled) {
       print('fluttify-dart: DTOpenAPI::appStoreURLOfDingTalk([])');
     }
-  
+
     // invoke native method
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('DTOpenAPI::appStoreURLOfDingTalk', );
-  
-  
+    final result =
+        await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod(
+      'DTOpenAPI::appStoreURLOfDingTalk',
+    );
+
     // handle native call
-  
-  
+
     // convert native result to dart side object
     if (result == null) {
       return null;
     } else {
-    
       return result;
     }
   }
-  
+
   static Future<String> openAPIVersion() async {
     // print log
     if (fluttifyLogEnabled) {
       print('fluttify-dart: DTOpenAPI::openAPIVersion([])');
     }
-  
+
     // invoke native method
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('DTOpenAPI::openAPIVersion', );
-  
-  
+    final result =
+        await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod(
+      'DTOpenAPI::openAPIVersion',
+    );
+
     // handle native call
-  
-  
+
     // convert native result to dart side object
     if (result == null) {
       return null;
     } else {
-    
       return result;
     }
   }
-  
+
   static Future<bool> openDingTalk() async {
     // print log
     if (fluttifyLogEnabled) {
       print('fluttify-dart: DTOpenAPI::openDingTalk([])');
     }
-  
+
     // invoke native method
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('DTOpenAPI::openDingTalk', );
-  
-  
+    final result =
+        await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod(
+      'DTOpenAPI::openDingTalk',
+    );
+
     // handle native call
-  
-  
+
     // convert native result to dart side object
     if (result == null) {
       return null;
     } else {
-    
       return result;
     }
   }
-  
+
   static Future<bool> openDingTalkForSSO() async {
     // print log
     if (fluttifyLogEnabled) {
       print('fluttify-dart: DTOpenAPI::openDingTalkForSSO([])');
     }
-  
+
     // invoke native method
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('DTOpenAPI::openDingTalkForSSO', );
-  
-  
+    final result =
+        await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod(
+      'DTOpenAPI::openDingTalkForSSO',
+    );
+
     // handle native call
-  
-  
+
     // convert native result to dart side object
     if (result == null) {
       return null;
     } else {
-    
       return result;
     }
   }
-  
+
   static Future<bool> sendReq(DTBaseReq req) async {
     // print log
     if (fluttifyLogEnabled) {
       print('fluttify-dart: DTOpenAPI::sendReq([])');
     }
-  
+
     // invoke native method
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('DTOpenAPI::sendReq', {"req": req.refId});
-  
-  
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod('DTOpenAPI::sendReq', {"req": req.refId});
+
     // handle native call
-  
-  
+
     // convert native result to dart side object
     if (result == null) {
       return null;
     } else {
-    
       return result;
     }
   }
-  
+
   static Future<bool> sendResp(DTBaseResp resp) async {
     // print log
     if (fluttifyLogEnabled) {
       print('fluttify-dart: DTOpenAPI::sendResp([])');
     }
-  
+
     // invoke native method
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('DTOpenAPI::sendResp', {"resp": resp.refId});
-  
-  
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod('DTOpenAPI::sendResp', {"resp": resp.refId});
+
     // handle native call
-  
-  
+
     // convert native result to dart side object
     if (result == null) {
       return null;
     } else {
-    
       return result;
     }
   }
-  
 }

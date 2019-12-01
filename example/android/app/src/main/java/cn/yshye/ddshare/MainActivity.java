@@ -1,4 +1,4 @@
-package com.fluttify.ddshare_fluttify_example;
+package cn.yshye.ddshare;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;

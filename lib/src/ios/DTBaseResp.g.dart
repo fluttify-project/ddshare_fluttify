@@ -10,35 +10,35 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 // ignore_for_file: non_constant_identifier_names, camel_case_types, missing_return, unused_import
-class DTBaseResp extends NSObject  {
+class DTBaseResp extends NSObject {
   // generate getters
   Future<DTOpenAPIErrorCode> get_errorCode() async {
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod("DTBaseResp::get_errorCode", {'refId': refId});
-  
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod("DTBaseResp::get_errorCode", {'refId': refId});
+
     return DTOpenAPIErrorCode.values[result];
   }
-  
+
   Future<String> get_errorMessage() async {
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod("DTBaseResp::get_errorMessage", {'refId': refId});
-  
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod("DTBaseResp::get_errorMessage", {'refId': refId});
+
     return result;
   }
-  
 
   // generate setters
   Future<void> set_errorCode(DTOpenAPIErrorCode errorCode) async {
-    await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('DTBaseResp::set_errorCode', {'refId': refId, "errorCode": errorCode.index});
-  
-  
+    await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod(
+        'DTBaseResp::set_errorCode',
+        {'refId': refId, "errorCode": errorCode.index});
   }
-  
-  Future<void> set_errorMessage(String errorMessage) async {
-    await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('DTBaseResp::set_errorMessage', {'refId': refId, "errorMessage": errorMessage});
-  
-  
-  }
-  
 
-  // generate methods
-  
+  Future<void> set_errorMessage(String errorMessage) async {
+    await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod(
+        'DTBaseResp::set_errorMessage',
+        {'refId': refId, "errorMessage": errorMessage});
+  }
+
+// generate methods
+
 }

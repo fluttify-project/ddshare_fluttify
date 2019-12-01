@@ -10,260 +10,282 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 // ignore_for_file: non_constant_identifier_names, camel_case_types, missing_return, unused_import
-class com_android_dingtalk_share_ddsharemodule_DDShareApiV2 extends java_lang_Object with com_android_dingtalk_share_ddsharemodule_IDDShareApi {
+class com_android_dingtalk_share_ddsharemodule_DDShareApiV2
+    extends java_lang_Object
+    with com_android_dingtalk_share_ddsharemodule_IDDShareApi {
   // generate getters
-  
 
   // generate setters
-  
 
   // generate methods
   Future<bool> registerApp(String appId) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.DDShareApiV2@$refId::registerApp([\'appId\':$appId])');
+      print(
+          'fluttify-dart: com.android.dingtalk.share.ddsharemodule.DDShareApiV2@$refId::registerApp([\'appId\':$appId])');
     }
-  
+
     // invoke native method
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('com.android.dingtalk.share.ddsharemodule.DDShareApiV2::registerApp', {"appId": appId, "refId": refId});
-  
-  
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod(
+            'com.android.dingtalk.share.ddsharemodule.DDShareApiV2::registerApp',
+            {"appId": appId, "refId": refId});
+
     // handle native call
-  
-  
+
     // convert native result to dart side object
     if (result == null) {
       return null;
     } else {
-    
       return result;
     }
   }
-  
+
   Future<void> unregisterApp() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.DDShareApiV2@$refId::unregisterApp([])');
+      print(
+          'fluttify-dart: com.android.dingtalk.share.ddsharemodule.DDShareApiV2@$refId::unregisterApp([])');
     }
-  
+
     // invoke native method
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('com.android.dingtalk.share.ddsharemodule.DDShareApiV2::unregisterApp', {"refId": refId});
-  
-  
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod(
+            'com.android.dingtalk.share.ddsharemodule.DDShareApiV2::unregisterApp',
+            {"refId": refId});
+
     // handle native call
-  
-  
+
     // convert native result to dart side object
     if (result == null) {
       return null;
     } else {
-    
       return result;
     }
   }
-  
+
   Future<bool> isDDAppInstalled() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.DDShareApiV2@$refId::isDDAppInstalled([])');
+      print(
+          'fluttify-dart: com.android.dingtalk.share.ddsharemodule.DDShareApiV2@$refId::isDDAppInstalled([])');
     }
-  
+
     // invoke native method
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('com.android.dingtalk.share.ddsharemodule.DDShareApiV2::isDDAppInstalled', {"refId": refId});
-  
-  
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod(
+            'com.android.dingtalk.share.ddsharemodule.DDShareApiV2::isDDAppInstalled',
+            {"refId": refId});
+
     // handle native call
-  
-  
+
     // convert native result to dart side object
     if (result == null) {
       return null;
     } else {
-    
       return result;
     }
   }
-  
-  Future<bool> handleIntent(android_content_Intent intent, com_android_dingtalk_share_ddsharemodule_IDDAPIEventHandler handler) async {
+
+  Future<bool> handleIntent(
+      android_content_Intent intent,
+      com_android_dingtalk_share_ddsharemodule_IDDAPIEventHandler
+          handler) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.DDShareApiV2@$refId::handleIntent([])');
+      print(
+          'fluttify-dart: com.android.dingtalk.share.ddsharemodule.DDShareApiV2@$refId::handleIntent([])');
     }
-  
+
     // invoke native method
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('com.android.dingtalk.share.ddsharemodule.DDShareApiV2::handleIntent', {"intent": intent.refId, "refId": refId});
-  
-  
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod(
+            'com.android.dingtalk.share.ddsharemodule.DDShareApiV2::handleIntent',
+            {"intent": intent.refId, "refId": refId});
+
     // handle native call
-    MethodChannel('com.android.dingtalk.share.ddsharemodule.DDShareApiV2::handleIntent::Callback')
+    MethodChannel(
+            'com.android.dingtalk.share.ddsharemodule.DDShareApiV2::handleIntent::Callback')
         .setMethodCallHandler((methodCall) async {
-          final args = methodCall.arguments as Map;
-          // final refId = args['callerRefId'] as int;
-          // if (refId != this.refId) return;
-  
-          switch (methodCall.method) {
-            case 'Callback::com.android.dingtalk.share.ddsharemodule.IDDAPIEventHandler::onReq':
-              // print log
-              if (!kReleaseMode) {
-                print('fluttify-dart-callback: onReq([])');
-              }
-        
-              // handle the native call
-              handler?.onReq(com_android_dingtalk_share_ddsharemodule_message_SendMessageToDD_Req()..refId = (args['var1'])..tag = 'ddshare_fluttify');
-              break;
-            case 'Callback::com.android.dingtalk.share.ddsharemodule.IDDAPIEventHandler::onResp':
-              // print log
-              if (!kReleaseMode) {
-                print('fluttify-dart-callback: onResp([])');
-              }
-        
-              // handle the native call
-              handler?.onResp(com_android_dingtalk_share_ddsharemodule_message_SendMessageToDD_Resp()..refId = (args['var1'])..tag = 'ddshare_fluttify');
-              break;
-            default:
-              break;
+      final args = methodCall.arguments as Map;
+      // final refId = args['callerRefId'] as int;
+      // if (refId != this.refId) return;
+
+      switch (methodCall.method) {
+        case 'Callback::com.android.dingtalk.share.ddsharemodule.IDDAPIEventHandler::onReq':
+          // print log
+          if (!kReleaseMode) {
+            print('fluttify-dart-callback: onReq([])');
           }
-        });
-  
+
+          // handle the native call
+          handler?.onReq(
+              com_android_dingtalk_share_ddsharemodule_message_SendMessageToDD_Req()
+                ..refId = (args['var1'])
+                ..tag = 'ddshare_fluttify');
+          break;
+        case 'Callback::com.android.dingtalk.share.ddsharemodule.IDDAPIEventHandler::onResp':
+          // print log
+          if (!kReleaseMode) {
+            print('fluttify-dart-callback: onResp([])');
+          }
+
+          // handle the native call
+          handler?.onResp(
+              com_android_dingtalk_share_ddsharemodule_message_SendMessageToDD_Resp()
+                ..refId = (args['var1'])
+                ..tag = 'ddshare_fluttify');
+          break;
+        default:
+          break;
+      }
+    });
+
     // convert native result to dart side object
     if (result == null) {
       return null;
     } else {
-    
       return result;
     }
   }
-  
+
   Future<bool> isDDSupportAPI() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.DDShareApiV2@$refId::isDDSupportAPI([])');
+      print(
+          'fluttify-dart: com.android.dingtalk.share.ddsharemodule.DDShareApiV2@$refId::isDDSupportAPI([])');
     }
-  
+
     // invoke native method
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('com.android.dingtalk.share.ddsharemodule.DDShareApiV2::isDDSupportAPI', {"refId": refId});
-  
-  
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod(
+            'com.android.dingtalk.share.ddsharemodule.DDShareApiV2::isDDSupportAPI',
+            {"refId": refId});
+
     // handle native call
-  
-  
+
     // convert native result to dart side object
     if (result == null) {
       return null;
     } else {
-    
       return result;
     }
   }
-  
+
   Future<bool> isDDSupportDingAPI() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.DDShareApiV2@$refId::isDDSupportDingAPI([])');
+      print(
+          'fluttify-dart: com.android.dingtalk.share.ddsharemodule.DDShareApiV2@$refId::isDDSupportDingAPI([])');
     }
-  
+
     // invoke native method
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('com.android.dingtalk.share.ddsharemodule.DDShareApiV2::isDDSupportDingAPI', {"refId": refId});
-  
-  
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod(
+            'com.android.dingtalk.share.ddsharemodule.DDShareApiV2::isDDSupportDingAPI',
+            {"refId": refId});
+
     // handle native call
-  
-  
+
     // convert native result to dart side object
     if (result == null) {
       return null;
     } else {
-    
       return result;
     }
   }
-  
+
   Future<int> getDDSupportAPI() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.DDShareApiV2@$refId::getDDSupportAPI([])');
+      print(
+          'fluttify-dart: com.android.dingtalk.share.ddsharemodule.DDShareApiV2@$refId::getDDSupportAPI([])');
     }
-  
+
     // invoke native method
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('com.android.dingtalk.share.ddsharemodule.DDShareApiV2::getDDSupportAPI', {"refId": refId});
-  
-  
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod(
+            'com.android.dingtalk.share.ddsharemodule.DDShareApiV2::getDDSupportAPI',
+            {"refId": refId});
+
     // handle native call
-  
-  
+
     // convert native result to dart side object
     if (result == null) {
       return null;
     } else {
-    
       return result;
     }
   }
-  
+
   Future<bool> openDDApp() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.DDShareApiV2@$refId::openDDApp([])');
+      print(
+          'fluttify-dart: com.android.dingtalk.share.ddsharemodule.DDShareApiV2@$refId::openDDApp([])');
     }
-  
+
     // invoke native method
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('com.android.dingtalk.share.ddsharemodule.DDShareApiV2::openDDApp', {"refId": refId});
-  
-  
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod(
+            'com.android.dingtalk.share.ddsharemodule.DDShareApiV2::openDDApp',
+            {"refId": refId});
+
     // handle native call
-  
-  
+
     // convert native result to dart side object
     if (result == null) {
       return null;
     } else {
-    
       return result;
     }
   }
-  
-  Future<bool> sendReq(com_android_dingtalk_share_ddsharemodule_message_BaseReq baseReq) async {
+
+  Future<bool> sendReq(
+      com_android_dingtalk_share_ddsharemodule_message_BaseReq baseReq) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.DDShareApiV2@$refId::sendReq([])');
+      print(
+          'fluttify-dart: com.android.dingtalk.share.ddsharemodule.DDShareApiV2@$refId::sendReq([])');
     }
-  
+
     // invoke native method
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('com.android.dingtalk.share.ddsharemodule.DDShareApiV2::sendReq', {"baseReq": baseReq.refId, "refId": refId});
-  
-  
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod(
+            'com.android.dingtalk.share.ddsharemodule.DDShareApiV2::sendReq',
+            {"baseReq": baseReq.refId, "refId": refId});
+
     // handle native call
-  
-  
+
     // convert native result to dart side object
     if (result == null) {
       return null;
     } else {
-    
       return result;
     }
   }
-  
-  Future<bool> sendReqToDing(com_android_dingtalk_share_ddsharemodule_message_BaseReq baseReq) async {
+
+  Future<bool> sendReqToDing(
+      com_android_dingtalk_share_ddsharemodule_message_BaseReq baseReq) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.DDShareApiV2@$refId::sendReqToDing([])');
+      print(
+          'fluttify-dart: com.android.dingtalk.share.ddsharemodule.DDShareApiV2@$refId::sendReqToDing([])');
     }
-  
+
     // invoke native method
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('com.android.dingtalk.share.ddsharemodule.DDShareApiV2::sendReqToDing', {"baseReq": baseReq.refId, "refId": refId});
-  
-  
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod(
+            'com.android.dingtalk.share.ddsharemodule.DDShareApiV2::sendReqToDing',
+            {"baseReq": baseReq.refId, "refId": refId});
+
     // handle native call
-  
-  
+
     // convert native result to dart side object
     if (result == null) {
       return null;
     } else {
-    
       return result;
     }
   }
-  
 }

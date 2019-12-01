@@ -10,23 +10,21 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 // ignore_for_file: non_constant_identifier_names, camel_case_types, missing_return, unused_import
-class DTMediaTextObject extends NSObject  {
+class DTMediaTextObject extends NSObject {
   // generate getters
   Future<String> get_text() async {
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod("DTMediaTextObject::get_text", {'refId': refId});
-  
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod("DTMediaTextObject::get_text", {'refId': refId});
+
     return result;
   }
-  
 
   // generate setters
   Future<void> set_text(String text) async {
-    await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('DTMediaTextObject::set_text', {'refId': refId, "text": text});
-  
-  
+    await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod(
+        'DTMediaTextObject::set_text', {'refId': refId, "text": text});
   }
-  
 
-  // generate methods
-  
+// generate methods
+
 }

@@ -10,156 +10,170 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 // ignore_for_file: non_constant_identifier_names, camel_case_types, missing_return, unused_import
-class com_android_dingtalk_share_ddsharemodule_message_DDImageMessage extends java_lang_Object with com_android_dingtalk_share_ddsharemodule_message_DDMediaMessage_IMediaObject {
+class com_android_dingtalk_share_ddsharemodule_message_DDImageMessage
+    extends java_lang_Object
+    with
+        com_android_dingtalk_share_ddsharemodule_message_DDMediaMessage_IMediaObject {
   // generate getters
   Future<Uint8List> get_mImageData() async {
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod("com.android.dingtalk.share.ddsharemodule.message.DDImageMessage::get_mImageData", {'refId': refId});
-  
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod(
+            "com.android.dingtalk.share.ddsharemodule.message.DDImageMessage::get_mImageData",
+            {'refId': refId});
+
     return result;
   }
-  
+
   Future<String> get_mImageUrl() async {
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod("com.android.dingtalk.share.ddsharemodule.message.DDImageMessage::get_mImageUrl", {'refId': refId});
-  
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod(
+            "com.android.dingtalk.share.ddsharemodule.message.DDImageMessage::get_mImageUrl",
+            {'refId': refId});
+
     return result;
   }
-  
+
   Future<String> get_mImagePath() async {
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod("com.android.dingtalk.share.ddsharemodule.message.DDImageMessage::get_mImagePath", {'refId': refId});
-  
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod(
+            "com.android.dingtalk.share.ddsharemodule.message.DDImageMessage::get_mImagePath",
+            {'refId': refId});
+
     return result;
   }
-  
 
   // generate setters
   Future<void> set_mImageData(Uint8List mImageData) async {
-    await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('com.android.dingtalk.share.ddsharemodule.message.DDImageMessage::set_mImageData', {'refId': refId, "mImageData": mImageData});
-  
-  
+    await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod(
+        'com.android.dingtalk.share.ddsharemodule.message.DDImageMessage::set_mImageData',
+        {'refId': refId, "mImageData": mImageData});
   }
-  
+
   Future<void> set_mImageUrl(String mImageUrl) async {
-    await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('com.android.dingtalk.share.ddsharemodule.message.DDImageMessage::set_mImageUrl', {'refId': refId, "mImageUrl": mImageUrl});
-  
-  
+    await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod(
+        'com.android.dingtalk.share.ddsharemodule.message.DDImageMessage::set_mImageUrl',
+        {'refId': refId, "mImageUrl": mImageUrl});
   }
-  
+
   Future<void> set_mImagePath(String mImagePath) async {
-    await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('com.android.dingtalk.share.ddsharemodule.message.DDImageMessage::set_mImagePath', {'refId': refId, "mImagePath": mImagePath});
-  
-  
+    await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod(
+        'com.android.dingtalk.share.ddsharemodule.message.DDImageMessage::set_mImagePath',
+        {'refId': refId, "mImagePath": mImagePath});
   }
-  
 
   // generate methods
   Future<void> serialize(android_os_Bundle bundle) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.DDImageMessage@$refId::serialize([])');
+      print(
+          'fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.DDImageMessage@$refId::serialize([])');
     }
-  
+
     // invoke native method
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('com.android.dingtalk.share.ddsharemodule.message.DDImageMessage::serialize', {"bundle": bundle.refId, "refId": refId});
-  
-  
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod(
+            'com.android.dingtalk.share.ddsharemodule.message.DDImageMessage::serialize',
+            {"bundle": bundle.refId, "refId": refId});
+
     // handle native call
-  
-  
+
     // convert native result to dart side object
     if (result == null) {
       return null;
     } else {
-    
       return result;
     }
   }
-  
+
   Future<void> unserialize(android_os_Bundle bundle) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.DDImageMessage@$refId::unserialize([])');
+      print(
+          'fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.DDImageMessage@$refId::unserialize([])');
     }
-  
+
     // invoke native method
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('com.android.dingtalk.share.ddsharemodule.message.DDImageMessage::unserialize', {"bundle": bundle.refId, "refId": refId});
-  
-  
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod(
+            'com.android.dingtalk.share.ddsharemodule.message.DDImageMessage::unserialize',
+            {"bundle": bundle.refId, "refId": refId});
+
     // handle native call
-  
-  
+
     // convert native result to dart side object
     if (result == null) {
       return null;
     } else {
-    
       return result;
     }
   }
-  
+
   Future<int> type() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.DDImageMessage@$refId::type([])');
+      print(
+          'fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.DDImageMessage@$refId::type([])');
     }
-  
+
     // invoke native method
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('com.android.dingtalk.share.ddsharemodule.message.DDImageMessage::type', {"refId": refId});
-  
-  
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod(
+            'com.android.dingtalk.share.ddsharemodule.message.DDImageMessage::type',
+            {"refId": refId});
+
     // handle native call
-  
-  
+
     // convert native result to dart side object
     if (result == null) {
       return null;
     } else {
-    
       return result;
     }
   }
-  
+
   Future<bool> checkArgs() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.DDImageMessage@$refId::checkArgs([])');
+      print(
+          'fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.DDImageMessage@$refId::checkArgs([])');
     }
-  
+
     // invoke native method
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('com.android.dingtalk.share.ddsharemodule.message.DDImageMessage::checkArgs', {"refId": refId});
-  
-  
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod(
+            'com.android.dingtalk.share.ddsharemodule.message.DDImageMessage::checkArgs',
+            {"refId": refId});
+
     // handle native call
-  
-  
+
     // convert native result to dart side object
     if (result == null) {
       return null;
     } else {
-    
       return result;
     }
   }
-  
+
   Future<int> getSupportVersion() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.DDImageMessage@$refId::getSupportVersion([])');
+      print(
+          'fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.DDImageMessage@$refId::getSupportVersion([])');
     }
-  
+
     // invoke native method
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('com.android.dingtalk.share.ddsharemodule.message.DDImageMessage::getSupportVersion', {"refId": refId});
-  
-  
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod(
+            'com.android.dingtalk.share.ddsharemodule.message.DDImageMessage::getSupportVersion',
+            {"refId": refId});
+
     // handle native call
-  
-  
+
     // convert native result to dart side object
     if (result == null) {
       return null;
     } else {
-    
       return result;
     }
   }
-  
 }

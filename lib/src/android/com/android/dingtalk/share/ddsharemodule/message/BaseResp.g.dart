@@ -10,112 +10,122 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 // ignore_for_file: non_constant_identifier_names, camel_case_types, missing_return, unused_import
-class com_android_dingtalk_share_ddsharemodule_message_BaseResp extends java_lang_Object  {
+class com_android_dingtalk_share_ddsharemodule_message_BaseResp
+    extends java_lang_Object {
   // generate getters
   Future<int> get_mErrCode() async {
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod("com.android.dingtalk.share.ddsharemodule.message.BaseResp::get_mErrCode", {'refId': refId});
-  
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod(
+            "com.android.dingtalk.share.ddsharemodule.message.BaseResp::get_mErrCode",
+            {'refId': refId});
+
     return result;
   }
-  
+
   Future<String> get_mErrStr() async {
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod("com.android.dingtalk.share.ddsharemodule.message.BaseResp::get_mErrStr", {'refId': refId});
-  
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod(
+            "com.android.dingtalk.share.ddsharemodule.message.BaseResp::get_mErrStr",
+            {'refId': refId});
+
     return result;
   }
-  
+
   Future<String> get_mTransaction() async {
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod("com.android.dingtalk.share.ddsharemodule.message.BaseResp::get_mTransaction", {'refId': refId});
-  
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod(
+            "com.android.dingtalk.share.ddsharemodule.message.BaseResp::get_mTransaction",
+            {'refId': refId});
+
     return result;
   }
-  
 
   // generate setters
   Future<void> set_mErrCode(int mErrCode) async {
-    await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('com.android.dingtalk.share.ddsharemodule.message.BaseResp::set_mErrCode', {'refId': refId, "mErrCode": mErrCode});
-  
-  
+    await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod(
+        'com.android.dingtalk.share.ddsharemodule.message.BaseResp::set_mErrCode',
+        {'refId': refId, "mErrCode": mErrCode});
   }
-  
+
   Future<void> set_mErrStr(String mErrStr) async {
-    await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('com.android.dingtalk.share.ddsharemodule.message.BaseResp::set_mErrStr', {'refId': refId, "mErrStr": mErrStr});
-  
-  
+    await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod(
+        'com.android.dingtalk.share.ddsharemodule.message.BaseResp::set_mErrStr',
+        {'refId': refId, "mErrStr": mErrStr});
   }
-  
+
   Future<void> set_mTransaction(String mTransaction) async {
-    await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('com.android.dingtalk.share.ddsharemodule.message.BaseResp::set_mTransaction', {'refId': refId, "mTransaction": mTransaction});
-  
-  
+    await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod(
+        'com.android.dingtalk.share.ddsharemodule.message.BaseResp::set_mTransaction',
+        {'refId': refId, "mTransaction": mTransaction});
   }
-  
 
   // generate methods
   Future<int> getType() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.BaseResp@$refId::getType([])');
+      print(
+          'fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.BaseResp@$refId::getType([])');
     }
-  
+
     // invoke native method
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('com.android.dingtalk.share.ddsharemodule.message.BaseResp::getType', {"refId": refId});
-  
-  
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod(
+            'com.android.dingtalk.share.ddsharemodule.message.BaseResp::getType',
+            {"refId": refId});
+
     // handle native call
-  
-  
+
     // convert native result to dart side object
     if (result == null) {
       return null;
     } else {
-    
       return result;
     }
   }
-  
+
   Future<void> toBundle(android_os_Bundle bundle) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.BaseResp@$refId::toBundle([])');
+      print(
+          'fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.BaseResp@$refId::toBundle([])');
     }
-  
+
     // invoke native method
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('com.android.dingtalk.share.ddsharemodule.message.BaseResp::toBundle', {"bundle": bundle.refId, "refId": refId});
-  
-  
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod(
+            'com.android.dingtalk.share.ddsharemodule.message.BaseResp::toBundle',
+            {"bundle": bundle.refId, "refId": refId});
+
     // handle native call
-  
-  
+
     // convert native result to dart side object
     if (result == null) {
       return null;
     } else {
-    
       return result;
     }
   }
-  
+
   Future<void> fromBundle(android_os_Bundle bundle) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.BaseResp@$refId::fromBundle([])');
+      print(
+          'fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.BaseResp@$refId::fromBundle([])');
     }
-  
+
     // invoke native method
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('com.android.dingtalk.share.ddsharemodule.message.BaseResp::fromBundle', {"bundle": bundle.refId, "refId": refId});
-  
-  
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod(
+            'com.android.dingtalk.share.ddsharemodule.message.BaseResp::fromBundle',
+            {"bundle": bundle.refId, "refId": refId});
+
     // handle native call
-  
-  
+
     // convert native result to dart side object
     if (result == null) {
       return null;
     } else {
-    
       return result;
     }
   }
-  
 }

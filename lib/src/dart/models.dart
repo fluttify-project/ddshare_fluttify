@@ -15,5 +15,6 @@ class DDShareBody {
 
   DDShareType shareType;
 
-  DDShareBody({this.mTitle, this.mContent, this.mThumbUrl, this.mUrl, this.shareType});
+  DDShareBody(
+      {this.mTitle, this.mContent, this.mThumbUrl, this.mUrl, this.shareType});
 }
