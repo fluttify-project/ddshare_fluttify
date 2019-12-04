@@ -19,6 +19,15 @@ class _MyAppState extends State<MyApp> {
     if (Platform.isAndroid) {
       // Android 测试
       DDSharePlugin.init("dingoalgfg9lln5ltgtmwg");
+      // 分享回调
+      DDSharePlugin.setCallback((int flag) {
+        if (flag == 1)
+          showToast('分享成功！');
+        else if (flag == 0)
+          showToast('取消分享！');
+        else
+          showToast('分享失败！');
+      });
     } else if (Platform.isIOS) {
       // 苹果测试
       DDSharePlugin.init("dingoak5hqhuvmpfhpnjvt");
