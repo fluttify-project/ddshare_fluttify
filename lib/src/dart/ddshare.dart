@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:ddshare_fluttify/src/dart/enums.dart';
+import 'package:flutter/cupertino.dart';
 import '../android/android.export.g.dart';
 import '../ios/ios.export.g.dart';
 import 'models.dart';
@@ -12,8 +13,7 @@ class DDSharePlugin {
   static Future<void> init(String appId) {
     return platform(
       android: (pool) async {
-        final android_content_Context context =
-            await PlatformFactoryAndroid.getandroid_app_Activity();
+        final android_content_Context context = await getandroid_app_Activity();
         _androidApi =
             await createcom_android_dingtalk_share_ddsharemodule_DDShareApiV2__android_content_Context__String__boolean(
                 context, appId, false);
@@ -43,6 +43,13 @@ class DDSharePlugin {
   static Future<bool> isDDSupportDingAPI() async {
     if (Platform.isAndroid) return await _androidApi?.isDDSupportDingAPI();
     return false;
+  }
+
+  /// 分享回调，1-成功，0-取消，-1-失败
+  static void setCallback(ValueChanged<int> listen) {
+    if (Platform.isAndroid) {
+      shareCallback.listen(listen);
+    }
   }
 
   /// 分享
