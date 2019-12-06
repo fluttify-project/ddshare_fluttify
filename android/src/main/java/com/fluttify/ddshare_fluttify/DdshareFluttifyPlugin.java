@@ -19,6 +19,8 @@ import static me.yohom.foundation_fluttify.FoundationFluttifyPluginKt.getHEAP;
 import static me.yohom.foundation_fluttify.FoundationFluttifyPluginKt.getEnableLog;
 import androidx.annotation.NonNull;
 
+import com.fluttify.ddshare_fluttify.handler.DDResponseHandler;
+
 @SuppressWarnings("ALL")
 public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
 
@@ -3302,7 +3304,7 @@ public class DdshareFluttifyPlugin implements MethodChannel.MethodCallHandler {
         channel.setMethodCallHandler(new DdshareFluttifyPlugin(registrar));
 
         // register platform view
-        
+        DDResponseHandler.setMethodChannel(channel);
     }
 
     @Override

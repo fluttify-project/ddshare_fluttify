@@ -10,78 +10,79 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 // ignore_for_file: non_constant_identifier_names, camel_case_types, missing_return, unused_import
-class com_android_dingtalk_share_ddsharemodule_algorithm_MD5 extends java_lang_Object  {
+class com_android_dingtalk_share_ddsharemodule_algorithm_MD5
+    extends java_lang_Object {
   // generate getters
-  
 
   // generate setters
-  
 
   // generate methods
-  static Future<String> getMessageDigest(List<int> bytes) async {
+  static Future<String> getMessageDigest(Uint8List bytes) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.algorithm.MD5::getMessageDigest([\'bytes\':$bytes])');
+      print(
+          'fluttify-dart: com.android.dingtalk.share.ddsharemodule.algorithm.MD5::getMessageDigest([\'bytes\':$bytes])');
     }
-  
+
     // invoke native method
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('com.android.dingtalk.share.ddsharemodule.algorithm.MD5::getMessageDigest', {"bytes": bytes});
-  
-  
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod(
+            'com.android.dingtalk.share.ddsharemodule.algorithm.MD5::getMessageDigest',
+            {"bytes": bytes});
+
     // handle native call
-  
-  
+
     // convert native result to dart side object
     if (result == null) {
       return null;
     } else {
-    
       return result;
     }
   }
-  
-  static Future<List<int>> getRawDigest(List<int> bytes) async {
+
+  static Future<Uint8List> getRawDigest(Uint8List bytes) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.algorithm.MD5::getRawDigest([\'bytes\':$bytes])');
+      print(
+          'fluttify-dart: com.android.dingtalk.share.ddsharemodule.algorithm.MD5::getRawDigest([\'bytes\':$bytes])');
     }
-  
+
     // invoke native method
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('com.android.dingtalk.share.ddsharemodule.algorithm.MD5::getRawDigest', {"bytes": bytes});
-  
-  
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod(
+            'com.android.dingtalk.share.ddsharemodule.algorithm.MD5::getRawDigest',
+            {"bytes": bytes});
+
     // handle native call
-  
-  
+
     // convert native result to dart side object
     if (result == null) {
       return null;
     } else {
-    
-      return result;
+      return (result as List).cast<int>();
     }
   }
-  
+
   static Future<String> getMD5(String var0) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.algorithm.MD5::getMD5([\'var0\':$var0])');
+      print(
+          'fluttify-dart: com.android.dingtalk.share.ddsharemodule.algorithm.MD5::getMD5([\'var0\':$var0])');
     }
-  
+
     // invoke native method
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('com.android.dingtalk.share.ddsharemodule.algorithm.MD5::getMD5', {"var0": var0});
-  
-  
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod(
+            'com.android.dingtalk.share.ddsharemodule.algorithm.MD5::getMD5',
+            {"var0": var0});
+
     // handle native call
-  
-  
+
     // convert native result to dart side object
     if (result == null) {
       return null;
     } else {
-    
       return result;
     }
   }
-  
 }

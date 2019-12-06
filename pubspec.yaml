@@ -1,7 +1,7 @@
 name: ddshare_fluttify
-description: A `ddshare` flutter plugin, based on `fluttify` engine.
-version: 0.0.1
-author: yohom <382146139@qq.com>
+description: 钉钉分享插件，基于 `fluttify` 引擎开发.
+version: 0.0.1+2
+author: yshye <yshye2013@gmail.com>
 homepage: https://github.com/fluttify-project/ddshare_fluttify
 
 environment:
@@ -10,7 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  foundation_fluttify: ^0.1.1
+  foundation_fluttify: ^0.2.1
   
 
 dev_dependencies:

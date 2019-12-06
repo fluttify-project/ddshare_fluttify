@@ -10,78 +10,82 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 // ignore_for_file: non_constant_identifier_names, camel_case_types, missing_return, unused_import
-class com_android_dingtalk_share_ddsharemodule_message_DDMessageAct extends java_lang_Object  {
+class com_android_dingtalk_share_ddsharemodule_message_DDMessageAct
+    extends java_lang_Object {
   // generate getters
-  
 
   // generate setters
-  
 
   // generate methods
-  static Future<bool> sendDDFriend(android_content_Context context, String appId, android_os_Bundle bundle) async {
+  static Future<bool> sendDDFriend(android_content_Context context,
+      String appId, android_os_Bundle bundle) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.DDMessageAct::sendDDFriend([\'appId\':$appId])');
+      print(
+          'fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.DDMessageAct::sendDDFriend([\'appId\':$appId])');
     }
-  
+
     // invoke native method
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('com.android.dingtalk.share.ddsharemodule.message.DDMessageAct::sendDDFriend', {"context": context.refId, "appId": appId, "bundle": bundle.refId});
-  
-  
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod(
+            'com.android.dingtalk.share.ddsharemodule.message.DDMessageAct::sendDDFriend',
+            {"context": context.refId, "appId": appId, "bundle": bundle.refId});
+
     // handle native call
-  
-  
+
     // convert native result to dart side object
     if (result == null) {
       return null;
     } else {
-    
       return result;
     }
   }
-  
-  static Future<bool> sendDing(android_content_Context context, String appId, android_os_Bundle bundle) async {
+
+  static Future<bool> sendDing(android_content_Context context, String appId,
+      android_os_Bundle bundle) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.DDMessageAct::sendDing([\'appId\':$appId])');
+      print(
+          'fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.DDMessageAct::sendDing([\'appId\':$appId])');
     }
-  
+
     // invoke native method
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('com.android.dingtalk.share.ddsharemodule.message.DDMessageAct::sendDing', {"context": context.refId, "appId": appId, "bundle": bundle.refId});
-  
-  
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod(
+            'com.android.dingtalk.share.ddsharemodule.message.DDMessageAct::sendDing',
+            {"context": context.refId, "appId": appId, "bundle": bundle.refId});
+
     // handle native call
-  
-  
+
     // convert native result to dart side object
     if (result == null) {
       return null;
     } else {
-    
       return result;
     }
   }
-  
-  static Future<bool> sendDDAuth(android_content_Context context, String appId, android_os_Bundle bundle) async {
+
+  static Future<bool> sendDDAuth(android_content_Context context, String appId,
+      android_os_Bundle bundle) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.DDMessageAct::sendDDAuth([\'appId\':$appId])');
+      print(
+          'fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.DDMessageAct::sendDDAuth([\'appId\':$appId])');
     }
-  
+
     // invoke native method
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('com.android.dingtalk.share.ddsharemodule.message.DDMessageAct::sendDDAuth', {"context": context.refId, "appId": appId, "bundle": bundle.refId});
-  
-  
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod(
+            'com.android.dingtalk.share.ddsharemodule.message.DDMessageAct::sendDDAuth',
+            {"context": context.refId, "appId": appId, "bundle": bundle.refId});
+
     // handle native call
-  
-  
+
     // convert native result to dart side object
     if (result == null) {
       return null;
     } else {
-    
       return result;
     }
   }
-  
 }

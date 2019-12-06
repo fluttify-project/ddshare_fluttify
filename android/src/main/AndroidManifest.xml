@@ -1,3 +1,31 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="com.fluttify.ddshare_fluttify">
+    package="com.fluttify.ddshare_fluttify">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <application>
+
+        <activity
+            android:name=".ddshare.DDShareActivity"
+            android:launchMode="singleTask"
+            android:theme="@style/DisablePreviewTheme" />
+
+        <activity-alias
+            android:name="${applicationId}.ddshare.DDShareActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:targetActivity="com.fluttify.ddshare_fluttify.ddshare.DDShareActivity"
+            android:theme="@style/DisablePreviewTheme">
+
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="sdksample" />
+            </intent-filter>
+        </activity-alias>
+    </application>
+
 </manifest>

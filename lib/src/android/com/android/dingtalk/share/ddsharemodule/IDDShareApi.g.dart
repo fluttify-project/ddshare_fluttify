@@ -11,98 +11,76 @@ import 'package:flutter/services.dart';
 
 // ignore_for_file: non_constant_identifier_names, camel_case_types, missing_return, unused_import
 mixin com_android_dingtalk_share_ddsharemodule_IDDShareApi on java_lang_Object {
-  
-
-  
-
   @mustCallSuper
   Future<bool> registerApp(String var1) {
-  
-  
     if (!kReleaseMode) {
       debugPrint('registerApp::kNativeObjectPool: $kNativeObjectPool');
     }
   }
-  
+
   @mustCallSuper
   Future<void> unregisterApp() {
-  
-  
     if (!kReleaseMode) {
       debugPrint('unregisterApp::kNativeObjectPool: $kNativeObjectPool');
     }
   }
-  
+
   @mustCallSuper
   Future<bool> isDDAppInstalled() {
-  
-  
     if (!kReleaseMode) {
       debugPrint('isDDAppInstalled::kNativeObjectPool: $kNativeObjectPool');
     }
   }
-  
+
   @mustCallSuper
-  Future<bool> handleIntent(android_content_Intent var1, com_android_dingtalk_share_ddsharemodule_IDDAPIEventHandler var2) {
-  
-  
+  Future<bool> handleIntent(android_content_Intent var1,
+      com_android_dingtalk_share_ddsharemodule_IDDAPIEventHandler var2) {
     if (!kReleaseMode) {
       debugPrint('handleIntent::kNativeObjectPool: $kNativeObjectPool');
     }
   }
-  
+
   @mustCallSuper
   Future<bool> isDDSupportAPI() {
-  
-  
     if (!kReleaseMode) {
       debugPrint('isDDSupportAPI::kNativeObjectPool: $kNativeObjectPool');
     }
   }
-  
+
   @mustCallSuper
   Future<bool> isDDSupportDingAPI() {
-  
-  
     if (!kReleaseMode) {
       debugPrint('isDDSupportDingAPI::kNativeObjectPool: $kNativeObjectPool');
     }
   }
-  
+
   @mustCallSuper
   Future<int> getDDSupportAPI() {
-  
-  
     if (!kReleaseMode) {
       debugPrint('getDDSupportAPI::kNativeObjectPool: $kNativeObjectPool');
     }
   }
-  
+
   @mustCallSuper
   Future<bool> openDDApp() {
-  
-  
     if (!kReleaseMode) {
       debugPrint('openDDApp::kNativeObjectPool: $kNativeObjectPool');
     }
   }
-  
+
   @mustCallSuper
-  Future<bool> sendReq(com_android_dingtalk_share_ddsharemodule_message_BaseReq var1) {
-  
-  
+  Future<bool> sendReq(
+      com_android_dingtalk_share_ddsharemodule_message_BaseReq var1) {
     if (!kReleaseMode) {
       debugPrint('sendReq::kNativeObjectPool: $kNativeObjectPool');
     }
   }
-  
+
   @mustCallSuper
-  Future<bool> sendReqToDing(com_android_dingtalk_share_ddsharemodule_message_BaseReq var1) {
-  
-  
+  Future<bool> sendReqToDing(
+      com_android_dingtalk_share_ddsharemodule_message_BaseReq var1) {
     if (!kReleaseMode) {
       debugPrint('sendReqToDing::kNativeObjectPool: $kNativeObjectPool');
     }
   }
-  
 }

@@ -10,23 +10,39 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 // ignore_for_file: non_constant_identifier_names, camel_case_types, missing_return, unused_import
-class DTMediaImageObject extends NSObject  {
+class DTMediaImageObject extends NSObject {
   // generate getters
+  Future<NSData> get_imageData() async {
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod("DTMediaImageObject::get_imageData", {'refId': refId});
+    kNativeObjectPool.add(NSData()
+      ..refId = result
+      ..tag = 'ddshare_fluttify');
+    return NSData()
+      ..refId = result
+      ..tag = 'ddshare_fluttify';
+  }
+
   Future<String> get_imageURL() async {
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod("DTMediaImageObject::get_imageURL", {'refId': refId});
-  
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod("DTMediaImageObject::get_imageURL", {'refId': refId});
+
     return result;
   }
-  
 
   // generate setters
-  Future<void> set_imageURL(String imageURL) async {
-    await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('DTMediaImageObject::set_imageURL', {'refId': refId, "imageURL": imageURL});
-  
-  
+  Future<void> set_imageData(NSData imageData) async {
+    await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod(
+        'DTMediaImageObject::set_imageData',
+        {'refId': refId, "imageData": imageData.refId});
   }
-  
 
-  // generate methods
-  
+  Future<void> set_imageURL(String imageURL) async {
+    await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod(
+        'DTMediaImageObject::set_imageURL',
+        {'refId': refId, "imageURL": imageURL});
+  }
+
+// generate methods
+
 }

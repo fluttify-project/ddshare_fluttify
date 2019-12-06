@@ -10,182 +10,213 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 // ignore_for_file: non_constant_identifier_names, camel_case_types, missing_return, unused_import
-class com_android_dingtalk_share_ddsharemodule_message_DDMediaMessage extends java_lang_Object  {
+class com_android_dingtalk_share_ddsharemodule_message_DDMediaMessage
+    extends java_lang_Object {
   // generate getters
   Future<int> get_mSDKVersion() async {
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod("com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage::get_mSDKVersion", {'refId': refId});
-  
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod(
+            "com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage::get_mSDKVersion",
+            {'refId': refId});
+
     return result;
   }
-  
+
   Future<String> get_mTitle() async {
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod("com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage::get_mTitle", {'refId': refId});
-  
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod(
+            "com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage::get_mTitle",
+            {'refId': refId});
+
     return result;
   }
-  
+
   Future<String> get_mContent() async {
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod("com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage::get_mContent", {'refId': refId});
-  
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod(
+            "com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage::get_mContent",
+            {'refId': refId});
+
     return result;
   }
-  
-  Future<List<int>> get_mThumbData() async {
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod("com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage::get_mThumbData", {'refId': refId});
-  
+
+  Future<Uint8List> get_mThumbData() async {
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod(
+            "com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage::get_mThumbData",
+            {'refId': refId});
+
     return result;
   }
-  
+
   Future<String> get_mThumbUrl() async {
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod("com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage::get_mThumbUrl", {'refId': refId});
-  
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod(
+            "com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage::get_mThumbUrl",
+            {'refId': refId});
+
     return result;
   }
-  
+
   Future<String> get_mUrl() async {
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod("com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage::get_mUrl", {'refId': refId});
-  
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod(
+            "com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage::get_mUrl",
+            {'refId': refId});
+
     return result;
   }
-  
-  Future<com_android_dingtalk_share_ddsharemodule_message_DDMediaMessage_IMediaObject> get_mMediaObject() async {
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod("com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage::get_mMediaObject", {'refId': refId});
-    kNativeObjectPool.add(com_android_dingtalk_share_ddsharemodule_message_DDTextMessage()..refId = result..tag = 'ddshare_fluttify');
-    return com_android_dingtalk_share_ddsharemodule_message_DDTextMessage()..refId = result..tag = 'ddshare_fluttify';
+
+  Future<com_android_dingtalk_share_ddsharemodule_message_DDMediaMessage_IMediaObject>
+      get_mMediaObject() async {
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod(
+            "com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage::get_mMediaObject",
+            {'refId': refId});
+    kNativeObjectPool
+        .add(com_android_dingtalk_share_ddsharemodule_message_DDTextMessage()
+          ..refId = result
+          ..tag = 'ddshare_fluttify');
+    return com_android_dingtalk_share_ddsharemodule_message_DDTextMessage()
+      ..refId = result
+      ..tag = 'ddshare_fluttify';
   }
-  
 
   // generate setters
   Future<void> set_mSDKVersion(int mSDKVersion) async {
-    await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage::set_mSDKVersion', {'refId': refId, "mSDKVersion": mSDKVersion});
-  
-  
+    await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod(
+        'com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage::set_mSDKVersion',
+        {'refId': refId, "mSDKVersion": mSDKVersion});
   }
-  
+
   Future<void> set_mTitle(String mTitle) async {
-    await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage::set_mTitle', {'refId': refId, "mTitle": mTitle});
-  
-  
+    await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod(
+        'com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage::set_mTitle',
+        {'refId': refId, "mTitle": mTitle});
   }
-  
+
   Future<void> set_mContent(String mContent) async {
-    await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage::set_mContent', {'refId': refId, "mContent": mContent});
-  
-  
+    await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod(
+        'com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage::set_mContent',
+        {'refId': refId, "mContent": mContent});
   }
-  
-  Future<void> set_mThumbData(List<int> mThumbData) async {
-    await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage::set_mThumbData', {'refId': refId, "mThumbData": mThumbData});
-  
-  
+
+  Future<void> set_mThumbData(Uint8List mThumbData) async {
+    await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod(
+        'com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage::set_mThumbData',
+        {'refId': refId, "mThumbData": mThumbData});
   }
-  
+
   Future<void> set_mThumbUrl(String mThumbUrl) async {
-    await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage::set_mThumbUrl', {'refId': refId, "mThumbUrl": mThumbUrl});
-  
-  
+    await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod(
+        'com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage::set_mThumbUrl',
+        {'refId': refId, "mThumbUrl": mThumbUrl});
   }
-  
+
   Future<void> set_mUrl(String mUrl) async {
-    await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage::set_mUrl', {'refId': refId, "mUrl": mUrl});
-  
-  
+    await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod(
+        'com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage::set_mUrl',
+        {'refId': refId, "mUrl": mUrl});
   }
-  
-  Future<void> set_mMediaObject(com_android_dingtalk_share_ddsharemodule_message_DDMediaMessage_IMediaObject mMediaObject) async {
-    await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage::set_mMediaObject', {'refId': refId, "mMediaObject": mMediaObject.refId});
-  
-  
+
+  Future<void> set_mMediaObject(
+      com_android_dingtalk_share_ddsharemodule_message_DDMediaMessage_IMediaObject
+          mMediaObject) async {
+    await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod(
+        'com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage::set_mMediaObject',
+        {'refId': refId, "mMediaObject": mMediaObject.refId});
   }
-  
 
   // generate methods
   Future<int> getType() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage@$refId::getType([])');
+      print(
+          'fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage@$refId::getType([])');
     }
-  
+
     // invoke native method
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage::getType', {"refId": refId});
-  
-  
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod(
+            'com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage::getType',
+            {"refId": refId});
+
     // handle native call
-  
-  
+
     // convert native result to dart side object
     if (result == null) {
       return null;
     } else {
-    
       return result;
     }
   }
-  
+
   Future<void> setThumbImage(android_graphics_Bitmap bitmap) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage@$refId::setThumbImage([])');
+      print(
+          'fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage@$refId::setThumbImage([])');
     }
-  
+
     // invoke native method
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage::setThumbImage', {"bitmap": bitmap.refId, "refId": refId});
-  
-  
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod(
+            'com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage::setThumbImage',
+            {"bitmap": bitmap.refId, "refId": refId});
+
     // handle native call
-  
-  
+
     // convert native result to dart side object
     if (result == null) {
       return null;
     } else {
-    
       return result;
     }
   }
-  
+
   Future<bool> checkArgs() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage@$refId::checkArgs([])');
+      print(
+          'fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage@$refId::checkArgs([])');
     }
-  
+
     // invoke native method
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage::checkArgs', {"refId": refId});
-  
-  
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod(
+            'com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage::checkArgs',
+            {"refId": refId});
+
     // handle native call
-  
-  
+
     // convert native result to dart side object
     if (result == null) {
       return null;
     } else {
-    
       return result;
     }
   }
-  
+
   Future<int> getSupportVersion() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage@$refId::getSupportVersion([])');
+      print(
+          'fluttify-dart: com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage@$refId::getSupportVersion([])');
     }
-  
+
     // invoke native method
-    final result = await MethodChannel('com.fluttify/ddshare_fluttify').invokeMethod('com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage::getSupportVersion', {"refId": refId});
-  
-  
+    final result = await MethodChannel('com.fluttify/ddshare_fluttify')
+        .invokeMethod(
+            'com.android.dingtalk.share.ddsharemodule.message.DDMediaMessage::getSupportVersion',
+            {"refId": refId});
+
     // handle native call
-  
-  
+
     // convert native result to dart side object
     if (result == null) {
       return null;
     } else {
-    
       return result;
     }
   }
-  
 }

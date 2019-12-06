@@ -10,10 +10,5 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 // ignore_for_file: non_constant_identifier_names, camel_case_types, missing_return, unused_import
-mixin com_android_dingtalk_share_ddsharemodule_message_BaseResp_ErrCode on java_lang_Object {
-  
-
-  
-
-  
-}
+mixin com_android_dingtalk_share_ddsharemodule_message_BaseResp_ErrCode
+    on java_lang_Object {}

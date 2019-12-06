@@ -10,27 +10,25 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 // ignore_for_file: non_constant_identifier_names, camel_case_types, missing_return, unused_import
-mixin com_android_dingtalk_share_ddsharemodule_IDDAPIEventHandler on java_lang_Object {
-  
-
-  
-
+mixin com_android_dingtalk_share_ddsharemodule_IDDAPIEventHandler
+    on java_lang_Object {
   @mustCallSuper
-  Future<void> onReq(com_android_dingtalk_share_ddsharemodule_message_BaseReq var1) {
+  Future<void> onReq(
+      com_android_dingtalk_share_ddsharemodule_message_BaseReq var1) {
     kNativeObjectPool.add(var1);
-  
+
     if (!kReleaseMode) {
       debugPrint('onReq::kNativeObjectPool: $kNativeObjectPool');
     }
   }
-  
+
   @mustCallSuper
-  Future<void> onResp(com_android_dingtalk_share_ddsharemodule_message_BaseResp var1) {
+  Future<void> onResp(
+      com_android_dingtalk_share_ddsharemodule_message_BaseResp var1) {
     kNativeObjectPool.add(var1);
-  
+
     if (!kReleaseMode) {
       debugPrint('onResp::kNativeObjectPool: $kNativeObjectPool');
     }
   }
-  
 }

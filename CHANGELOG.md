@@ -1,3 +1,8 @@
 ## 0.0.1
+首次发布，同时支持Android和IOS端分享
 
-* TODO: Describe initial release.
+## 0.0.1+1
+优化代码结构
+
+## 0.0.1+2
+修改说明
