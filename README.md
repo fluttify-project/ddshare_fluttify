@@ -1,12 +1,15 @@
 # 钉钉分享组件
+[![](https://img.shields.io/pub/v/ddshare_fluttify#align=left&display=inline&height=20&originHeight=20&originWidth=76&status=done&style=none&width=76)](https://pub.flutter-io.cn/packages/ddshare_fluttify)
 
-钉钉分享的Flutter插件，同时支持Android和IOS。
+DingTalk Share plugin, developed based on the fluttify engine. Supports both Android and IOS, text sharing, picture sharing, web page sharing.
+钉钉分享的Flutter插件，同时支持Android和IOS。支持检测、分享文本、分享图片、分享网页。
+
 ## 安装:
 ```dart
 dependencies:
   flutter:
     sdk: flutter
-  ddshare_fluttify: ^x.x.x
+  ddshare_fluttify: ^0.1.0
 ```
 ## 导入：
 ```dart
@@ -29,26 +32,36 @@ import 'package:ddshare_fluttify/ddshare_fluttify.dart';
 
 ## 使用
 ```dart
- // 1. 初始化，前往钉钉开放平台申请
- DDSharePlugin.init("dingoalgfg9lln5ltgtmwg");
- // 2. 检测是否安装了钉钉
- bool flag = await DDSharePlugin.isDDAppInstalled();
- // 3. 检测是否支持分享到好友
- bool flag = await DDSharePlugin.isDDSupportAPI();
- // 4. 检测是都支持分享到Ding
- bool flag = await DDSharePlugin.isDDSupportDingAPI();
- // 5. 分享文本
- DDSharePlugin.sendTextMessage("一个简单的文本分享");
- // 6. 分享网络图片
- DDSharePlugin.sendOnlineImage(picUrl);
- // 7. 分享本地图片(仅支持Android)
- File imageFile = File('图片的本地地址');
- DDSharePlugin.sendLocalImage(image);
- // 8. 分享网页
- String url = "https://www.badu.com";
- String title = "这是标题";
- String content = "这里是分享的文本内容";
- // 缩略图
- String thumbUrl = "https://t.alipayobjects.com/images/rmsweb/T1vs0gXXhlXXXXXXXX.jpg";
- await DDSharePlugin.sendWebPageMessage(url, title: title, content: content, thumbUrl: thumbUrl);
+// 1. 初始化，前往钉钉开放平台申请
+DDSharePlugin.init("dingoalgfg9lln5ltgtmwg");
+// 2. 检测是否安装了钉钉
+bool flag = await DDSharePlugin.isDDAppInstalled();
+// 3. 检测是否支持分享到好友
+bool flag = await DDSharePlugin.isDDSupportAPI();
+// 4. 检测是都支持分享到Ding
+bool flag = await DDSharePlugin.isDDSupportDingAPI();
+// 5. 分享文本
+DDSharePlugin.sendTextMessage("一个简单的文本分享");
+// 6. 分享网络图片
+DDSharePlugin.sendOnlineImage(picUrl);
+// 7. 分享本地图片(仅支持Android)
+File imageFile = File('图片的本地地址');
+DDSharePlugin.sendLocalImage(image);
+// 8. 分享网页
+String url = "https://www.badu.com";
+String title = "这是标题";
+String content = "这里是分享的文本内容";
+// 缩略图
+String thumbUrl = "https://t.alipayobjects.com/images/rmsweb/T1vs0gXXhlXXXXXXXX.jpg";
+await DDSharePlugin.sendWebPageMessage(url, title: title, content: content, thumbUrl: thumbUrl);
+
+// 分享回调（仅Android）
+DDSharePlugin.setCallback((int flag) {
+if (flag == 1)
+  showToast('分享成功！');
+else if (flag == 0)
+  showToast('取消分享！');
+else
+  showToast('分享失败！');
+});
 ```
