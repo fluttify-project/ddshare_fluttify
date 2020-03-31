@@ -33,7 +33,7 @@ class DDSharePlugin {
     _initCallback();
     return platform(
       android: (pool) async {
-        final android_content_Context context = await getandroid_app_Activity();
+        final android_content_Context context = await android_app_Activity.get();
         _androidApi =
             await createcom_android_dingtalk_share_ddsharemodule_DDShareApiV2__android_content_Context__String__boolean(
                 context, appId, false);

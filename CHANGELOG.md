@@ -1,3 +1,6 @@
+## 0.1.1
+更新到最新版foundation_fluttify
+
 ## 0.1.0
 支持Flutter 1.12.13
 

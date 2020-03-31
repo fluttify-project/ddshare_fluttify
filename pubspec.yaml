@@ -1,6 +1,6 @@
 name: ddshare_fluttify
 description: DingTalk Share plugin, developed based on the fluttify engine,Support detection, text sharing, picture sharing, web page sharing.
-version: 0.1.0
+version: 0.1.1
 author: yshye<yshye2013@gmail.com>
 homepage: https://github.com/fluttify-project/ddshare_fluttify
 
@@ -10,7 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  foundation_fluttify: ^0.3.0
+  foundation_fluttify:
   
 
 dev_dependencies:
