@@ -76,10 +76,10 @@ class com_android_dingtalk_share_ddsharemodule_message_DDMediaMessage
     kNativeObjectPool
         .add(com_android_dingtalk_share_ddsharemodule_message_DDTextMessage()
           ..refId = result
-          ..tag = 'ddshare_fluttify');
+          ..tag__ = 'ddshare_fluttify');
     return com_android_dingtalk_share_ddsharemodule_message_DDTextMessage()
       ..refId = result
-      ..tag = 'ddshare_fluttify';
+      ..tag__ = 'ddshare_fluttify';
   }
 
   // generate setters

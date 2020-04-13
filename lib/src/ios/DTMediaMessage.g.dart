@@ -32,10 +32,10 @@ class DTMediaMessage extends NSObject {
         .invokeMethod("DTMediaMessage::get_thumbData", {'refId': refId});
     kNativeObjectPool.add(NSData()
       ..refId = result
-      ..tag = 'ddshare_fluttify');
+      ..tag__ = 'ddshare_fluttify');
     return NSData()
       ..refId = result
-      ..tag = 'ddshare_fluttify';
+      ..tag__ = 'ddshare_fluttify';
   }
 
   Future<String> get_thumbURL() async {
@@ -50,10 +50,10 @@ class DTMediaMessage extends NSObject {
         .invokeMethod("DTMediaMessage::get_mediaObject", {'refId': refId});
     kNativeObjectPool.add(NSObject()
       ..refId = result
-      ..tag = 'ddshare_fluttify');
+      ..tag__ = 'ddshare_fluttify');
     return NSObject()
       ..refId = result
-      ..tag = 'ddshare_fluttify';
+      ..tag__ = 'ddshare_fluttify';
   }
 
   // generate setters

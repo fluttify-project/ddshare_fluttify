@@ -33,7 +33,7 @@ class DDSharePlugin {
     _initCallback();
     return platform(
       android: (pool) async {
-        final android_content_Context context = await getandroid_app_Activity();
+        final android_content_Context context = await android_app_Activity.get();
         _androidApi =
             await createcom_android_dingtalk_share_ddsharemodule_DDShareApiV2__android_content_Context__String__boolean(
                 context, appId, false);
@@ -146,12 +146,12 @@ class DDSharePlugin {
     if (Platform.isAndroid) {
       com_android_dingtalk_share_ddsharemodule_message_DDMediaMessage
       mediaMessage =
-      await createcom_android_dingtalk_share_ddsharemodule_message_DDMediaMessage__();
+      await createcom_android_dingtalk_share_ddsharemodule_message_DDMediaMessage();
       switch (shareBody.shareType) {
         case DDShareType.TEXT:
           com_android_dingtalk_share_ddsharemodule_message_DDTextMessage
           textObject =
-          await createcom_android_dingtalk_share_ddsharemodule_message_DDTextMessage__();
+          await createcom_android_dingtalk_share_ddsharemodule_message_DDTextMessage();
           await textObject.set_mText(shareBody.mContent);
           await mediaMessage.set_mMediaObject(textObject);
           break;
@@ -159,7 +159,7 @@ class DDSharePlugin {
         case DDShareType.IMG_URL:
           com_android_dingtalk_share_ddsharemodule_message_DDImageMessage
           imageObject =
-          await createcom_android_dingtalk_share_ddsharemodule_message_DDImageMessage__();
+          await createcom_android_dingtalk_share_ddsharemodule_message_DDImageMessage();
           if (shareBody.shareType == DDShareType.IMG_LOCAL) {
             await imageObject.set_mImagePath(shareBody.mContent);
           } else {
@@ -171,13 +171,13 @@ class DDSharePlugin {
         case DDShareType.ZFB:
           if (shareBody.shareType == DDShareType.URL) {
             com_android_dingtalk_share_ddsharemodule_message_DDWebpageMessage webPageObject =
-            await createcom_android_dingtalk_share_ddsharemodule_message_DDWebpageMessage__();
+            await createcom_android_dingtalk_share_ddsharemodule_message_DDWebpageMessage();
             await webPageObject.set_mUrl(shareBody.mUrl);
             await mediaMessage.set_mMediaObject(webPageObject);
           } else {
             com_android_dingtalk_share_ddsharemodule_message_DDZhiFuBaoMesseage
             zfbPageObject =
-            await createcom_android_dingtalk_share_ddsharemodule_message_DDZhiFuBaoMesseage__();
+            await createcom_android_dingtalk_share_ddsharemodule_message_DDZhiFuBaoMesseage();
             await zfbPageObject.set_mUrl(shareBody.mUrl);
             await mediaMessage.set_mMediaObject(zfbPageObject);
           }
@@ -187,7 +187,7 @@ class DDSharePlugin {
           break;
       }
       com_android_dingtalk_share_ddsharemodule_message_SendMessageToDD_Req req =
-      await createcom_android_dingtalk_share_ddsharemodule_message_SendMessageToDD_Req__();
+      await createcom_android_dingtalk_share_ddsharemodule_message_SendMessageToDD_Req();
       await req.set_mMediaMessage(mediaMessage);
       if (isSendDing) {
         return await _androidApi?.sendReqToDing(req);

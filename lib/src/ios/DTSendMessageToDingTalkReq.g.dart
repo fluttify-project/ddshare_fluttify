@@ -18,10 +18,10 @@ class DTSendMessageToDingTalkReq extends DTBaseReq {
             "DTSendMessageToDingTalkReq::get_message", {'refId': refId});
     kNativeObjectPool.add(DTMediaMessage()
       ..refId = result
-      ..tag = 'ddshare_fluttify');
+      ..tag__ = 'ddshare_fluttify');
     return DTMediaMessage()
       ..refId = result
-      ..tag = 'ddshare_fluttify';
+      ..tag__ = 'ddshare_fluttify';
   }
 
   Future<DTScene> get_scene() async {

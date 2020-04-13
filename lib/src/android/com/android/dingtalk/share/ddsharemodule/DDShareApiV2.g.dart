@@ -122,7 +122,7 @@ class com_android_dingtalk_share_ddsharemodule_DDShareApiV2
           handler?.onReq(
               com_android_dingtalk_share_ddsharemodule_message_SendMessageToDD_Req()
                 ..refId = (args['var1'])
-                ..tag = 'ddshare_fluttify');
+                ..tag__ = 'ddshare_fluttify');
           break;
         case 'Callback::com.android.dingtalk.share.ddsharemodule.IDDAPIEventHandler::onResp':
           // print log
@@ -134,7 +134,7 @@ class com_android_dingtalk_share_ddsharemodule_DDShareApiV2
           handler?.onResp(
               com_android_dingtalk_share_ddsharemodule_message_SendMessageToDD_Resp()
                 ..refId = (args['var1'])
-                ..tag = 'ddshare_fluttify');
+                ..tag__ = 'ddshare_fluttify');
           break;
         default:
           break;

@@ -45,10 +45,10 @@ class com_android_dingtalk_share_ddsharemodule_DDShareApiFactory
       kNativeObjectPool
           .add(com_android_dingtalk_share_ddsharemodule_DDShareApiV2()
             ..refId = result
-            ..tag = 'ddshare_fluttify');
+            ..tag__ = 'ddshare_fluttify');
       return com_android_dingtalk_share_ddsharemodule_DDShareApiV2()
         ..refId = result
-        ..tag = 'ddshare_fluttify';
+        ..tag__ = 'ddshare_fluttify';
     }
   }
 }

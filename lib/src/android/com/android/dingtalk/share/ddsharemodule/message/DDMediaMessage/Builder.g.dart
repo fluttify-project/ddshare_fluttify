@@ -40,10 +40,10 @@ class com_android_dingtalk_share_ddsharemodule_message_DDMediaMessage_Builder
     } else {
       kNativeObjectPool.add(android_os_Bundle()
         ..refId = result
-        ..tag = 'ddshare_fluttify');
+        ..tag__ = 'ddshare_fluttify');
       return android_os_Bundle()
         ..refId = result
-        ..tag = 'ddshare_fluttify';
+        ..tag__ = 'ddshare_fluttify';
     }
   }
 
@@ -70,10 +70,10 @@ class com_android_dingtalk_share_ddsharemodule_message_DDMediaMessage_Builder
       kNativeObjectPool
           .add(com_android_dingtalk_share_ddsharemodule_message_DDMediaMessage()
             ..refId = result
-            ..tag = 'ddshare_fluttify');
+            ..tag__ = 'ddshare_fluttify');
       return com_android_dingtalk_share_ddsharemodule_message_DDMediaMessage()
         ..refId = result
-        ..tag = 'ddshare_fluttify';
+        ..tag__ = 'ddshare_fluttify';
     }
   }
 }

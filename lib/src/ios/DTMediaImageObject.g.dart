@@ -17,10 +17,10 @@ class DTMediaImageObject extends NSObject {
         .invokeMethod("DTMediaImageObject::get_imageData", {'refId': refId});
     kNativeObjectPool.add(NSData()
       ..refId = result
-      ..tag = 'ddshare_fluttify');
+      ..tag__ = 'ddshare_fluttify');
     return NSData()
       ..refId = result
-      ..tag = 'ddshare_fluttify';
+      ..tag__ = 'ddshare_fluttify';
   }
 
   Future<String> get_imageURL() async {
