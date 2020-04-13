@@ -1,3 +1,6 @@
+## 0.1.3
+修复对foundation_fluttify代码的支持
+
 ## 0.1.1
 更新到最新版foundation_fluttify
 

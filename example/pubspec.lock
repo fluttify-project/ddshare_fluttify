@@ -70,7 +70,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "0.1.0"
+    version: "0.1.2"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -94,7 +94,7 @@ packages:
       name: foundation_fluttify
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.4.18"
+    version: "0.5.1"
   image:
     dependency: transitive
     description:

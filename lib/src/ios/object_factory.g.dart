@@ -17,7 +17,7 @@ Future<DTBaseReq> createDTBaseReq() async {
       await _channel.invokeMethod('ObjectFactory::createDTBaseReq');
   final object = DTBaseReq()
     ..refId = refId
-    ..tag = 'ddshare_fluttify';
+    ..tag__ = 'ddshare_fluttify';
 
   kNativeObjectPool.add(object);
   return object;
@@ -28,7 +28,7 @@ Future<DTBaseResp> createDTBaseResp() async {
       await _channel.invokeMethod('ObjectFactory::createDTBaseResp');
   final object = DTBaseResp()
     ..refId = refId
-    ..tag = 'ddshare_fluttify';
+    ..tag__ = 'ddshare_fluttify';
 
   kNativeObjectPool.add(object);
   return object;
@@ -39,7 +39,7 @@ Future<DTAuthorizeReq> createDTAuthorizeReq() async {
       await _channel.invokeMethod('ObjectFactory::createDTAuthorizeReq');
   final object = DTAuthorizeReq()
     ..refId = refId
-    ..tag = 'ddshare_fluttify';
+    ..tag__ = 'ddshare_fluttify';
 
   kNativeObjectPool.add(object);
   return object;
@@ -50,7 +50,7 @@ Future<DTAuthorizeResp> createDTAuthorizeResp() async {
       await _channel.invokeMethod('ObjectFactory::createDTAuthorizeResp');
   final object = DTAuthorizeResp()
     ..refId = refId
-    ..tag = 'ddshare_fluttify';
+    ..tag__ = 'ddshare_fluttify';
 
   kNativeObjectPool.add(object);
   return object;
@@ -61,7 +61,7 @@ Future<DTSendMessageToDingTalkReq> createDTSendMessageToDingTalkReq() async {
       .invokeMethod('ObjectFactory::createDTSendMessageToDingTalkReq');
   final object = DTSendMessageToDingTalkReq()
     ..refId = refId
-    ..tag = 'ddshare_fluttify';
+    ..tag__ = 'ddshare_fluttify';
 
   kNativeObjectPool.add(object);
   return object;
@@ -72,7 +72,7 @@ Future<DTSendMessageToDingTalkResp> createDTSendMessageToDingTalkResp() async {
       .invokeMethod('ObjectFactory::createDTSendMessageToDingTalkResp');
   final object = DTSendMessageToDingTalkResp()
     ..refId = refId
-    ..tag = 'ddshare_fluttify';
+    ..tag__ = 'ddshare_fluttify';
 
   kNativeObjectPool.add(object);
   return object;
@@ -83,7 +83,7 @@ Future<DTMediaMessage> createDTMediaMessage() async {
       await _channel.invokeMethod('ObjectFactory::createDTMediaMessage');
   final object = DTMediaMessage()
     ..refId = refId
-    ..tag = 'ddshare_fluttify';
+    ..tag__ = 'ddshare_fluttify';
 
   kNativeObjectPool.add(object);
   return object;
@@ -94,7 +94,7 @@ Future<DTMediaTextObject> createDTMediaTextObject() async {
       await _channel.invokeMethod('ObjectFactory::createDTMediaTextObject');
   final object = DTMediaTextObject()
     ..refId = refId
-    ..tag = 'ddshare_fluttify';
+    ..tag__ = 'ddshare_fluttify';
 
   kNativeObjectPool.add(object);
   return object;
@@ -105,7 +105,7 @@ Future<DTMediaImageObject> createDTMediaImageObject() async {
       await _channel.invokeMethod('ObjectFactory::createDTMediaImageObject');
   final object = DTMediaImageObject()
     ..refId = refId
-    ..tag = 'ddshare_fluttify';
+    ..tag__ = 'ddshare_fluttify';
 
   kNativeObjectPool.add(object);
   return object;
@@ -116,7 +116,7 @@ Future<DTMediaWebObject> createDTMediaWebObject() async {
       await _channel.invokeMethod('ObjectFactory::createDTMediaWebObject');
   final object = DTMediaWebObject()
     ..refId = refId
-    ..tag = 'ddshare_fluttify';
+    ..tag__ = 'ddshare_fluttify';
 
   kNativeObjectPool.add(object);
   return object;
@@ -127,7 +127,7 @@ Future<DTMediaAlipayObject> createDTMediaAlipayObject() async {
       await _channel.invokeMethod('ObjectFactory::createDTMediaAlipayObject');
   final object = DTMediaAlipayObject()
     ..refId = refId
-    ..tag = 'ddshare_fluttify';
+    ..tag__ = 'ddshare_fluttify';
 
   kNativeObjectPool.add(object);
   return object;
@@ -138,7 +138,7 @@ Future<DTOpenAPI> createDTOpenAPI() async {
       await _channel.invokeMethod('ObjectFactory::createDTOpenAPI');
   final object = DTOpenAPI()
     ..refId = refId
-    ..tag = 'ddshare_fluttify';
+    ..tag__ = 'ddshare_fluttify';
 
   kNativeObjectPool.add(object);
   return object;
